@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Maintenance & Calibration - Wireframes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="wireframe-styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <header class="wireframe-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-box">[LOGO]</div>
+                    <h1>Enterprise Management System</h1>
+                </div>
+                <div class="user-area">
+                    <div class="user-box">[USER]</div>
+                    <span>Maintenance Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="wireframe-nav">
+            <div class="nav-item">
+                <a href="home.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="projects.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="mobile-app.html">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile App</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="cost-analysis.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Cost Analysis</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="inventory.html">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="hr-portal.html">
+                    <i class="fas fa-users"></i>
+                    <span>HR Portal</span>
+                </a>
+            </div>
+            <div class="nav-item active">
+                <i class="fas fa-tools"></i>
+                <span>Maintenance</span>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="wireframe-main">
+            <div class="page-header">
+                <h2>Predictive Asset Maintenance & Calibration</h2>
+                <div class="breadcrumb">
+                    <span><a href="home.html">Home</a></span>
+                    <span>Asset Maintenance</span>
+                </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="widget" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <select style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px;">
+                            <option>All Assets</option>
+                            <option>Operational</option>
+                            <option>Maintenance Due</option>
+                            <option>Critical Alerts</option>
+                            <option>Offline</option>
+                        </select>
+                        <input type="text" placeholder="Search assets..." style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px; width: 250px;">
+                        <div class="wireframe-button">🔍 Search</div>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="wireframe-button" style="background: #007bff; color: #fff; border-color: #007bff;">+ New Asset</div>
+                        <div class="wireframe-button">🤖 AI Predictions</div>
+                        <div class="wireframe-button">📊 Reports</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance Overview KPIs -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #007bff;">
+                    <div style="font-size: 1.5rem; color: #007bff;">⚙️</div>
+                    <div>
+                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Total Assets</h3>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">1,247</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #f39c12;">
+                    <div style="font-size: 1.5rem; color: #f39c12;">⚠</div>
+                    <div>
+                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Maintenance Due</h3>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">23</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #dc3545;">
+                    <div style="font-size: 1.5rem; color: #dc3545;">📅</div>
+                    <div>
+                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Overdue</h3>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">5</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #28a745;">
+                    <div style="font-size: 1.5rem; color: #28a745;">✅</div>
+                    <div>
+                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Completed (Month)</h3>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">89</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-Time Asset Monitoring -->
+            <div class="widget" style="margin-bottom: 3rem;">
+                <h3 style="color: #495057; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                    📈 Real-Time Asset Monitoring
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Operational Asset -->
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                            <div style="font-size: 1.5rem; color: #007bff;">🏭</div>
+                            <div>
+                                <h4 style="color: #495057; margin: 0; font-size: 1rem;">Generator Unit #A12</h4>
+                                <span style="color: #6c757d; font-size: 0.8rem; font-family: monospace;">GEN-A12-2023</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; color: #28a745; font-size: 0.9rem; font-weight: 500;">
+                            <div style="width: 8px; height: 8px; background: #28a745; border-radius: 50%;"></div>
+                            <span>Operational</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <div style="color: #495057; font-size: 0.8rem; margin-bottom: 5px;">Runtime: 1,247h</div>
+                            <div style="color: #495057; font-size: 0.8rem; margin-bottom: 5px;">Efficiency: 94%</div>
+                            <div style="color: #f39c12; font-size: 0.8rem; font-weight: 500;">Temperature: 82°C (Warning)</div>
+                        </div>
+                        
+                        <div style="background: rgba(52, 152, 219, 0.1); padding: 0.8rem; border-radius: 5px; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; color: #495057;">
+                            <div style="color: #007bff;">🤖</div>
+                            <span>AI: Next maintenance in 23 days</span>
+                        </div>
+                    </div>
+
+                    <!-- Warning Asset -->
+                    <div style="background: #fef9e7; padding: 1.5rem; border-radius: 8px; border: 1px solid #f39c12;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                            <div style="font-size: 1.5rem; color: #007bff;">💨</div>
+                            <div>
+                                <h4 style="color: #495057; margin: 0; font-size: 1rem;">HVAC System #B07</h4>
+                                <span style="color: #6c757d; font-size: 0.8rem; font-family: monospace;">HVAC-B07-2024</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; color: #f39c12; font-size: 0.9rem; font-weight: 500;">
+                            <div style="width: 8px; height: 8px; background: #f39c12; border-radius: 50%;"></div>
+                            <span>Attention Required</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <div style="color: #495057; font-size: 0.8rem; margin-bottom: 5px;">Runtime: 8,934h</div>
+                            <div style="color: #f39c12; font-size: 0.8rem; margin-bottom: 5px; font-weight: 500;">Efficiency: 78%</div>
+                            <div style="color: #495057; font-size: 0.8rem;">Vibration: Normal</div>
+                        </div>
+                        
+                        <div style="background: rgba(243, 156, 18, 0.1); padding: 0.8rem; border-radius: 5px; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; color: #d68910;">
+                            <div style="color: #f39c12;">⚠</div>
+                            <span>AI: Filter replacement needed within 7 days</span>
+                        </div>
+                    </div>
+
+                    <!-- Critical Asset -->
+                    <div style="background: #fdf2f2; padding: 1.5rem; border-radius: 8px; border: 1px solid #dc3545;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                            <div style="font-size: 1.5rem; color: #007bff;">⚡</div>
+                            <div>
+                                <h4 style="color: #495057; margin: 0; font-size: 1rem;">Electrical Panel #C15</h4>
+                                <span style="color: #6c757d; font-size: 0.8rem; font-family: monospace;">ELC-C15-2022</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; color: #dc3545; font-size: 0.9rem; font-weight: 500;">
+                            <div style="width: 8px; height: 8px; background: #dc3545; border-radius: 50%;"></div>
+                            <span>Critical Alert</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <div style="color: #dc3545; font-size: 0.8rem; margin-bottom: 5px; font-weight: 500;">Load: 95% (Critical)</div>
+                            <div style="color: #495057; font-size: 0.8rem; margin-bottom: 5px;">Voltage: 415V</div>
+                            <div style="color: #dc3545; font-size: 0.8rem; font-weight: 500;">Last Calibration: 367 days ago</div>
+                        </div>
+                        
+                        <div style="background: rgba(231, 76, 60, 0.1); padding: 0.8rem; border-radius: 5px; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; color: #c0392b;">
+                            <div style="color: #dc3545;">⚠</div>
+                            <span>AI: Immediate calibration required - overdue</span>
+                        </div>
+                    </div>
+
+                    <!-- New Asset -->
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                            <div style="font-size: 1.5rem; color: #007bff;">🏗️</div>
+                            <div>
+                                <h4 style="color: #495057; margin: 0; font-size: 1rem;">Crane System #D04</h4>
+                                <span style="color: #6c757d; font-size: 0.8rem; font-family: monospace;">CRN-D04-2025</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; color: #007bff; font-size: 0.9rem; font-weight: 500;">
+                            <div style="width: 8px; height: 8px; background: #007bff; border-radius: 50%;"></div>
+                            <span>Commissioning</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <div style="color: #495057; font-size: 0.8rem; margin-bottom: 5px;">Runtime: 45h</div>
+                            <div style="color: #495057; font-size: 0.8rem; margin-bottom: 5px;">Load Capacity: 100%</div>
+                            <div style="color: #28a745; font-size: 0.8rem; font-weight: 500;">All Systems: Normal</div>
+                        </div>
+                        
+                        <div style="background: rgba(52, 152, 219, 0.1); padding: 0.8rem; border-radius: 5px; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; color: #495057;">
+                            <div style="color: #007bff;">🤖</div>
+                            <span>AI: Initial maintenance at 500h runtime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance Schedule -->
+            <div class="widget" style="margin-bottom: 3rem;">
+                <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    📅 Maintenance Schedule
+                </h3>
+                
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: #007bff; color: #fff; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">This Week</button>
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: #fff; color: #495057; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">Next 30 Days</button>
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: #fff; color: #495057; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">Overdue</button>
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: #fff; color: #495057; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">All</button>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    
+                    <!-- Urgent Item -->
+                    <div style="background: #fdf2f2; padding: 1rem; border-radius: 8px; border-left: 4px solid #dc3545; display: grid; grid-template-columns: 120px 1fr auto; gap: 1rem; align-items: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <div style="font-weight: bold; color: #495057; font-size: 0.9rem;">Today</div>
+                            <div style="color: #6c757d; font-size: 0.8rem;">10:00 AM</div>
+                        </div>
+                        <div>
+                            <strong style="color: #495057; display: block; margin-bottom: 5px; font-size: 0.9rem;">Electrical Panel C15 - Emergency Calibration</strong>
+                            <p style="color: #6c757d; font-size: 0.8rem; margin: 5px 0;">Critical calibration overdue - immediate action required</p>
+                            <span style="color: #007bff; font-size: 0.8rem; font-style: italic;">Assigned: Ahmed Al-Rashid</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <div class="wireframe-button" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; background: #dc3545; color: #fff; border-color: #dc3545;">Start Work</div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Item -->
+                    <div style="background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #007bff; display: grid; grid-template-columns: 120px 1fr auto; gap: 1rem; align-items: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <div style="font-weight: bold; color: #495057; font-size: 0.9rem;">Sept 28</div>
+                            <div style="color: #6c757d; font-size: 0.8rem;">2:00 PM</div>
+                        </div>
+                        <div>
+                            <strong style="color: #495057; display: block; margin-bottom: 5px; font-size: 0.9rem;">HVAC B07 - Filter Replacement</strong>
+                            <p style="color: #6c757d; font-size: 0.8rem; margin: 5px 0;">Routine filter replacement and system check</p>
+                            <span style="color: #007bff; font-size: 0.8rem; font-style: italic;">Assigned: Omar Hassan</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <div class="wireframe-button" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Reschedule</div>
+                        </div>
+                    </div>
+
+                    <!-- AI Scheduled Item -->
+                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; border-left: 4px solid #9c27b0; display: grid; grid-template-columns: 120px 1fr auto; gap: 1rem; align-items: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <div style="font-weight: bold; color: #495057; font-size: 0.9rem;">Oct 2</div>
+                            <div style="color: #6c757d; font-size: 0.8rem;">9:00 AM</div>
+                        </div>
+                        <div>
+                            <strong style="color: #495057; display: block; margin-bottom: 5px; font-size: 0.9rem;">Generator A12 - Preventive Maintenance</strong>
+                            <p style="color: #6c757d; font-size: 0.8rem; margin: 5px 0;">Scheduled oil change and performance check</p>
+                            <span style="color: #9c27b0; font-size: 0.8rem; font-style: italic;">🤖 Auto-assigned by AI</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <div class="wireframe-button" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">View Details</div>
+                        </div>
+                    </div>
+
+                    <!-- Future Item -->
+                    <div style="background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #28a745; display: grid; grid-template-columns: 120px 1fr auto; gap: 1rem; align-items: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <div style="font-weight: bold; color: #495057; font-size: 0.9rem;">Oct 5</div>
+                            <div style="color: #6c757d; font-size: 0.8rem;">11:30 AM</div>
+                        </div>
+                        <div>
+                            <strong style="color: #495057; display: block; margin-bottom: 5px; font-size: 0.9rem;">Crane D04 - Initial Inspection</strong>
+                            <p style="color: #6c757d; font-size: 0.8rem; margin: 5px 0;">First maintenance check after commissioning</p>
+                            <span style="color: #007bff; font-size: 0.8rem; font-style: italic;">Assigned: Maintenance Team A</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <div class="wireframe-button" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Schedule</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance Analytics -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                
+                <!-- Performance Trends -->
+                <div class="widget">
+                    <h3 style="margin-bottom: 1rem; color: #495057;">Asset Performance Trends</h3>
+                    <div class="chart-placeholder" style="height: 250px;">
+                        [PERFORMANCE TRENDS CHART]<br><br>
+                        Key Metrics:<br>
+                        • Overall Equipment Efficiency: 87%<br>
+                        • Planned vs Unplanned Maintenance: 78% / 22%<br>
+                        • Average Response Time: 2.4 hours<br>
+                        • Cost per Asset: $1,247/month<br><br>
+                        🤖 AI Insight: Predictive maintenance<br>
+                        reduced unplanned downtime by 34%
+                    </div>
+                </div>
+
+                <!-- Maintenance Costs -->
+                <div class="widget">
+                    <h3 style="margin-bottom: 1rem; color: #495057;">Maintenance Cost Analysis</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                            <span style="color: #666; font-size: 0.9rem;">Preventive Maintenance</span>
+                            <span style="font-weight: bold; color: #28a745;">$234,500</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                            <span style="color: #666; font-size: 0.9rem;">Corrective Maintenance</span>
+                            <span style="font-weight: bold; color: #f39c12;">$89,230</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                            <span style="color: #666; font-size: 0.9rem;">Emergency Repairs</span>
+                            <span style="font-weight: bold; color: #dc3545;">$45,780</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 2px solid #dee2e6;">
+                            <span style="color: #495057; font-size: 1rem; font-weight: bold;">Total Monthly</span>
+                            <span style="font-weight: bold; color: #495057; font-size: 1.2rem;">$369,510</span>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e3f2fd; padding: 1rem; border-radius: 5px; font-size: 0.9rem;">
+                        <div style="color: #1565c0; font-weight: bold; margin-bottom: 5px;">🤖 AI Cost Optimization</div>
+                        <div style="color: #6c757d;">
+                            • Predicted savings: $23K/month<br>
+                            • Optimal maintenance frequency identified<br>
+                            • Parts inventory optimization: $12K savings
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Maintenance Activities -->
+            <div class="widget">
+                <h3 style="margin-bottom: 1.5rem; color: #495057;">Recent Maintenance Activities</h3>
+                <table class="wireframe-table">
+                    <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Asset</th>
+                            <th>Maintenance Type</th>
+                            <th>Technician</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                            <th>Next Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sept 26, 08:45 AM</td>
+                            <td><strong>Generator A10</strong><br><small style="color: #6c757d;">GEN-A10-2022</small></td>
+                            <td><span style="color: #28a745;">Preventive</span></td>
+                            <td>Omar Hassan</td>
+                            <td>3.5 hours</td>
+                            <td><span style="color: #28a745;">✓ Completed</span></td>
+                            <td>Dec 26, 2025</td>
+                        </tr>
+                        <tr>
+                            <td>Sept 26, 07:30 AM</td>
+                            <td><strong>HVAC B05</strong><br><small style="color: #6c757d;">HVAC-B05-2023</small></td>
+                            <td><span style="color: #f39c12;">Corrective</span></td>
+                            <td>Ahmed Al-Rashid</td>
+                            <td>2.2 hours</td>
+                            <td><span style="color: #28a745;">✓ Completed</span></td>
+                            <td>Nov 15, 2025</td>
+                        </tr>
+                        <tr>
+                            <td>Sept 25, 16:00 PM</td>
+                            <td><strong>Electrical Panel C12</strong><br><small style="color: #6c757d;">ELC-C12-2024</small></td>
+                            <td><span style="color: #007bff;">Calibration</span></td>
+                            <td>Khalid Mansour</td>
+                            <td>1.8 hours</td>
+                            <td><span style="color: #28a745;">✓ Completed</span></td>
+                            <td>Mar 25, 2026</td>
+                        </tr>
+                        <tr style="background: #f8d7da;">
+                            <td>Sept 25, 14:30 PM</td>
+                            <td><strong>Crane D03</strong><br><small style="color: #6c757d;">CRN-D03-2021</small></td>
+                            <td><span style="color: #dc3545;">Emergency</span></td>
+                            <td>Emergency Team</td>
+                            <td>6.5 hours</td>
+                            <td><span style="color: #dc3545;">⚠ Under Review</span></td>
+                            <td>TBD</td>
+                        </tr>
+                        <tr>
+                            <td>Sept 25, 09:00 AM</td>
+                            <td><strong>Generator A08</strong><br><small style="color: #6c757d;">GEN-A08-2023</small></td>
+                            <td><span style="color: #9c27b0;">AI Scheduled</span></td>
+                            <td>Maintenance Team B</td>
+                            <td>4.1 hours</td>
+                            <td><span style="color: #28a745;">✓ Completed</span></td>
+                            <td>Jan 25, 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="wireframe-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <span>© 2025 Enterprise Management System</span>
+                </div>
+                <div class="footer-section">
+                    <span>Maintenance | AI Monitoring: 1,247 assets</span>
+                </div>
+                <div class="footer-section">
+                    <a href="#work-orders">Work Orders</a>
+                    <a href="#calibration">Calibration</a>
+                    <a href="#reports">Maintenance Reports</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

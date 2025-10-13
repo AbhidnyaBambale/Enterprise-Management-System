@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Timesheet App - Wireframes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="wireframe-styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <header class="wireframe-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-box">[LOGO]</div>
+                    <h1>Enterprise Management System</h1>
+                </div>
+                <div class="user-area">
+                    <div class="user-box">[USER]</div>
+                    <span>Mobile Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="wireframe-nav">
+            <div class="nav-item">
+                <a href="home.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="projects.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+            </div>
+            <div class="nav-item active">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile App</span>
+            </div>
+            <div class="nav-item">
+                <a href="cost-analysis.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Cost Analysis</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="inventory.html">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="hr-portal.html">
+                    <i class="fas fa-users"></i>
+                    <span>HR Portal</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="maintenance.html">
+                    <i class="fas fa-tools"></i>
+                    <span>Maintenance</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="wireframe-main">
+            <div class="page-header">
+                <h2>Mobile Timesheet Application</h2>
+                <div class="breadcrumb">
+                    <span><a href="home.html">Home</a></span>
+                    <span>Mobile App Wireframes</span>
+                </div>
+            </div>
+
+            <!-- App Overview -->
+            <div class="widget" style="margin-bottom: 2rem;">
+                <h3>Power Apps Mobile Application for Field Staff</h3>
+                <p style="color: #6c757d; margin-bottom: 1rem;">GPS-enabled timesheet app with AI auto-fill capabilities for 600+ field staff</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; color: #28a745;">587</div>
+                        <div style="color: #6c757d; font-size: 0.9rem;">Active Users</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; color: #007bff;">2,847</div>
+                        <div style="color: #6c757d; font-size: 0.9rem;">Daily Check-ins</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; color: #f39c12;">98%</div>
+                        <div style="color: #6c757d; font-size: 0.9rem;">GPS Accuracy</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; color: #9c27b0;">89%</div>
+                        <div style="color: #6c757d; font-size: 0.9rem;">AI Auto-fill Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                
+                <!-- Mobile App Wireframes -->
+                <div>
+                    <h3 style="margin-bottom: 2rem; color: #495057;">Mobile App Interface</h3>
+                    
+                    <!-- Main App Screen -->
+                    <div class="mobile-frame" style="margin-bottom: 2rem;">
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; font-size: 0.8rem; color: #6c757d;">
+                            📱 TimeClock Pro - 9:41 AM 📶 📳 🔋
+                        </div>
+                        
+                        <div style="background: #007bff; color: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; text-align: center;">
+                            <h4 style="margin: 0 0 10px 0; font-size: 1rem;">Current Assignment</h4>
+                            <div style="font-weight: bold; margin-bottom: 5px;">Industrial Complex - Phase 1</div>
+                            <div style="font-size: 0.8rem; opacity: 0.9;">📍 Building A, Level 3</div>
+                            <div style="font-size: 0.8rem; opacity: 0.9;">🕐 Started: 7:30 AM</div>
+                            <div style="margin-top: 10px;">
+                                <div style="background: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px; font-size: 0.9rem; cursor: pointer;">⏸ CLOCK OUT</div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(0,123,255,0.1); padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+                            <div style="font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; color: #007bff;">🤖 AI Suggestions</div>
+                            <div style="font-size: 0.75rem; color: #495057; margin-bottom: 5px;">📍 Auto-detected: Building A confirmed</div>
+                            <div style="font-size: 0.75rem; color: #495057;">🔧 Suggested task: Electrical installation</div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px;">
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; font-size: 0.75rem; border: 1px dashed #adb5bd; cursor: pointer;">📷 Photo</div>
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; font-size: 0.75rem; border: 1px dashed #adb5bd; cursor: pointer;">⚠ Issue</div>
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; font-size: 0.75rem; border: 1px dashed #adb5bd; cursor: pointer;">📦 Materials</div>
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; font-size: 0.75rem; border: 1px dashed #adb5bd; cursor: pointer;">📝 Notes</div>
+                        </div>
+
+                        <div style="background: rgba(0,123,255,0.1); padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+                            <div style="font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; color: #007bff;">Today's Summary</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; text-align: center; font-size: 0.7rem;">
+                                <div>
+                                    <div style="font-weight: bold; color: #f39c12;">6.5h</div>
+                                    <div style="color: #6c757d;">Hours</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: bold; color: #28a745;">2</div>
+                                    <div style="color: #6c757d;">Jobs</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: bold; color: #dc3545;">$145</div>
+                                    <div style="color: #6c757d;">Materials</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; text-align: center; font-size: 0.7rem; color: #6c757d;">
+                            <div style="padding: 8px;">
+                                <div style="color: #007bff; margin-bottom: 2px;">🏠</div>
+                                <div>Home</div>
+                            </div>
+                            <div style="padding: 8px;">
+                                <div style="margin-bottom: 2px;">📋</div>
+                                <div>Jobs</div>
+                            </div>
+                            <div style="padding: 8px;">
+                                <div style="margin-bottom: 2px;">⏰</div>
+                                <div>Timesheet</div>
+                            </div>
+                            <div style="padding: 8px;">
+                                <div style="margin-bottom: 2px;">👤</div>
+                                <div>Profile</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Screens -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        
+                        <!-- Job List Screen -->
+                        <div style="width: 200px; height: 350px; background: #fff; border: 2px solid #495057; border-radius: 15px; padding: 15px;">
+                            <div style="text-align: center; font-size: 0.8rem; color: #6c757d; margin-bottom: 15px;">📋 Job List</div>
+                            
+                            <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 8px; margin-bottom: 8px; font-size: 0.7rem;">
+                                <div style="font-weight: bold;">Industrial Complex</div>
+                                <div style="color: #6c757d;">Building A - Level 3</div>
+                                <div style="color: #28a745;">✓ Current</div>
+                            </div>
+
+                            <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 8px; margin-bottom: 8px; font-size: 0.7rem;">
+                                <div style="font-weight: bold;">Commercial Tower</div>
+                                <div style="color: #6c757d;">Maintenance Check</div>
+                                <div style="color: #6c757d;">📅 Next</div>
+                            </div>
+
+                            <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 8px; margin-bottom: 8px; font-size: 0.7rem;">
+                                <div style="font-weight: bold;">Residential Complex</div>
+                                <div style="color: #6c757d;">Phase 3 - Electrical</div>
+                                <div style="color: #6c757d;">📅 Scheduled</div>
+                            </div>
+                        </div>
+
+                        <!-- Profile Screen -->
+                        <div style="width: 200px; height: 350px; background: #fff; border: 2px solid #495057; border-radius: 15px; padding: 15px;">
+                            <div style="text-align: center; font-size: 0.8rem; color: #6c757d; margin-bottom: 15px;">👤 Profile</div>
+                            
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="width: 60px; height: 60px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; margin: 0 auto 8px auto; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">[PHOTO]</div>
+                                <div style="font-weight: bold; font-size: 0.8rem;">Ahmed Al-Rashid</div>
+                                <div style="color: #6c757d; font-size: 0.7rem;">Senior Technician</div>
+                            </div>
+
+                            <div style="font-size: 0.7rem; margin-bottom: 15px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <span>Hours This Week:</span>
+                                    <span style="font-weight: bold;">38.5h</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <span>Jobs Completed:</span>
+                                    <span style="font-weight: bold;">12</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <span>Rating:</span>
+                                    <span style="font-weight: bold;">⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+
+                            <div style="background: #f8f9fa; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.7rem; border: 1px dashed #adb5bd;">
+                                [SETTINGS & OPTIONS]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features & Benefits -->
+                <div>
+                    <h3 style="margin-bottom: 1.5rem; color: #495057;">Key Features & Benefits</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        
+                        <div class="widget" style="border-left: 4px solid #007bff; padding: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                                <div style="width: 40px; height: 40px; background: #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">🤖</div>
+                                <div>
+                                    <h4 style="margin: 0; color: #495057;">AI Auto-Fill Technology</h4>
+                                    <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.9rem;">Copilot AI automatically fills location, hours, and job type using GPS and historical patterns</p>
+                                </div>
+                            </div>
+                            <div style="color: #007bff; font-size: 0.85rem;">✓ 89% accuracy rate | ✓ 70% time savings</div>
+                        </div>
+
+                        <div class="widget" style="border-left: 4px solid #28a745; padding: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                                <div style="width: 40px; height: 40px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">📍</div>
+                                <div>
+                                    <h4 style="margin: 0; color: #495057;">GPS Integration</h4>
+                                    <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.9rem;">Automatic location detection and job site verification with real-time tracking</p>
+                                </div>
+                            </div>
+                            <div style="color: #28a745; font-size: 0.85rem;">✓ 98% location accuracy | ✓ Fraud prevention</div>
+                        </div>
+
+                        <div class="widget" style="border-left: 4px solid #f39c12; padding: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                                <div style="width: 40px; height: 40px; background: #f39c12; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">🔄</div>
+                                <div>
+                                    <h4 style="margin: 0; color: #495057;">Real-time Sync</h4>
+                                    <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.9rem;">Instant synchronization with D365 and project management systems</p>
+                                </div>
+                            </div>
+                            <div style="color: #f39c12; font-size: 0.85rem;">✓ Instant updates | ✓ Offline capability</div>
+                        </div>
+
+                        <div class="widget" style="border-left: 4px solid #9c27b0; padding: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                                <div style="width: 40px; height: 40px; background: #9c27b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">📷</div>
+                                <div>
+                                    <h4 style="margin: 0; color: #495057;">Photo Documentation</h4>
+                                    <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.9rem;">Capture work progress photos with automatic project linking and metadata</p>
+                                </div>
+                            </div>
+                            <div style="color: #9c27b0; font-size: 0.85rem;">✓ Auto-tagged photos | ✓ Progress tracking</div>
+                        </div>
+
+                        <div class="widget" style="border-left: 4px solid #dc3545; padding: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                                <div style="width: 40px; height: 40px; background: #dc3545; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">🔒</div>
+                                <div>
+                                    <h4 style="margin: 0; color: #495057;">Security & Compliance</h4>
+                                    <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.9rem;">End-to-end encryption with Saudi labor law compliance and audit trails</p>
+                                </div>
+                            </div>
+                            <div style="color: #dc3545; font-size: 0.85rem;">✓ Encrypted data | ✓ Compliance ready</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Analytics -->
+            <div class="widget" style="margin-top: 2rem;">
+                <h3>Mobile App Usage Analytics</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                    
+                    <div>
+                        <h4 style="color: #495057; margin-bottom: 1rem;">Daily Usage Patterns</h4>
+                        <div class="chart-placeholder" style="height: 200px;">
+                            [USAGE CHART]<br>
+                            Peak usage: 7:00 AM - 8:00 AM<br>
+                            Average session: 3.2 minutes<br>
+                            Daily active users: 587
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 style="color: #495057; margin-bottom: 1rem;">Feature Adoption</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.9rem;">Clock In/Out</span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="background: #e9ecef; height: 8px; width: 100px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #28a745; height: 100%; width: 98%;"></div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #6c757d;">98%</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.9rem;">Photo Upload</span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="background: #e9ecef; height: 8px; width: 100px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #007bff; height: 100%; width: 76%;"></div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #6c757d;">76%</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.9rem;">AI Suggestions</span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="background: #e9ecef; height: 8px; width: 100px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #9c27b0; height: 100%; width: 89%;"></div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #6c757d;">89%</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.9rem;">Materials Logging</span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="background: #e9ecef; height: 8px; width: 100px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #f39c12; height: 100%; width: 64%;"></div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #6c757d;">64%</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.9rem;">Issue Reporting</span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="background: #e9ecef; height: 8px; width: 100px; border-radius: 4px; overflow: hidden;">
+                                        <div style="background: #dc3545; height: 100%; width: 43%;"></div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #6c757d;">43%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Specifications -->
+            <div class="widget" style="margin-top: 2rem;">
+                <h3>Technical Specifications</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                    <div>
+                        <h4 style="color: #495057; margin-bottom: 1rem;">Platform Requirements</h4>
+                        <table class="wireframe-table">
+                            <tr>
+                                <td>Platform</td>
+                                <td>Microsoft Power Apps</td>
+                            </tr>
+                            <tr>
+                                <td>iOS Support</td>
+                                <td>iOS 14.0+</td>
+                            </tr>
+                            <tr>
+                                <td>Android Support</td>
+                                <td>Android 8.0+</td>
+                            </tr>
+                            <tr>
+                                <td>Internet</td>
+                                <td>Offline capable with sync</td>
+                            </tr>
+                            <tr>
+                                <td>GPS</td>
+                                <td>Required for location services</td>
+                            </tr>
+                            <tr>
+                                <td>Camera</td>
+                                <td>Required for photo documentation</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h4 style="color: #495057; margin-bottom: 1rem;">Security Features</h4>
+                        <table class="wireframe-table">
+                            <tr>
+                                <td>Authentication</td>
+                                <td>Azure AD / SSO</td>
+                            </tr>
+                            <tr>
+                                <td>Data Encryption</td>
+                                <td>End-to-end encryption</td>
+                            </tr>
+                            <tr>
+                                <td>Biometric Auth</td>
+                                <td>Fingerprint / Face ID</td>
+                            </tr>
+                            <tr>
+                                <td>Audit Trail</td>
+                                <td>Complete action logging</td>
+                            </tr>
+                            <tr>
+                                <td>Compliance</td>
+                                <td>Saudi labor law ready</td>
+                            </tr>
+                            <tr>
+                                <td>Data Residency</td>
+                                <td>Middle East region</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="wireframe-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <span>© 2025 Enterprise Management System</span>
+                </div>
+                <div class="footer-section">
+                    <span>Mobile App | 587 Active Users</span>
+                </div>
+                <div class="footer-section">
+                    <a href="#app-store">App Store</a>
+                    <a href="#google-play">Google Play</a>
+                    <a href="#support">Mobile Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

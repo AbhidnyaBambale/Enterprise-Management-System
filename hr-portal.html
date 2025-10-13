@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR & Payroll Self-Service - Wireframes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="wireframe-styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <header class="wireframe-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-box">[LOGO]</div>
+                    <h1>Enterprise Management System</h1>
+                </div>
+                <div class="user-area">
+                    <div class="user-box">[USER]</div>
+                    <span>HR Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="wireframe-nav">
+            <div class="nav-item">
+                <a href="home.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="dashboard.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="projects.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="mobile-app.html">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile App</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="cost-analysis.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Cost Analysis</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="inventory.html">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+            </div>
+            <div class="nav-item active">
+                <i class="fas fa-users"></i>
+                <span>HR Portal</span>
+            </div>
+            <div class="nav-item">
+                <a href="maintenance.html">
+                    <i class="fas fa-tools"></i>
+                    <span>Maintenance</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="wireframe-main">
+            <div class="page-header">
+                <h2>HR & Payroll Self-Service Portal</h2>
+                <div class="breadcrumb">
+                    <span><a href="home.html">Home</a></span>
+                    <span>HR Portal</span>
+                </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="widget" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <select style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px;">
+                            <option>All Departments</option>
+                            <option>Engineering</option>
+                            <option>Field Operations</option>
+                            <option>Administration</option>
+                            <option>Management</option>
+                        </select>
+                        <input type="text" placeholder="Search employees..." style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px; width: 250px;">
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="wireframe-button" style="background: #007bff; color: #fff; border-color: #007bff;">+ New Employee</div>
+                        <div class="wireframe-button">💰 Process Payroll</div>
+                        <div class="wireframe-button">📊 HR Reports</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Overview Widgets -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                
+                <!-- Employee Overview -->
+                <div class="widget" style="border-left: 4px solid #007bff;">
+                    <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">👥 Employee Overview</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
+                            <span style="color: #6c757d; font-size: 0.9rem;">Total Employees</span>
+                            <span style="font-weight: bold; color: #495057; font-size: 1.1rem;">623</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
+                            <span style="color: #6c757d; font-size: 0.9rem;">Active Projects</span>
+                            <span style="font-weight: bold; color: #495057; font-size: 1.1rem;">587</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
+                            <span style="color: #6c757d; font-size: 0.9rem;">On Leave Today</span>
+                            <span style="font-weight: bold; color: #f39c12; font-size: 1.1rem;">36</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
+                            <span style="color: #6c757d; font-size: 0.9rem;">New Hires (Month)</span>
+                            <span style="font-weight: bold; color: #28a745; font-size: 1.1rem;">12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Summary -->
+                <div class="widget" style="border-left: 4px solid #28a745;">
+                    <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">⏰ Attendance Summary</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span style="font-size: 0.9rem;">Present: 91%</span>
+                            </div>
+                            <div style="background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                                <div style="background: #28a745; height: 100%; width: 91%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span style="font-size: 0.9rem;">Leave: 6%</span>
+                            </div>
+                            <div style="background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                                <div style="background: #f39c12; height: 100%; width: 6%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span style="font-size: 0.9rem;">Absent: 3%</span>
+                            </div>
+                            <div style="background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
+                                <div style="background: #dc3545; height: 100%; width: 3%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #dee2e6; font-size: 0.9rem; color: #6c757d;">
+                        Average weekly hours: 42.3h<br>
+                        Overtime this week: 287h
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employee Self-Service Portal Preview -->
+            <div class="widget" style="margin-bottom: 3rem;">
+                <h3 style="color: #495057; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">📱 Employee Self-Service Portal</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Leave Management Card -->
+                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
+                        <div style="background: #007bff; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
+                            <div style="font-size: 1.2rem;">📅</div>
+                            <h4 style="font-size: 0.9rem; margin: 0;">Leave Management</h4>
+                        </div>
+                        <div style="padding: 1rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: #6c757d;">
+                                <span>Annual Leave: 18 days remaining</span>
+                                <span>Sick Leave: 5 days remaining</span>
+                                <span>Personal Leave: 3 days remaining</span>
+                            </div>
+                            <div class="wireframe-button" style="width: 100%; text-align: center; background: #007bff; color: #fff; border-color: #007bff;">Request Leave</div>
+                        </div>
+                    </div>
+
+                    <!-- Expense Claims Card -->
+                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
+                        <div style="background: #28a745; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
+                            <div style="font-size: 1.2rem;">🧾</div>
+                            <h4 style="font-size: 0.9rem; margin: 0;">Expense Claims</h4>
+                        </div>
+                        <div style="padding: 1rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: #6c757d;">
+                                <span>Pending: $234.50 (2 claims)</span>
+                                <span>Approved: $1,890.25 (8 claims)</span>
+                                <span>This Month: $2,124.75 total</span>
+                            </div>
+                            <div class="wireframe-button" style="width: 100%; text-align: center;">📷 Submit Receipt</div>
+                            <div style="background: rgba(156, 39, 176, 0.1); padding: 0.5rem; margin-top: 0.5rem; border-radius: 5px; font-size: 0.8rem; color: #8e44ad; display: flex; align-items: center; gap: 5px;">
+                                <div>🤖</div>
+                                <span>AI OCR auto-fills expense details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payslip & Documents Card -->
+                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
+                        <div style="background: #6c757d; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
+                            <div style="font-size: 1.2rem;">📄</div>
+                            <h4 style="font-size: 0.9rem; margin: 0;">Documents & Payslips</h4>
+                        </div>
+                        <div style="padding: 1rem;">
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem; background: #fff; border-radius: 5px; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                                    <div style="color: #dc3545;">📄</div>
+                                    <span>Payslip - September 2025</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem; background: #fff; border-radius: 5px; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                                    <div style="color: #dc3545;">📜</div>
+                                    <span>Employment Certificate</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem; background: #fff; border-radius: 5px; font-size: 0.8rem;">
+                                    <div style="color: #dc3545;">📋</div>
+                                    <span>Tax Statement YTD</span>
+                                </div>
+                            </div>
+                            <div class="wireframe-button" style="width: 100%; text-align: center;">View All Documents</div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Dashboard Card -->
+                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
+                        <div style="background: #f39c12; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
+                            <div style="font-size: 1.2rem;">📊</div>
+                            <h4 style="font-size: 0.9rem; margin: 0;">Performance Dashboard</h4>
+                        </div>
+                        <div style="padding: 1rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: #6c757d;">
+                                <span>Current Rating: ⭐⭐⭐⭐⭐ (4.8/5)</span>
+                                <span>Projects Completed: 23</span>
+                                <span>Training Hours: 42h</span>
+                            </div>
+                            <div class="wireframe-button" style="width: 100%; text-align: center;">View Full Profile</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI-Powered HR Insights -->
+            <div class="widget" style="margin-bottom: 3rem; border-left: 4px solid #9c27b0;">
+                <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    🤖 AI-Powered HR Insights
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    
+                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
+                        <div style="font-size: 1.2rem; color: #9c27b0;">📈</div>
+                        <div style="flex: 1;">
+                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Retention Prediction</strong>
+                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">5 employees at high risk of leaving based on engagement patterns and performance metrics</p>
+                        </div>
+                        <div class="wireframe-button" style="background: #9c27b0; color: #fff; border-color: #9c27b0;">Intervene</div>
+                    </div>
+
+                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
+                        <div style="font-size: 1.2rem; color: #9c27b0;">🎓</div>
+                        <div style="flex: 1;">
+                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Training Recommendations</strong>
+                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">42 employees would benefit from advanced safety certification based on project assignments</p>
+                        </div>
+                        <div class="wireframe-button">Schedule Training</div>
+                    </div>
+
+                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
+                        <div style="font-size: 1.2rem; color: #9c27b0;">💰</div>
+                        <div style="flex: 1;">
+                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Payroll Optimization</strong>
+                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">AI detected potential $23K savings through overtime optimization and efficient scheduling</p>
+                        </div>
+                        <div class="wireframe-button">Review Options</div>
+                    </div>
+
+                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
+                        <div style="font-size: 1.2rem; color: #9c27b0;">🏆</div>
+                        <div style="flex: 1;">
+                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Performance Insights</strong>
+                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">Top 10% performers show 23% higher engagement in projects with AI-assisted tools</p>
+                        </div>
+                        <div class="wireframe-button">View Report</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Analytics Dashboard -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                
+                <!-- Employee Demographics -->
+                <div class="widget">
+                    <h3 style="margin-bottom: 1rem; color: #495057;">Employee Demographics</h3>
+                    <div class="chart-placeholder" style="height: 250px;">
+                        [DEMOGRAPHICS CHART]<br><br>
+                        Age Distribution:<br>
+                        • 25-35 years: 45% (280 employees)<br>
+                        • 35-45 years: 32% (200 employees)<br>
+                        • 45-55 years: 18% (112 employees)<br>
+                        • 55+ years: 5% (31 employees)<br><br>
+                        Gender: 78% Male, 22% Female<br>
+                        Departments: Engineering (40%), Field Ops (35%), Admin (25%)
+                    </div>
+                </div>
+
+                <!-- Payroll Summary -->
+                <div class="widget">
+                    <h3 style="margin-bottom: 1rem; color: #495057;">Payroll Summary (September 2025)</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                            <span style="color: #666; font-size: 0.9rem;">Base Salaries</span>
+                            <span style="font-weight: bold; color: #495057;">$2,847,650</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                            <span style="color: #666; font-size: 0.9rem;">Overtime</span>
+                            <span style="font-weight: bold; color: #f39c12;">$387,420</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                            <span style="color: #666; font-size: 0.9rem;">Benefits</span>
+                            <span style="font-weight: bold; color: #007bff;">$456,780</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 2px solid #dee2e6;">
+                            <span style="color: #666; font-size: 0.9rem;">Taxes & Deductions</span>
+                            <span style="font-weight: bold; color: #dc3545;">-$642,385</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
+                            <span style="color: #495057; font-size: 1rem; font-weight: bold;">Total Net Pay</span>
+                            <span style="font-weight: bold; color: #28a745; font-size: 1.2rem;">$3,049,465</span>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e3f2fd; padding: 1rem; border-radius: 5px; font-size: 0.9rem;">
+                        <div style="color: #1565c0; font-weight: bold; margin-bottom: 5px;">🤖 AI Compliance Check</div>
+                        <div style="color: #6c757d;">✅ Saudi Labor Law compliant<br>✅ All tax calculations verified<br>✅ Benefits allocation optimized</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent HR Activities -->
+            <div class="widget">
+                <h3 style="margin-bottom: 1.5rem; color: #495057;">Recent HR Activities</h3>
+                <table class="wireframe-table">
+                    <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Employee</th>
+                            <th>Activity Type</th>
+                            <th>Details</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sept 26, 10:15 AM</td>
+                            <td><strong>Ahmed Al-Rashid</strong><br><small style="color: #6c757d;">Senior Technician</small></td>
+                            <td><span style="color: #28a745;">Expense Claim</span></td>
+                            <td>Travel expenses - Project Site C<br>Amount: $145.50</td>
+                            <td><span style="color: #f39c12;">⏳ AI Reviewing</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Process</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sept 26, 09:30 AM</td>
+                            <td><strong>Fatima Hassan</strong><br><small style="color: #6c757d;">Project Manager</small></td>
+                            <td><span style="color: #007bff;">Leave Request</span></td>
+                            <td>Annual Leave: Oct 15-19, 2025<br>Duration: 5 days</td>
+                            <td><span style="color: #28a745;">✓ Approved</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Calendar</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sept 26, 08:45 AM</td>
+                            <td><strong>Omar Abdullah</strong><br><small style="color: #6c757d;">Field Engineer</small></td>
+                            <td><span style="color: #dc3545;">Performance Review</span></td>
+                            <td>Q3 2025 Performance Review<br>Rating: 4.2/5.0</td>
+                            <td><span style="color: #28a745;">✓ Completed</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Feedback</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="background: #f8d7da;">
+                            <td>Sept 26, 08:00 AM</td>
+                            <td><strong>Khalid Mansour</strong><br><small style="color: #6c757d;">Senior Technician</small></td>
+                            <td><span style="color: #dc3545;">AI Alert</span></td>
+                            <td>High turnover risk detected<br>Engagement score declining</td>
+                            <td><span style="color: #dc3545;">⚠ Requires Action</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <div style="background: #dc3545; color: #fff; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Urgent</div>
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Contact</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sept 25, 16:30 PM</td>
+                            <td><strong>Sarah Al-Zahra</strong><br><small style="color: #6c757d;">Admin Assistant</small></td>
+                            <td><span style="color: #6c757d;">Document Request</span></td>
+                            <td>Employment Certificate<br>For visa application</td>
+                            <td><span style="color: #28a745;">✓ Issued</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
+                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Download</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="wireframe-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <span>© 2025 Enterprise Management System</span>
+                </div>
+                <div class="footer-section">
+                    <span>HR Portal | AI Insights Active | 623 Employees</span>
+                </div>
+                <div class="footer-section">
+                    <a href="#payroll">Payroll Processing</a>
+                    <a href="#compliance">Compliance Reports</a>
+                    <a href="#analytics">HR Analytics</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

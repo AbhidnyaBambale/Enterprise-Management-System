@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard - Enterprise Management System</title>
+    <link rel="stylesheet" href="corporate-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Top Certification Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="certification-info">
+                <span><i class="fas fa-certificate"></i> ISO 9001:2015 Certified</span>
+                <span><i class="fas fa-shield-alt"></i> Industry Compliant</span>
+                <span class="current-datetime"><i class="fas fa-clock"></i> Loading...</span>
+            </div>
+            <div class="social-links">
+                <span style="color: #4a5568; margin-right: 1rem;">Welcome, John Anderson</span>
+                <a href="#" title="Notifications"><i class="fas fa-bell"></i> <sup style="color: #c53030;">3</sup></a>
+                <a href="#" title="Settings"><i class="fas fa-cog"></i></a>
+                <a href="#" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div>
+                    <div class="logo-text">EMS</div>
+                    <span class="logo-subtitle">Enterprise Management System</span>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-primary">
+                    <li class="nav-item"><a href="index-corporate.html">HOME</a></li>
+                    <li class="nav-item active"><a href="dashboard-corporate.html">DASHBOARD</a></li>
+                    <li class="nav-item"><a href="projects-corporate.html">PROJECTS</a></li>
+                    <li class="nav-item"><a href="mobile-corporate.html">MOBILE APP</a></li>
+                    <li class="nav-item dropdown">
+                        <span>MORE <i class="fas fa-chevron-down" style="font-size: 10px;"></i></span>
+                        <div class="dropdown-menu">
+                            <a href="#cost-analysis">Cost Analysis</a>
+                            <a href="#inventory">Inventory</a>
+                            <a href="#hr">HR Portal</a>
+                            <a href="#maintenance">Maintenance</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="section-header">
+            <h2 class="section-title">EXECUTIVE DASHBOARD</h2>
+            <p class="section-subtitle">Real-time business intelligence and performance metrics</p>
+        </div>
+
+        <!-- Action Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <div>
+                <button class="btn btn-primary" data-action="refresh-data">
+                    <i class="fas fa-sync-alt"></i> REFRESH DATA
+                </button>
+                <button class="btn btn-secondary" data-action="export-data">
+                    <i class="fas fa-download"></i> EXPORT REPORT
+                </button>
+            </div>
+            <div>
+                <select class="form-control" style="display: inline-block; width: auto;">
+                    <option>Last 30 Days</option>
+                    <option>Last Quarter</option>
+                    <option>Last Year</option>
+                    <option>All Time</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Key Performance Indicators -->
+        <div class="grid grid-4">
+            <div class="kpi-card">
+                <div class="kpi-label">Total Revenue</div>
+                <div class="kpi-value">$2,847,000</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> +15.3% vs last month</div>
+            </div>
+
+            <div class="kpi-card" style="border-left-color: #38a169;">
+                <div class="kpi-label">Active Projects</div>
+                <div class="kpi-value" style="color: #38a169;">247</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> +12 new projects</div>
+            </div>
+
+            <div class="kpi-card" style="border-left-color: #d69e2e;">
+                <div class="kpi-label">Resource Utilization</div>
+                <div class="kpi-value" style="color: #d69e2e;">87%</div>
+                <div class="kpi-change neutral" style="color: #718096;"><i class="fas fa-minus"></i> Stable</div>
+            </div>
+
+            <div class="kpi-card" style="border-left-color: #3182ce;">
+                <div class="kpi-label">Client Satisfaction</div>
+                <div class="kpi-value" style="color: #3182ce;">98%</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> +3% this quarter</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-2" style="margin-top: 2rem;">
+            <!-- Revenue Chart -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3 class="chart-title">REVENUE TREND</h3>
+                    <p style="font-size: 0.75rem; color: #718096; margin: 0;">Last 6 Months Performance</p>
+                </div>
+                <canvas id="revenueChart" style="max-height: 300px;"></canvas>
+            </div>
+
+            <!-- Project Status Chart -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3 class="chart-title">PROJECT STATUS</h3>
+                    <p style="font-size: 0.75rem; color: #718096; margin: 0;">Current Distribution</p>
+                </div>
+                <canvas id="projectChart" style="max-height: 300px;"></canvas>
+            </div>
+        </div>
+
+        <!-- Cost Analysis Chart -->
+        <div class="chart-container" style="margin-top: 1.5rem;">
+            <div class="chart-header">
+                <h3 class="chart-title">COST BREAKDOWN ANALYSIS</h3>
+                <p style="font-size: 0.75rem; color: #718096; margin: 0;">Monthly Operating Expenses</p>
+            </div>
+            <canvas id="costChart" style="max-height: 350px;"></canvas>
+        </div>
+
+        <!-- Recent Activity & Alerts -->
+        <div class="grid grid-2" style="margin-top: 2rem;">
+            <!-- Recent Projects -->
+            <div class="section">
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.125rem; margin: 0;">RECENT PROJECTS</h3>
+                </div>
+                
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>PROJECT NAME</th>
+                                <th>STATUS</th>
+                                <th>PROGRESS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Digital Transformation</strong><br>
+                                    <small style="color: #718096;">Client: TechCorp Inc.</small>
+                                </td>
+                                <td><span class="badge badge-success">IN PROGRESS</span></td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar success" style="width: 75%;"></div>
+                                    </div>
+                                    <small style="color: #718096;">75%</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Cloud Migration</strong><br>
+                                    <small style="color: #718096;">Client: Global Systems</small>
+                                </td>
+                                <td><span class="badge badge-warning">PLANNING</span></td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar warning" style="width: 35%;"></div>
+                                    </div>
+                                    <small style="color: #718096;">35%</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Security Audit</strong><br>
+                                    <small style="color: #718096;">Client: FinanceOne</small>
+                                </td>
+                                <td><span class="badge badge-info">REVIEW</span></td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 90%; background-color: #3182ce;"></div>
+                                    </div>
+                                    <small style="color: #718096;">90%</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>ERP Implementation</strong><br>
+                                    <small style="color: #718096;">Client: Manufacturing Co.</small>
+                                </td>
+                                <td><span class="badge badge-success">IN PROGRESS</span></td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar success" style="width: 62%;"></div>
+                                    </div>
+                                    <small style="color: #718096;">62%</small>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- System Alerts -->
+            <div class="section">
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.125rem; margin: 0;">SYSTEM ALERTS</h3>
+                </div>
+                
+                <div class="alerts-container">
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle" style="font-size: 1.25rem;"></i>
+                        <div>
+                            <strong>Backup Completed</strong><br>
+                            <small>System backup completed successfully at 03:00 AM</small>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 1.25rem;"></i>
+                        <div>
+                            <strong>Resource Alert</strong><br>
+                            <small>Server utilization at 85% - consider scaling resources</small>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle" style="font-size: 1.25rem;"></i>
+                        <div>
+                            <strong>Update Available</strong><br>
+                            <small>New system update v2.4.1 available for installation</small>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <i class="fas fa-tasks" style="font-size: 1.25rem;"></i>
+                        <div>
+                            <strong>Task Completed</strong><br>
+                            <small>Monthly financial report has been generated</small>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline btn-sm" style="width: 100%; margin-top: 1rem;" data-action="ai-optimize">
+                    <i class="fas fa-robot"></i> AI OPTIMIZATION ANALYSIS
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="section" style="margin-top: 2rem; background-color: #f7fafc;">
+            <h3 style="font-size: 1.125rem; margin-bottom: 1rem;">QUICK ACTIONS</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-primary" data-action="new-project">
+                    <i class="fas fa-plus"></i> NEW PROJECT
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-file-alt"></i> GENERATE REPORT
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-users"></i> TEAM OVERVIEW
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-calendar-alt"></i> SCHEDULE MEETING
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-cog"></i> SYSTEM SETTINGS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About EMS</h4>
+                    <p style="font-size: 0.875rem; line-height: 1.6;">
+                        Leading provider of enterprise management solutions, delivering excellence through innovation and dedicated service since 2008.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-corporate.html">Home</a></li>
+                        <li><a href="dashboard-corporate.html">Dashboard</a></li>
+                        <li><a href="projects-corporate.html">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="dashboard-corporate.html">Executive Dashboard</a></li>
+                        <li><a href="projects-corporate.html">Project Management</a></li>
+                        <li><a href="mobile-corporate.html">Mobile Solutions</a></li>
+                        <li><a href="#inventory">Inventory Control</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 1234 Business Ave, Suite 100</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@emsolutions.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enterprise Management System. All rights reserved. | ISO 9001:2015 Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // Initialize Chart.js charts with corporate styling
+        document.addEventListener('DOMContentLoaded', function() {
+            const corporateColors = {
+                primary: '#2c5282',
+                success: '#38a169',
+                warning: '#d69e2e',
+                error: '#c53030',
+                info: '#3182ce',
+                gray: '#718096'
+            };
+
+            // Revenue Trend Chart
+            const revenueCtx = document.getElementById('revenueChart');
+            if (revenueCtx) {
+                new Chart(revenueCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Revenue ($M)',
+                            data: [2.1, 2.4, 2.3, 2.7, 2.6, 2.8],
+                            borderColor: corporateColors.primary,
+                            backgroundColor: 'rgba(44, 82, 130, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                grid: { color: '#e2e8f0' }
+                            },
+                            x: {
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Project Status Chart
+            const projectCtx = document.getElementById('projectChart');
+            if (projectCtx) {
+                new Chart(projectCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['In Progress', 'Planning', 'Review', 'Completed'],
+                        datasets: [{
+                            data: [45, 28, 15, 12],
+                            backgroundColor: [
+                                corporateColors.success,
+                                corporateColors.warning,
+                                corporateColors.info,
+                                corporateColors.gray
+                            ],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { padding: 15, font: { size: 11 } }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Cost Breakdown Chart
+            const costCtx = document.getElementById('costChart');
+            if (costCtx) {
+                new Chart(costCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Salaries', 'Infrastructure', 'Marketing', 'R&D', 'Operations', 'Other'],
+                        datasets: [{
+                            label: 'Monthly Cost ($K)',
+                            data: [850, 320, 180, 240, 410, 150],
+                            backgroundColor: [
+                                corporateColors.primary,
+                                corporateColors.info,
+                                corporateColors.success,
+                                corporateColors.warning,
+                                corporateColors.gray,
+                                '#a0aec0'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#e2e8f0' }
+                            },
+                            x: {
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

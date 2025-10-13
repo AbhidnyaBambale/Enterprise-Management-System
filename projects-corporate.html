@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management - Enterprise Management System</title>
+    <link rel="stylesheet" href="corporate-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Certification Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="certification-info">
+                <span><i class="fas fa-certificate"></i> ISO 9001:2015 Certified</span>
+                <span><i class="fas fa-shield-alt"></i> Industry Compliant</span>
+                <span class="current-datetime"><i class="fas fa-clock"></i> Loading...</span>
+            </div>
+            <div class="social-links">
+                <span style="color: #4a5568; margin-right: 1rem;">Welcome, John Anderson</span>
+                <a href="#" title="Notifications"><i class="fas fa-bell"></i></a>
+                <a href="#" title="Settings"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div>
+                    <div class="logo-text">EMS</div>
+                    <span class="logo-subtitle">Enterprise Management System</span>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-primary">
+                    <li class="nav-item"><a href="index-corporate.html">HOME</a></li>
+                    <li class="nav-item"><a href="dashboard-corporate.html">DASHBOARD</a></li>
+                    <li class="nav-item active"><a href="projects-corporate.html">PROJECTS</a></li>
+                    <li class="nav-item"><a href="mobile-corporate.html">MOBILE APP</a></li>
+                    <li class="nav-item dropdown">
+                        <span>MORE <i class="fas fa-chevron-down" style="font-size: 10px;"></i></span>
+                        <div class="dropdown-menu">
+                            <a href="#cost-analysis">Cost Analysis</a>
+                            <a href="#inventory">Inventory</a>
+                            <a href="#hr">HR Portal</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="section-header">
+            <h2 class="section-title">PROJECT MANAGEMENT</h2>
+            <p class="section-subtitle">Track and manage all enterprise projects</p>
+        </div>
+
+        <!-- Filter & Actions -->
+        <div class="section" style="background-color: #f7fafc; padding: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <select class="form-control" id="statusFilter" style="width: auto;">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="planning">Planning</option>
+                        <option value="completed">Completed</option>
+                        <option value="on-hold">On Hold</option>
+                    </select>
+                    <select class="form-control" id="priorityFilter" style="width: auto;">
+                        <option value="all">All Priorities</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                    <input type="text" class="form-control" id="searchFilter" placeholder="Search projects..." style="width: 250px;">
+                </div>
+                <button class="btn btn-primary" data-action="new-project">
+                    <i class="fas fa-plus"></i> NEW PROJECT
+                </button>
+            </div>
+        </div>
+
+        <!-- Project Summary KPIs -->
+        <div class="grid grid-4" style="margin-bottom: 2rem;">
+            <div class="kpi-card">
+                <div class="kpi-label">Total Projects</div>
+                <div class="kpi-value">247</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> +12 this month</div>
+            </div>
+
+            <div class="kpi-card" style="border-left-color: #38a169;">
+                <div class="kpi-label">Active Projects</div>
+                <div class="kpi-value" style="color: #38a169;">186</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> 75% of total</div>
+            </div>
+
+            <div class="kpi-card" style="border-left-color: #3182ce;">
+                <div class="kpi-label">Avg. Completion</div>
+                <div class="kpi-value" style="color: #3182ce;">68%</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> +5% this week</div>
+            </div>
+
+            <div class="kpi-card" style="border-left-color: #d69e2e;">
+                <div class="kpi-label">On Schedule</div>
+                <div class="kpi-value" style="color: #d69e2e;">92%</div>
+                <div class="kpi-change positive"><i class="fas fa-arrow-up"></i> +3% improvement</div>
+            </div>
+        </div>
+
+        <!-- Projects Table -->
+        <div class="table-container">
+            <table class="table" id="projectsTable">
+                <thead>
+                    <tr>
+                        <th data-sortable>PROJECT NAME</th>
+                        <th data-sortable>CLIENT</th>
+                        <th data-sortable>STATUS</th>
+                        <th data-sortable>PRIORITY</th>
+                        <th data-sortable>PROGRESS</th>
+                        <th>TIMELINE</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="projectsTableBody">
+                    <tr data-status="active" data-priority="high">
+                        <td>
+                            <strong>Digital Transformation Initiative</strong><br>
+                            <small style="color: #718096;">DT-2024-001</small>
+                        </td>
+                        <td>TechCorp Inc.</td>
+                        <td><span class="badge badge-success">ACTIVE</span></td>
+                        <td><span class="badge badge-error">HIGH</span></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar success" style="width: 75%;"></div>
+                            </div>
+                            <small style="color: #718096;">75%</small>
+                        </td>
+                        <td>
+                            <small>Start: Jan 15, 2025</small><br>
+                            <small>Due: Jun 30, 2025</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    <tr data-status="active" data-priority="high">
+                        <td>
+                            <strong>Cloud Migration Project</strong><br>
+                            <small style="color: #718096;">CM-2024-002</small>
+                        </td>
+                        <td>Global Systems Ltd.</td>
+                        <td><span class="badge badge-warning">PLANNING</span></td>
+                        <td><span class="badge badge-error">HIGH</span></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar warning" style="width: 35%;"></div>
+                            </div>
+                            <small style="color: #718096;">35%</small>
+                        </td>
+                        <td>
+                            <small>Start: Feb 1, 2025</small><br>
+                            <small>Due: Aug 15, 2025</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    <tr data-status="active" data-priority="medium">
+                        <td>
+                            <strong>Security Compliance Audit</strong><br>
+                            <small style="color: #718096;">SC-2024-003</small>
+                        </td>
+                        <td>FinanceOne Corp.</td>
+                        <td><span class="badge badge-info">REVIEW</span></td>
+                        <td><span class="badge badge-warning">MEDIUM</span></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%; background-color: #3182ce;"></div>
+                            </div>
+                            <small style="color: #718096;">90%</small>
+                        </td>
+                        <td>
+                            <small>Start: Dec 10, 2024</small><br>
+                            <small>Due: Mar 30, 2025</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    <tr data-status="active" data-priority="medium">
+                        <td>
+                            <strong>ERP System Implementation</strong><br>
+                            <small style="color: #718096;">ERP-2024-004</small>
+                        </td>
+                        <td>Manufacturing Co.</td>
+                        <td><span class="badge badge-success">ACTIVE</span></td>
+                        <td><span class="badge badge-warning">MEDIUM</span></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar success" style="width: 62%;"></div>
+                            </div>
+                            <small style="color: #718096;">62%</small>
+                        </td>
+                        <td>
+                            <small>Start: Jan 5, 2025</small><br>
+                            <small>Due: Dec 31, 2025</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    <tr data-status="completed" data-priority="low">
+                        <td>
+                            <strong>Website Redesign</strong><br>
+                            <small style="color: #718096;">WR-2023-045</small>
+                        </td>
+                        <td>Retail Group Inc.</td>
+                        <td><span class="badge badge-neutral">COMPLETED</span></td>
+                        <td><span class="badge badge-info">LOW</span></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 100%; background-color: #718096;"></div>
+                            </div>
+                            <small style="color: #718096;">100%</small>
+                        </td>
+                        <td>
+                            <small>Start: Oct 1, 2024</small><br>
+                            <small>Completed: Jan 20, 2025</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-download"></i></button>
+                        </td>
+                    </tr>
+                    <tr data-status="planning" data-priority="high">
+                        <td>
+                            <strong>AI Integration Platform</strong><br>
+                            <small style="color: #718096;">AI-2025-005</small>
+                        </td>
+                        <td>Innovation Labs</td>
+                        <td><span class="badge badge-warning">PLANNING</span></td>
+                        <td><span class="badge badge-error">HIGH</span></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar warning" style="width: 15%;"></div>
+                            </div>
+                            <small style="color: #718096;">15%</small>
+                        </td>
+                        <td>
+                            <small>Start: Mar 1, 2025</small><br>
+                            <small>Due: Sep 30, 2025</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Export Options -->
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem;">
+            <button class="btn btn-secondary" data-action="export-data">
+                <i class="fas fa-file-excel"></i> EXPORT TO EXCEL
+            </button>
+            <button class="btn btn-secondary">
+                <i class="fas fa-file-pdf"></i> EXPORT TO PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About EMS</h4>
+                    <p style="font-size: 0.875rem; line-height: 1.6;">
+                        Leading provider of enterprise management solutions since 2008.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-corporate.html">Home</a></li>
+                        <li><a href="dashboard-corporate.html">Dashboard</a></li>
+                        <li><a href="projects-corporate.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="dashboard-corporate.html">Executive Dashboard</a></li>
+                        <li><a href="projects-corporate.html">Project Management</a></li>
+                        <li><a href="mobile-corporate.html">Mobile Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@emsolutions.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enterprise Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusFilter = document.getElementById('statusFilter');
+            const priorityFilter = document.getElementById('priorityFilter');
+            const searchFilter = document.getElementById('searchFilter');
+            const tableBody = document.getElementById('projectsTableBody');
+            const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+            function filterProjects() {
+                const status = statusFilter.value.toLowerCase();
+                const priority = priorityFilter.value.toLowerCase();
+                const search = searchFilter.value.toLowerCase();
+
+                rows.forEach(row => {
+                    const rowStatus = row.getAttribute('data-status');
+                    const rowPriority = row.getAttribute('data-priority');
+                    const rowText = row.textContent.toLowerCase();
+
+                    const statusMatch = status === 'all' || rowStatus === status;
+                    const priorityMatch = priority === 'all' || rowPriority === priority;
+                    const searchMatch = search === '' || rowText.includes(search);
+
+                    if (statusMatch && priorityMatch && searchMatch) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            statusFilter.addEventListener('change', filterProjects);
+            priorityFilter.addEventListener('change', filterProjects);
+            searchFilter.addEventListener('input', filterProjects);
+        });
+    </script>
+</body>
+</html>

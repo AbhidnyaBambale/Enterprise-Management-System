@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "enterprise-management-system": {
+      "appLocation": ".",
+      "outputLocation": ".",
+      "appName": "enterprise-management-system",
+      "resourceGroup": "enterprise-management-system-rg"
+    }
+  }
+}

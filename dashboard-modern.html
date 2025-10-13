@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard - Enterprise Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="modern-styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Enterprise Management</h1>
+                        <p>Executive Dashboard</p>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">JA</div>
+                        <div class="user-info">
+                            <h4>John Anderson</h4>
+                            <p>Executive</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="app-navigation">
+            <div class="nav-content">
+                <a href="website-home.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <div class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </div>
+                <a href="projects-modern.html" class="nav-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="mobile-modern.html" class="nav-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile App</span>
+                </a>
+                <a href="analytics-modern.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="inventory-modern.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+                <a href="hr-modern.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>HR Portal</span>
+                </a>
+                <a href="maintenance-modern.html" class="nav-item">
+                    <i class="fas fa-tools"></i>
+                    <span>Maintenance</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Page Header -->
+            <div class="page-header animate-fade-in">
+                <div class="page-title">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <div>
+                        <h1>Executive Dashboard</h1>
+                        <div class="breadcrumb">
+                            <a href="website-home.html">Home</a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span>Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <select class="form-control" id="dateFilter">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30" selected>Last 30 Days</option>
+                        <option value="90">Last Quarter</option>
+                        <option value="365">Year to Date</option>
+                    </select>
+                    <button class="btn btn-secondary" data-action="export-data">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                    <button class="btn btn-primary" data-action="refresh-data">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Performance Indicators -->
+            <div class="kpi-grid animate-slide-up">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="kpi-title">Active Field Staff</h3>
+                    </div>
+                    <div class="kpi-value">587</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +12 this week
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon success">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="kpi-title">Active Projects</h3>
+                    </div>
+                    <div class="kpi-value">143</div>
+                    <div class="kpi-trend neutral">
+                        <i class="fas fa-minus"></i>
+                        No change
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon warning">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="kpi-title">Monthly Revenue</h3>
+                    </div>
+                    <div class="kpi-value">2.1M</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +8.5%
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon info">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3 class="kpi-title">Profit Margin</h3>
+                    </div>
+                    <div class="kpi-value">18.3%</div>
+                    <div class="kpi-trend negative">
+                        <i class="fas fa-arrow-down"></i>
+                        -2.1%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Analytics -->
+            <div class="grid grid-2" style="margin-top: 2rem;">
+                <!-- Revenue Trend Chart -->
+                <div class="chart-container animate-slide-up">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-chart-line"></i>
+                            Revenue Trend & AI Forecast
+                        </h3>
+                        <div class="chart-actions">
+                            <button class="btn btn-secondary btn-sm" id="toggleForecast">
+                                <i class="fas fa-brain"></i>
+                                AI Forecast
+                            </button>
+                        </div>
+                    </div>
+                    <canvas id="revenueChart" height="300"></canvas>
+                </div>
+
+                <!-- Project Status Distribution -->
+                <div class="chart-container animate-slide-up">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-project-diagram"></i>
+                            Project Status Distribution
+                        </h3>
+                    </div>
+                    <canvas id="projectChart" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- Field Staff Distribution & AI Alerts -->
+            <div class="grid grid-2" style="margin-top: 2rem;">
+                <!-- Field Staff Map -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Field Staff Distribution
+                        </h3>
+                        <p class="card-subtitle">Real-time location tracking</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="map-container">
+                            <div class="map-region" style="top: 25%; left: 35%;">
+                                <div class="map-dot large pulse" data-tooltip="Riyadh Region">
+                                    <span class="staff-count">145</span>
+                                </div>
+                                <div class="map-tooltip">Riyadh - 145 Staff</div>
+                            </div>
+                            <div class="map-region" style="top: 45%; left: 20%;">
+                                <div class="map-dot medium" data-tooltip="Jeddah Region">
+                                    <span class="staff-count">98</span>
+                                </div>
+                                <div class="map-tooltip">Jeddah - 98 Staff</div>
+                            </div>
+                            <div class="map-region" style="top: 35%; left: 60%;">
+                                <div class="map-dot medium" data-tooltip="Dammam Region">
+                                    <span class="staff-count">87</span>
+                                </div>
+                                <div class="map-tooltip">Dammam - 87 Staff</div>
+                            </div>
+                            <div class="map-region" style="top: 60%; left: 25%;">
+                                <div class="map-dot small" data-tooltip="Mecca Region">
+                                    <span class="staff-count">52</span>
+                                </div>
+                                <div class="map-tooltip">Mecca - 52 Staff</div>
+                            </div>
+                            <div class="map-region" style="top: 20%; left: 45%;">
+                                <div class="map-dot small" data-tooltip="Medina Region">
+                                    <span class="staff-count">41</span>
+                                </div>
+                                <div class="map-tooltip">Medina - 41 Staff</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI-Powered Alerts -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-brain"></i>
+                            AI-Powered Alerts
+                        </h3>
+                        <p class="card-subtitle">Intelligent system recommendations</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="alerts-list">
+                            <div class="alert-item critical">
+                                <div class="alert-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <h5>Project ABC123 - Cost Overrun Alert</h5>
+                                    <p>AI detected 15% cost overrun risk. Immediate action recommended.</p>
+                                    <div class="alert-meta">
+                                        <span class="alert-time">2 hours ago</span>
+                                        <span class="alert-confidence">95% confidence</span>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn btn-sm btn-primary">Review</button>
+                                    <button class="btn btn-sm btn-secondary">Dismiss</button>
+                                </div>
+                            </div>
+
+                            <div class="alert-item warning">
+                                <div class="alert-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <h5>Inventory Replenishment Needed</h5>
+                                    <p>AI suggests ordering materials for upcoming projects within 5 days.</p>
+                                    <div class="alert-meta">
+                                        <span class="alert-time">4 hours ago</span>
+                                        <span class="alert-confidence">87% confidence</span>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn btn-sm btn-primary">Order</button>
+                                    <button class="btn btn-sm btn-secondary">Snooze</button>
+                                </div>
+                            </div>
+
+                            <div class="alert-item info">
+                                <div class="alert-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <h5>Efficiency Optimization Opportunity</h5>
+                                    <p>Reallocate 3 staff members to improve overall productivity by 12%.</p>
+                                    <div class="alert-meta">
+                                        <span class="alert-time">6 hours ago</span>
+                                        <span class="alert-confidence">92% confidence</span>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn btn-sm btn-primary">Apply</button>
+                                    <button class="btn btn-sm btn-secondary">Details</button>
+                                </div>
+                            </div>
+
+                            <div class="alert-item success">
+                                <div class="alert-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <h5>Performance Goal Achieved</h5>
+                                    <p>Team Delta exceeded quarterly targets by 18%. Great work!</p>
+                                    <div class="alert-meta">
+                                        <span class="alert-time">1 day ago</span>
+                                        <span class="alert-confidence">100% verified</span>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn btn-sm btn-success">Celebrate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-secondary btn-sm">View All Alerts</a>
+                        <button class="btn btn-primary btn-sm" data-action="ai-optimize">
+                            <i class="fas fa-brain"></i>
+                            AI Optimization
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Performance Metrics
+                    </h3>
+                    <p class="card-subtitle">Key operational indicators across all departments</p>
+                </div>
+                <div class="card-body">
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-label">Project Completion Rate</div>
+                            <div class="metric-value">94.2%</div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 94.2%" data-width="94.2%"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-label">Staff Productivity Index</div>
+                            <div class="metric-value">87.5%</div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 87.5%" data-width="87.5%"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-label">Client Satisfaction Score</div>
+                            <div class="metric-value">92.8%</div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 92.8%" data-width="92.8%"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="metric-label">Resource Utilization</div>
+                            <div class="metric-value">89.3%</div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 89.3%" data-width="89.3%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // Dashboard-specific JavaScript
+        class Dashboard {
+            constructor() {
+                this.charts = {};
+                this.initializeDashboard();
+            }
+
+            initializeDashboard() {
+                this.createRevenueChart();
+                this.createProjectChart();
+                this.initializeMapInteractions();
+                this.startRealTimeUpdates();
+            }
+
+            createRevenueChart() {
+                const ctx = document.getElementById('revenueChart').getContext('2d');
+                
+                // Generate sample data
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+                const revenueData = [1.8, 1.9, 2.1, 1.85, 2.3, 2.1];
+                const forecastData = [null, null, null, null, null, 2.1, 2.4, 2.6, 2.8];
+                
+                this.charts.revenue = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: [...months, 'Jul', 'Aug', 'Sep'],
+                        datasets: [{
+                            label: 'Actual Revenue',
+                            data: [...revenueData, null, null, null],
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }, {
+                            label: 'AI Forecast',
+                            data: forecastData,
+                            borderColor: '#764ba2',
+                            backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: false
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                min: 1.5,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toFixed(1) + 'M';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            createProjectChart() {
+                const ctx = document.getElementById('projectChart').getContext('2d');
+                
+                this.charts.project = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Completed', 'In Progress', 'Planning', 'On Hold'],
+                        datasets: [{
+                            data: [68, 45, 20, 10],
+                            backgroundColor: [
+                                '#48bb78',
+                                '#667eea',
+                                '#ed8936',
+                                '#f56565'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        },
+                        cutout: '60%'
+                    }
+                });
+            }
+
+            initializeMapInteractions() {
+                const mapDots = document.querySelectorAll('.map-dot');
+                mapDots.forEach(dot => {
+                    dot.addEventListener('mouseenter', (e) => {
+                        const tooltip = e.target.parentElement.querySelector('.map-tooltip');
+                        if (tooltip) {
+                            tooltip.style.opacity = '1';
+                            tooltip.style.transform = 'translateY(-10px)';
+                        }
+                    });
+
+                    dot.addEventListener('mouseleave', (e) => {
+                        const tooltip = e.target.parentElement.querySelector('.map-tooltip');
+                        if (tooltip) {
+                            tooltip.style.opacity = '0';
+                            tooltip.style.transform = 'translateY(0)';
+                        }
+                    });
+
+                    dot.addEventListener('click', (e) => {
+                        const region = e.target.getAttribute('data-tooltip');
+                        if (window.enterpriseApp) {
+                            window.enterpriseApp.showToast(`Viewing details for ${region}`, 'info');
+                        }
+                    });
+                });
+            }
+
+            startRealTimeUpdates() {
+                // Simulate real-time data updates
+                setInterval(() => {
+                    this.updateKPIs();
+                }, 30000); // Update every 30 seconds
+
+                // Update charts every 2 minutes
+                setInterval(() => {
+                    this.updateChartData();
+                }, 120000);
+            }
+
+            updateKPIs() {
+                const kpiValues = document.querySelectorAll('.kpi-value');
+                kpiValues.forEach(kpi => {
+                    const currentText = kpi.textContent;
+                    const currentValue = parseFloat(currentText.replace(/[^\d.]/g, ''));
+                    
+                    // Simulate small random changes
+                    const change = (Math.random() - 0.5) * 0.1;
+                    let newValue = currentValue + change;
+                    
+                    // Format based on original format
+                    if (currentText.includes('M')) {
+                        kpi.textContent = newValue.toFixed(1) + 'M';
+                    } else if (currentText.includes('%')) {
+                        kpi.textContent = Math.max(0, Math.min(100, newValue)).toFixed(1) + '%';
+                    } else {
+                        kpi.textContent = Math.floor(Math.max(0, newValue));
+                    }
+                });
+            }
+
+            updateChartData() {
+                // Add new data point to revenue chart
+                if (this.charts.revenue) {
+                    const chart = this.charts.revenue;
+                    const newValue = 1.8 + Math.random() * 0.8;
+                    
+                    // Remove first data point and add new one
+                    chart.data.labels.shift();
+                    chart.data.labels.push('New');
+                    
+                    chart.data.datasets[0].data.shift();
+                    chart.data.datasets[0].data.push(newValue);
+                    
+                    chart.update('active');
+                }
+            }
+
+            exportDashboard() {
+                // Simulate export functionality
+                if (window.enterpriseApp) {
+                    window.enterpriseApp.showToast('Preparing dashboard export...', 'info');
+                    
+                    setTimeout(() => {
+                        window.enterpriseApp.showToast('Dashboard exported successfully!', 'success');
+                    }, 2000);
+                }
+            }
+        }
+
+        // Initialize dashboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dashboard = new Dashboard();
+            
+            // Add event listeners for dashboard-specific actions
+            document.getElementById('toggleForecast')?.addEventListener('click', function() {
+                // Toggle forecast visibility
+                if (window.dashboard.charts.revenue) {
+                    const chart = window.dashboard.charts.revenue;
+                    const forecastDataset = chart.data.datasets[1];
+                    forecastDataset.hidden = !forecastDataset.hidden;
+                    chart.update();
+                    
+                    this.innerHTML = forecastDataset.hidden ? 
+                        '<i class="fas fa-brain"></i> Show Forecast' : 
+                        '<i class="fas fa-brain"></i> Hide Forecast';
+                }
+            });
+
+            // Date filter change
+            document.getElementById('dateFilter')?.addEventListener('change', function() {
+                if (window.enterpriseApp) {
+                    window.enterpriseApp.showToast(`Updating dashboard for ${this.options[this.selectedIndex].text}`, 'info');
+                    
+                    // Simulate data refresh
+                    setTimeout(() => {
+                        window.dashboard.updateChartData();
+                        window.enterpriseApp.showToast('Dashboard updated!', 'success');
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Dashboard-specific styles */
+        .map-container {
+            height: 300px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-region {
+            position: absolute;
+        }
+
+        .map-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .map-dot.large { width: 50px; height: 50px; }
+        .map-dot.medium { width: 45px; height: 45px; }
+        .map-dot.small { width: 35px; height: 35px; }
+
+        .map-dot:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .map-dot.pulse {
+            animation: mapPulse 2s infinite;
+        }
+
+        @keyframes mapPulse {
+            0% { box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6), 0 0 0 10px rgba(102, 126, 234, 0.1); }
+            100% { box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+        }
+
+        .staff-count {
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .map-tooltip {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-primary);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .map-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--text-primary);
+        }
+
+        .alerts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .alert-item {
+            display: flex;
+            gap: 12px;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid;
+            transition: all 0.3s ease;
+        }
+
+        .alert-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .alert-item.critical {
+            border-color: rgba(245, 101, 101, 0.3);
+            background: rgba(245, 101, 101, 0.05);
+        }
+
+        .alert-item.warning {
+            border-color: rgba(237, 137, 54, 0.3);
+            background: rgba(237, 137, 54, 0.05);
+        }
+
+        .alert-item.info {
+            border-color: rgba(66, 153, 225, 0.3);
+            background: rgba(66, 153, 225, 0.05);
+        }
+
+        .alert-item.success {
+            border-color: rgba(72, 187, 120, 0.3);
+            background: rgba(72, 187, 120, 0.05);
+        }
+
+        .alert-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .alert-item.critical .alert-icon { background: var(--error-color); }
+        .alert-item.warning .alert-icon { background: var(--warning-color); }
+        .alert-item.info .alert-icon { background: var(--info-color); }
+        .alert-item.success .alert-icon { background: var(--success-color); }
+
+        .alert-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .alert-content h5 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.25rem 0;
+        }
+
+        .alert-content p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin: 0 0 0.5rem 0;
+            line-height: 1.4;
+        }
+
+        .alert-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .alert-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert-actions .btn {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .alerts-list {
+                max-height: 300px;
+            }
+
+            .alert-actions {
+                flex-direction: row;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .metric-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

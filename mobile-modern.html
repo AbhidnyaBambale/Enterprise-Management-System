@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Timesheet - Enterprise Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="modern-styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Enterprise Management</h1>
+                        <p>Mobile Application Hub</p>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">4</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">FS</div>
+                        <div class="user-info">
+                            <h4>Field Supervisor</h4>
+                            <p>Mobile Admin</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="app-navigation">
+            <div class="nav-content">
+                <a href="website-home.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="dashboard-modern.html" class="nav-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="projects-modern.html" class="nav-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+                <div class="nav-item active">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile App</span>
+                </div>
+                <a href="analytics-modern.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="inventory-modern.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+                <a href="hr-modern.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>HR Portal</span>
+                </a>
+                <a href="maintenance-modern.html" class="nav-item">
+                    <i class="fas fa-tools"></i>
+                    <span>Maintenance</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Page Header -->
+            <div class="page-header animate-fade-in">
+                <div class="page-title">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div>
+                        <h1>Mobile Timesheet Application</h1>
+                        <div class="breadcrumb">
+                            <a href="website-home.html">Home</a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span>Mobile App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" data-action="sync-data">
+                        <i class="fas fa-sync-alt"></i>
+                        Sync Data
+                    </button>
+                    <button class="btn btn-primary" data-action="deploy-update">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Deploy Update
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile App Overview -->
+            <div class="kpi-grid animate-slide-up">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon primary">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="kpi-title">Active Users</h3>
+                    </div>
+                    <div class="kpi-value">547</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +23 today
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon success">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="kpi-title">Hours Logged</h3>
+                    </div>
+                    <div class="kpi-value">4,382</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        This week
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon warning">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="kpi-title">GPS Check-ins</h3>
+                    </div>
+                    <div class="kpi-value">1,245</div>
+                    <div class="kpi-trend neutral">
+                        <i class="fas fa-minus"></i>
+                        Today
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon info">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3 class="kpi-title">Sync Success</h3>
+                    </div>
+                    <div class="kpi-value">99.2%</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        Reliability
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile App Demo and Real-time Activity -->
+            <div class="grid grid-2" style="margin-top: 2rem;">
+                <!-- Interactive Mobile App Demo -->
+                <div class="card animate-slide-up mobile-demo-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-mobile-alt"></i>
+                            Interactive Mobile Demo
+                        </h3>
+                        <p class="card-subtitle">Experience the field staff mobile application</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="mobile-simulator">
+                            <div class="mobile-frame">
+                                <div class="mobile-screen" id="mobileScreen">
+                                    <!-- Mobile App Screen 1: Login -->
+                                    <div class="mobile-view active" id="loginScreen">
+                                        <div class="mobile-header">
+                                            <div class="mobile-status-bar">
+                                                <span class="time">09:41</span>
+                                                <div class="mobile-indicators">
+                                                    <i class="fas fa-signal"></i>
+                                                    <i class="fas fa-wifi"></i>
+                                                    <i class="fas fa-battery-three-quarters"></i>
+                                                </div>
+                                            </div>
+                                            <div class="app-header-mobile">
+                                                <div class="app-logo">
+                                                    <i class="fas fa-building"></i>
+                                                </div>
+                                                <h2>Enterprise Mobile</h2>
+                                            </div>
+                                        </div>
+                                        <div class="mobile-content">
+                                            <div class="welcome-section">
+                                                <h3>Welcome Back!</h3>
+                                                <p>Track your time and manage tasks</p>
+                                            </div>
+                                            <div class="login-form">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Employee ID" class="mobile-input" value="EMP001">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" placeholder="Password" class="mobile-input" value="••••••">
+                                                </div>
+                                                <button class="mobile-btn primary" onclick="showMobileScreen('dashboardScreen')">
+                                                    <i class="fas fa-sign-in-alt"></i>
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mobile App Screen 2: Dashboard -->
+                                    <div class="mobile-view" id="dashboardScreen">
+                                        <div class="mobile-header">
+                                            <div class="mobile-status-bar">
+                                                <span class="time">09:42</span>
+                                                <div class="mobile-indicators">
+                                                    <i class="fas fa-signal"></i>
+                                                    <i class="fas fa-wifi"></i>
+                                                    <i class="fas fa-battery-three-quarters"></i>
+                                                </div>
+                                            </div>
+                                            <div class="app-header-mobile">
+                                                <button class="back-btn" onclick="showMobileScreen('loginScreen')">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </button>
+                                                <h2>Dashboard</h2>
+                                                <button class="menu-btn" onclick="showMobileScreen('timesheetScreen')">
+                                                    <i class="fas fa-clock"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mobile-content">
+                                            <div class="user-welcome">
+                                                <div class="user-avatar-mobile">JD</div>
+                                                <div class="user-info-mobile">
+                                                    <h4>John Doe</h4>
+                                                    <p>Field Technician</p>
+                                                </div>
+                                                <div class="status-indicator online"></div>
+                                            </div>
+                                            <div class="quick-stats">
+                                                <div class="stat-item">
+                                                    <span class="stat-value">8.5h</span>
+                                                    <span class="stat-label">Today</span>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <span class="stat-value">42.5h</span>
+                                                    <span class="stat-label">This Week</span>
+                                                </div>
+                                            </div>
+                                            <div class="quick-actions">
+                                                <button class="action-btn" onclick="showMobileScreen('timesheetScreen')">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>Timesheet</span>
+                                                </button>
+                                                <button class="action-btn" onclick="showMobileScreen('tasksScreen')">
+                                                    <i class="fas fa-tasks"></i>
+                                                    <span>Tasks</span>
+                                                </button>
+                                                <button class="action-btn" onclick="showMobileScreen('locationScreen')">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span>Location</span>
+                                                </button>
+                                                <button class="action-btn">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Photos</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mobile App Screen 3: Timesheet -->
+                                    <div class="mobile-view" id="timesheetScreen">
+                                        <div class="mobile-header">
+                                            <div class="mobile-status-bar">
+                                                <span class="time">09:43</span>
+                                                <div class="mobile-indicators">
+                                                    <i class="fas fa-signal"></i>
+                                                    <i class="fas fa-wifi"></i>
+                                                    <i class="fas fa-battery-three-quarters"></i>
+                                                </div>
+                                            </div>
+                                            <div class="app-header-mobile">
+                                                <button class="back-btn" onclick="showMobileScreen('dashboardScreen')">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </button>
+                                                <h2>Timesheet</h2>
+                                                <button class="menu-btn">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mobile-content">
+                                            <div class="current-time">
+                                                <div class="time-display" id="currentTime">09:43:25</div>
+                                                <div class="date-display" id="currentDate">Monday, Sep 26, 2025</div>
+                                            </div>
+                                            <div class="timer-section">
+                                                <div class="project-selector">
+                                                    <select class="mobile-select">
+                                                        <option>Industrial Complex - Phase 1</option>
+                                                        <option>Commercial Tower</option>
+                                                        <option>Residential Complex</option>
+                                                    </select>
+                                                </div>
+                                                <button class="clock-btn active" id="clockBtn" onclick="toggleClock()">
+                                                    <i class="fas fa-play" id="clockIcon"></i>
+                                                    <span id="clockText">Clock In</span>
+                                                </button>
+                                            </div>
+                                            <div class="today-entries">
+                                                <h4>Today's Entries</h4>
+                                                <div class="time-entry">
+                                                    <div class="entry-info">
+                                                        <span class="project-name">Industrial Complex</span>
+                                                        <span class="time-range">08:00 - 12:30</span>
+                                                    </div>
+                                                    <span class="entry-hours">4.5h</span>
+                                                </div>
+                                                <div class="time-entry">
+                                                    <div class="entry-info">
+                                                        <span class="project-name">Commercial Tower</span>
+                                                        <span class="time-range">13:30 - 17:30</span>
+                                                    </div>
+                                                    <span class="entry-hours">4.0h</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mobile App Screen 4: Tasks -->
+                                    <div class="mobile-view" id="tasksScreen">
+                                        <div class="mobile-header">
+                                            <div class="mobile-status-bar">
+                                                <span class="time">09:44</span>
+                                                <div class="mobile-indicators">
+                                                    <i class="fas fa-signal"></i>
+                                                    <i class="fas fa-wifi"></i>
+                                                    <i class="fas fa-battery-three-quarters"></i>
+                                                </div>
+                                            </div>
+                                            <div class="app-header-mobile">
+                                                <button class="back-btn" onclick="showMobileScreen('dashboardScreen')">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </button>
+                                                <h2>My Tasks</h2>
+                                                <button class="menu-btn">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mobile-content">
+                                            <div class="task-list">
+                                                <div class="task-item">
+                                                    <div class="task-checkbox">
+                                                        <input type="checkbox" id="task1">
+                                                        <label for="task1"></label>
+                                                    </div>
+                                                    <div class="task-info">
+                                                        <h5>Install electrical panels</h5>
+                                                        <p>Building A, Floor 3</p>
+                                                        <span class="task-priority high">High Priority</span>
+                                                    </div>
+                                                </div>
+                                                <div class="task-item">
+                                                    <div class="task-checkbox">
+                                                        <input type="checkbox" id="task2" checked>
+                                                        <label for="task2"></label>
+                                                    </div>
+                                                    <div class="task-info completed">
+                                                        <h5>Safety inspection checklist</h5>
+                                                        <p>Building B, All floors</p>
+                                                        <span class="task-priority medium">Medium</span>
+                                                    </div>
+                                                </div>
+                                                <div class="task-item">
+                                                    <div class="task-checkbox">
+                                                        <input type="checkbox" id="task3">
+                                                        <label for="task3"></label>
+                                                    </div>
+                                                    <div class="task-info">
+                                                        <h5>Material inventory count</h5>
+                                                        <p>Warehouse Section C</p>
+                                                        <span class="task-priority low">Low Priority</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mobile App Screen 5: Location -->
+                                    <div class="mobile-view" id="locationScreen">
+                                        <div class="mobile-header">
+                                            <div class="mobile-status-bar">
+                                                <span class="time">09:45</span>
+                                                <div class="mobile-indicators">
+                                                    <i class="fas fa-signal"></i>
+                                                    <i class="fas fa-wifi"></i>
+                                                    <i class="fas fa-battery-three-quarters"></i>
+                                                </div>
+                                            </div>
+                                            <div class="app-header-mobile">
+                                                <button class="back-btn" onclick="showMobileScreen('dashboardScreen')">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </button>
+                                                <h2>Location</h2>
+                                                <button class="menu-btn">
+                                                    <i class="fas fa-crosshairs"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mobile-content">
+                                            <div class="location-info">
+                                                <div class="location-status online">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span>Location Tracking: Active</span>
+                                                </div>
+                                                <div class="current-location">
+                                                    <h4>Current Location</h4>
+                                                    <p>Industrial Complex - Phase 1</p>
+                                                    <p class="coordinates">24.7136° N, 46.6753° E</p>
+                                                </div>
+                                            </div>
+                                            <div class="location-map">
+                                                <div class="map-placeholder">
+                                                    <div class="map-pin">
+                                                        <i class="fas fa-map-marker-alt"></i>
+                                                    </div>
+                                                    <div class="map-info">Your current location</div>
+                                                </div>
+                                            </div>
+                                            <div class="location-actions">
+                                                <button class="mobile-btn secondary">
+                                                    <i class="fas fa-route"></i>
+                                                    Get Directions
+                                                </button>
+                                                <button class="mobile-btn primary">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Check In Here
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobile-controls">
+                                <button class="control-btn" onclick="showMobileScreen('loginScreen')" data-screen="login">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <span>Login</span>
+                                </button>
+                                <button class="control-btn" onclick="showMobileScreen('dashboardScreen')" data-screen="dashboard">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Dashboard</span>
+                                </button>
+                                <button class="control-btn active" onclick="showMobileScreen('timesheetScreen')" data-screen="timesheet">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Timesheet</span>
+                                </button>
+                                <button class="control-btn" onclick="showMobileScreen('tasksScreen')" data-screen="tasks">
+                                    <i class="fas fa-tasks"></i>
+                                    <span>Tasks</span>
+                                </button>
+                                <button class="control-btn" onclick="showMobileScreen('locationScreen')" data-screen="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Location</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real-time Activity Feed -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-activity"></i>
+                            Real-time Activity Feed
+                        </h3>
+                        <p class="card-subtitle">Live updates from field staff</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="activity-feed" id="activityFeed">
+                            <div class="activity-item">
+                                <div class="activity-avatar">JD</div>
+                                <div class="activity-content">
+                                    <h5>John Doe <span class="activity-action">clocked in</span></h5>
+                                    <p>Industrial Complex - Phase 1</p>
+                                    <div class="activity-meta">
+                                        <span class="activity-time">2 minutes ago</span>
+                                        <span class="activity-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Riyadh, SA
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="activity-status online"></div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-avatar">SM</div>
+                                <div class="activity-content">
+                                    <h5>Sarah Miller <span class="activity-action">completed task</span></h5>
+                                    <p>Safety inspection checklist</p>
+                                    <div class="activity-meta">
+                                        <span class="activity-time">5 minutes ago</span>
+                                        <span class="activity-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Jeddah, SA
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="activity-status completed"></div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-avatar">AR</div>
+                                <div class="activity-content">
+                                    <h5>Ahmed Rahman <span class="activity-action">uploaded photo</span></h5>
+                                    <p>Progress documentation</p>
+                                    <div class="activity-meta">
+                                        <span class="activity-time">8 minutes ago</span>
+                                        <span class="activity-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Dammam, SA
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="activity-status photo"></div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-avatar">LK</div>
+                                <div class="activity-content">
+                                    <h5>Lisa Kim <span class="activity-action">clocked out</span></h5>
+                                    <p>Commercial Tower Maintenance</p>
+                                    <div class="activity-meta">
+                                        <span class="activity-time">12 minutes ago</span>
+                                        <span class="activity-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Riyadh, SA
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="activity-status offline"></div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-avatar">MJ</div>
+                                <div class="activity-content">
+                                    <h5>Mike Johnson <span class="activity-action">started break</span></h5>
+                                    <p>Scheduled 30-minute break</p>
+                                    <div class="activity-meta">
+                                        <span class="activity-time">15 minutes ago</span>
+                                        <span class="activity-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Mecca, SA
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="activity-status break"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary btn-sm">View All Activity</button>
+                        <button class="btn btn-primary btn-sm" data-action="export-data">
+                            <i class="fas fa-download"></i>
+                            Export Log
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Statistics and Features -->
+            <div class="grid grid-2" style="margin-top: 2rem;">
+                <!-- Mobile App Features -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-mobile-alt"></i>
+                            Mobile App Features
+                        </h3>
+                        <p class="card-subtitle">Comprehensive field staff tools</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <div class="feature-icon success">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Smart Timesheet</h5>
+                                    <p>GPS-enabled time tracking with automatic project detection</p>
+                                </div>
+                                <div class="feature-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon primary">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Location Services</h5>
+                                    <p>Real-time GPS tracking and geofencing capabilities</p>
+                                </div>
+                                <div class="feature-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon warning">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Task Management</h5>
+                                    <p>Assignment, progress tracking, and completion workflows</p>
+                                </div>
+                                <div class="feature-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon info">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Photo Documentation</h5>
+                                    <p>Instant photo capture with GPS tagging and cloud sync</p>
+                                </div>
+                                <div class="feature-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon success">
+                                    <i class="fas fa-wifi"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Offline Mode</h5>
+                                    <p>Continue working without internet, sync when connected</p>
+                                </div>
+                                <div class="feature-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon primary">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Push Notifications</h5>
+                                    <p>Instant alerts for new tasks, messages, and updates</p>
+                                </div>
+                                <div class="feature-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Statistics -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Usage Statistics
+                        </h3>
+                        <p class="card-subtitle">App performance and adoption metrics</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon primary">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">587</div>
+                                    <div class="stat-label">App Installs</div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon success">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">92%</div>
+                                    <div class="stat-label">Daily Active</div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon warning">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">1,247</div>
+                                    <div class="stat-label">Daily Syncs</div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon info">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">4.8</div>
+                                    <div class="stat-label">App Rating</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="usage-chart">
+                            <h5>Weekly Usage Trend</h5>
+                            <div class="chart-bars">
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 70%"></div>
+                                    <span class="bar-label">Mon</span>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 85%"></div>
+                                    <span class="bar-label">Tue</span>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 92%"></div>
+                                    <span class="bar-label">Wed</span>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 88%"></div>
+                                    <span class="bar-label">Thu</span>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 95%"></div>
+                                    <span class="bar-label">Fri</span>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 40%"></div>
+                                    <span class="bar-label">Sat</span>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar" style="height: 25%"></div>
+                                    <span class="bar-label">Sun</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // Mobile app demo functionality
+        let currentScreen = 'timesheetScreen';
+        let isClocked = false;
+        let clockStartTime = null;
+
+        function showMobileScreen(screenId) {
+            // Hide all screens
+            document.querySelectorAll('.mobile-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            
+            // Show selected screen
+            document.getElementById(screenId).classList.add('active');
+            currentScreen = screenId;
+            
+            // Update control buttons
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-screen="${screenId.replace('Screen', '')}"]`)?.classList.add('active');
+            
+            // Start specific screen functionality
+            if (screenId === 'timesheetScreen') {
+                startClock();
+            }
+        }
+
+        function toggleClock() {
+            const clockBtn = document.getElementById('clockBtn');
+            const clockIcon = document.getElementById('clockIcon');
+            const clockText = document.getElementById('clockText');
+            
+            isClocked = !isClocked;
+            
+            if (isClocked) {
+                clockBtn.classList.add('clocked-in');
+                clockIcon.className = 'fas fa-stop';
+                clockText.textContent = 'Clock Out';
+                clockStartTime = new Date();
+                
+                if (window.enterpriseApp) {
+                    window.enterpriseApp.showToast('Clocked in successfully!', 'success');
+                }
+                
+                // Add new activity to feed
+                addActivityToFeed('You clocked in', 'Industrial Complex - Phase 1', 'online');
+            } else {
+                clockBtn.classList.remove('clocked-in');
+                clockIcon.className = 'fas fa-play';
+                clockText.textContent = 'Clock In';
+                
+                if (window.enterpriseApp) {
+                    window.enterpriseApp.showToast('Clocked out successfully!', 'info');
+                }
+                
+                // Add new activity to feed
+                addActivityToFeed('You clocked out', 'Industrial Complex - Phase 1', 'offline');
+            }
+        }
+
+        function startClock() {
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 1000);
+        }
+
+        function updateCurrentTime() {
+            const now = new Date();
+            const timeDisplay = document.getElementById('currentTime');
+            const dateDisplay = document.getElementById('currentDate');
+            
+            if (timeDisplay) {
+                timeDisplay.textContent = now.toLocaleTimeString('en-US', { 
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+            }
+            
+            if (dateDisplay) {
+                dateDisplay.textContent = now.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+        }
+
+        function addActivityToFeed(action, project, status) {
+            const activityFeed = document.getElementById('activityFeed');
+            if (!activityFeed) return;
+            
+            const activityItem = document.createElement('div');
+            activityItem.className = 'activity-item';
+            activityItem.innerHTML = `
+                <div class="activity-avatar">YU</div>
+                <div class="activity-content">
+                    <h5>You <span class="activity-action">${action}</span></h5>
+                    <p>${project}</p>
+                    <div class="activity-meta">
+                        <span class="activity-time">Just now</span>
+                        <span class="activity-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Current Location
+                        </span>
+                    </div>
+                </div>
+                <div class="activity-status ${status}"></div>
+            `;
+            
+            activityFeed.insertBefore(activityItem, activityFeed.firstChild);
+            
+            // Remove last item if more than 10 items
+            const items = activityFeed.querySelectorAll('.activity-item');
+            if (items.length > 10) {
+                items[items.length - 1].remove();
+            }
+        }
+
+        function simulateRealTimeActivity() {
+            const activities = [
+                { user: 'DM', name: 'David Miller', action: 'completed task', project: 'Equipment maintenance', status: 'completed' },
+                { user: 'NK', name: 'Nina Kumar', action: 'clocked in', project: 'Smart Building Integration', status: 'online' },
+                { user: 'RT', name: 'Robert Taylor', action: 'uploaded photo', project: 'Infrastructure Upgrade', status: 'photo' },
+                { user: 'AL', name: 'Anna Lopez', action: 'started break', project: 'Office Renovation', status: 'break' }
+            ];
+            
+            setInterval(() => {
+                const activity = activities[Math.floor(Math.random() * activities.length)];
+                const activityFeed = document.getElementById('activityFeed');
+                if (!activityFeed) return;
+                
+                const activityItem = document.createElement('div');
+                activityItem.className = 'activity-item';
+                activityItem.innerHTML = `
+                    <div class="activity-avatar">${activity.user}</div>
+                    <div class="activity-content">
+                        <h5>${activity.name} <span class="activity-action">${activity.action}</span></h5>
+                        <p>${activity.project}</p>
+                        <div class="activity-meta">
+                            <span class="activity-time">Just now</span>
+                            <span class="activity-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Field Location
+                            </span>
+                        </div>
+                    </div>
+                    <div class="activity-status ${activity.status}"></div>
+                `;
+                
+                activityFeed.insertBefore(activityItem, activityFeed.firstChild);
+                
+                // Remove last item if more than 15 items
+                const items = activityFeed.querySelectorAll('.activity-item');
+                if (items.length > 15) {
+                    items[items.length - 1].remove();
+                }
+            }, 30000); // Add new activity every 30 seconds
+        }
+
+        // Initialize mobile demo
+        document.addEventListener('DOMContentLoaded', function() {
+            showMobileScreen('timesheetScreen');
+            startClock();
+            simulateRealTimeActivity();
+            
+            // Add event listeners for mobile app actions
+            const syncBtn = document.querySelector('[data-action="sync-data"]');
+            if (syncBtn) {
+                syncBtn.addEventListener('click', () => {
+                    if (window.enterpriseApp) {
+                        window.enterpriseApp.showToast('Syncing mobile data...', 'info');
+                        setTimeout(() => {
+                            window.enterpriseApp.showToast('Sync completed successfully!', 'success');
+                        }, 2000);
+                    }
+                });
+            }
+            
+            const deployBtn = document.querySelector('[data-action="deploy-update"]');
+            if (deployBtn) {
+                deployBtn.addEventListener('click', () => {
+                    if (window.enterpriseApp) {
+                        window.enterpriseApp.showToast('Deploying app update...', 'info');
+                        setTimeout(() => {
+                            window.enterpriseApp.showToast('App update deployed successfully!', 'success');
+                        }, 3000);
+                    }
+                });
+            }
+        });
+    </script>
+
+    <style>
+        /* Mobile App Demo Styles */
+        .mobile-demo-card {
+            height: fit-content;
+        }
+
+        .mobile-simulator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mobile-frame {
+            width: 300px;
+            height: 600px;
+            background: #2d3748;
+            border-radius: 30px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mobile-view {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-view.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            background: #000;
+            color: white;
+            font-size: 12px;
+        }
+
+        .mobile-indicators {
+            display: flex;
+            gap: 4px;
+        }
+
+        .app-header-mobile {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .app-header-mobile h2 {
+            flex: 1;
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .back-btn, .menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .mobile-content {
+            padding: 16px;
+            height: calc(100% - 100px);
+            overflow-y: auto;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .welcome-section h3 {
+            font-size: 24px;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-section p {
+            color: var(--text-secondary);
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        .mobile-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-btn.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .mobile-btn.secondary {
+            background: var(--surface-color);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .user-welcome {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            padding: 16px;
+            background: var(--background-color);
+            border-radius: 12px;
+        }
+
+        .user-avatar-mobile {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .user-info-mobile h4 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+        }
+
+        .user-info-mobile p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: auto;
+        }
+
+        .status-indicator.online { background: var(--success-color); }
+
+        .quick-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            background: var(--surface-color);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .action-btn {
+            padding: 16px 12px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--background-color);
+            border-color: var(--primary-color);
+        }
+
+        .action-btn i {
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .action-btn span {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .current-time {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .time-display {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .date-display {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .timer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 14px;
+            background: var(--surface-color);
+        }
+
+        .clock-btn {
+            width: 120px;
+            height: 120px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--success-color), #38a169);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto;
+            box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .clock-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .clock-btn.clocked-in {
+            background: linear-gradient(135deg, var(--error-color), #e53e3e);
+            box-shadow: 0 8px 20px rgba(245, 101, 101, 0.3);
+        }
+
+        .clock-btn i {
+            font-size: 24px;
+        }
+
+        .today-entries h4 {
+            margin-bottom: 1rem;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .time-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: var(--background-color);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .project-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .time-range {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .entry-hours {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .task-item {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .task-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .task-checkbox label {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .task-checkbox input[type="checkbox"]:checked + label {
+            background: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .task-checkbox input[type="checkbox"]:checked + label::after {
+            content: '✓';
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .task-info h5 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .task-info p {
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .task-info.completed {
+            opacity: 0.6;
+        }
+
+        .task-info.completed h5 {
+            text-decoration: line-through;
+        }
+
+        .task-priority {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .task-priority.high {
+            background: rgba(245, 101, 101, 0.1);
+            color: var(--error-color);
+        }
+
+        .task-priority.medium {
+            background: rgba(237, 137, 54, 0.1);
+            color: var(--warning-color);
+        }
+
+        .task-priority.low {
+            background: rgba(66, 153, 225, 0.1);
+            color: var(--info-color);
+        }
+
+        .location-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .location-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(72, 187, 120, 0.1);
+            color: var(--success-color);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .current-location {
+            margin-top: 1rem;
+        }
+
+        .current-location h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+
+        .current-location p {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .coordinates {
+            font-size: 12px;
+            color: var(--text-muted) !important;
+        }
+
+        .location-map {
+            height: 200px;
+            margin: 1rem 0;
+        }
+
+        .map-placeholder {
+            height: 100%;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-pin {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .map-info {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .location-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .location-actions .mobile-btn {
+            flex: 1;
+        }
+
+        .mobile-controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .control-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 12px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 10px;
+        }
+
+        .control-btn:hover,
+        .control-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .control-btn i {
+            font-size: 14px;
+        }
+
+        /* Activity Feed Styles */
+        .activity-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .activity-item:hover {
+            background: var(--background-color);
+        }
+
+        .activity-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-content h5 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .activity-action {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .activity-content p {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .activity-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .activity-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .activity-status.online { background: var(--success-color); }
+        .activity-status.offline { background: var(--text-muted); }
+        .activity-status.completed { background: var(--info-color); }
+        .activity-status.photo { background: var(--warning-color); }
+        .activity-status.break { background: var(--error-color); }
+
+        /* Features and Stats */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--background-color);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-content h5 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .feature-content p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .feature-status {
+            display: flex;
+            align-items: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--surface-color);
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .stat-info {
+            flex: 1;
+        }
+
+        .stat-info .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-info .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .usage-chart h5 {
+            margin-bottom: 1rem;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .chart-bars {
+            display: flex;
+            gap: 8px;
+            align-items: end;
+            height: 120px;
+        }
+
+        .bar-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bar {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px 4px 0 0;
+            min-height: 20px;
+            transition: height 0.5s ease;
+        }
+
+        .bar-label {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-frame {
+                width: 250px;
+                height: 500px;
+                padding: 15px;
+            }
+
+            .grid.grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-controls {
+                gap: 4px;
+            }
+
+            .control-btn {
+                padding: 6px 8px;
+                font-size: 9px;
+            }
+        }
+    </style>
+</body>
+</html>

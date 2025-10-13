@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard - Wireframes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="wireframe-styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <header class="wireframe-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-box">[LOGO]</div>
+                    <h1>Enterprise Management System</h1>
+                </div>
+                <div class="user-area">
+                    <div class="user-box">[USER]</div>
+                    <span>Admin User</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="wireframe-nav">
+            <div class="nav-item">
+                <a href="home.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="nav-item active">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </div>
+            <div class="nav-item">
+                <a href="projects.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="mobile-app.html">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile App</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="cost-analysis.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Cost Analysis</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="inventory.html">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="hr-portal.html">
+                    <i class="fas fa-users"></i>
+                    <span>HR Portal</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="maintenance.html">
+                    <i class="fas fa-tools"></i>
+                    <span>Maintenance</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="wireframe-main">
+            <div class="page-header">
+                <h2>Executive Dashboard</h2>
+                <div class="breadcrumb">
+                    <span><a href="home.html">Home</a></span>
+                    <span>Dashboard</span>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">[ICON]</div>
+                        <div class="kpi-title">Active Field Staff</div>
+                    </div>
+                    <div class="kpi-value">587</div>
+                    <div class="kpi-change">+12 this week</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">[ICON]</div>
+                        <div class="kpi-title">Active Projects</div>
+                    </div>
+                    <div class="kpi-value">143</div>
+                    <div class="kpi-change neutral">No change</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">[ICON]</div>
+                        <div class="kpi-title">Monthly Revenue</div>
+                    </div>
+                    <div class="kpi-value">$2.1M</div>
+                    <div class="kpi-change">+8.5% vs last month</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">[ICON]</div>
+                        <div class="kpi-title">Profit Margin</div>
+                    </div>
+                    <div class="kpi-value">18.3%</div>
+                    <div class="kpi-change negative">-2.1% vs target</div>
+                </div>
+            </div>
+
+            <!-- Dashboard Widgets -->
+            <div class="dashboard-widgets">
+                <div class="widget">
+                    <h3>Revenue Trend & AI Forecast</h3>
+                    <div class="chart-placeholder">
+                        [REVENUE CHART]<br>
+                        Interactive line chart showing monthly revenue<br>
+                        with AI-powered future projections
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3>Field Staff Distribution</h3>
+                    <div class="chart-placeholder">
+                        [GEOGRAPHIC MAP]<br>
+                        Real-time staff locations<br>
+                        across different cities
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Alerts Section -->
+            <div class="widget">
+                <h3>AI-Powered Alerts & Insights</h3>
+                <div style="display: grid; gap: 1rem;">
+                    <div style="background: #fff3cd; border: 2px solid #ffeaa7; border-radius: 8px; padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #f39c12; border-radius: 50%;"></div>
+                            <div>
+                                <strong>Cost Overrun Alert - Project ABC123</strong>
+                                <p style="margin: 5px 0 0 0; color: #6c757d;">AI detected 15% cost overrun risk. Immediate review recommended.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #d4edda; border: 2px solid #c3e6cb; border-radius: 8px; padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #28a745; border-radius: 50%;"></div>
+                            <div>
+                                <strong>Inventory Replenishment Suggestion</strong>
+                                <p style="margin: 5px 0 0 0; color: #6c757d;">AI recommends ordering materials for 3 upcoming projects.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8d7da; border: 2px solid #f5c6cb; border-radius: 8px; padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #dc3545; border-radius: 50%;"></div>
+                            <div>
+                                <strong>Equipment Calibration Due</strong>
+                                <p style="margin: 5px 0 0 0; color: #6c757d;">5 critical assets require calibration within 7 days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="widget" style="margin-top: 2rem;">
+                <h3>Quick Actions</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <a href="projects.html" class="wireframe-button">View All Projects</a>
+                    <a href="cost-analysis.html" class="wireframe-button">Cost Analysis</a>
+                    <a href="hr-portal.html" class="wireframe-button">HR Dashboard</a>
+                    <a href="maintenance.html" class="wireframe-button">Asset Status</a>
+                    <a href="inventory.html" class="wireframe-button">Inventory Levels</a>
+                    <a href="mobile-app.html" class="wireframe-button">Mobile App Status</a>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="widget" style="margin-top: 2rem;">
+                <h3>Recent System Activity</h3>
+                <table class="wireframe-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activity</th>
+                            <th>User/System</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:45 AM</td>
+                            <td>Project XYZ123 - Cost variance detected</td>
+                            <td>AI System</td>
+                            <td><span style="color: #f39c12;">⚠ Alert</span></td>
+                        </tr>
+                        <tr>
+                            <td>09:30 AM</td>
+                            <td>Mobile timesheet submitted</td>
+                            <td>Ahmed Al-Rashid</td>
+                            <td><span style="color: #28a745;">✓ Complete</span></td>
+                        </tr>
+                        <tr>
+                            <td>09:15 AM</td>
+                            <td>Inventory item below threshold</td>
+                            <td>AI System</td>
+                            <td><span style="color: #f39c12;">⚠ Alert</span></td>
+                        </tr>
+                        <tr>
+                            <td>09:00 AM</td>
+                            <td>Daily staff allocation optimized</td>
+                            <td>AI System</td>
+                            <td><span style="color: #28a745;">✓ Complete</span></td>
+                        </tr>
+                        <tr>
+                            <td>08:45 AM</td>
+                            <td>Equipment calibration completed</td>
+                            <td>Omar Hassan</td>
+                            <td><span style="color: #28a745;">✓ Complete</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="wireframe-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <span>© 2025 Enterprise Management System</span>
+                </div>
+                <div class="footer-section">
+                    <span>Dashboard | Last Updated: Sept 26, 2025 - 16:40</span>
+                </div>
+                <div class="footer-section">
+                    <a href="#refresh">Refresh Data</a>
+                    <a href="#export">Export</a>
+                    <a href="#settings">Settings</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
