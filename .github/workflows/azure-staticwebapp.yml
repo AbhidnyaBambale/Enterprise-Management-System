@@ -21,11 +21,10 @@ on:
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  APP_LOCATION: "/" # location of your client code
-  API_LOCATION: "api" # location of your api source code - optional
-  APP_ARTIFACT_LOCATION: "build" # location of client code build output
-  AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }} # secret containing deployment token for your static web app
-
+  APP_LOCATION: "." # location of your client code
+  API_LOCATION: "" # location of your api source code - optional
+  APP_ARTIFACT_LOCATION: "build"
+  AZURE_STATIC_WEB_APPS_API_TOKEN: "177c13b7dc3042d49c9b4253b71b0970c21bfa81a95f0e7f3931b1a995bf663a02-c459fa5a-deda-4c0b-bf98-e156f3d61a8a00003070fe1aac00"
 permissions:
   contents: read
 
