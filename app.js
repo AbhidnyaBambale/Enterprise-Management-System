@@ -31,9 +31,40 @@ class EnterpriseApp {
     }
 
     animateCounter(element) {
-        const target = parseInt(element.textContent.replace(/[^\d]/g, ''));
+        const original = element.textContent.trim();
         const duration = 2000;
-        const increment = target / (duration / 16);
+
+        // Determine target value and unit based on original formatted text
+        let target = 0;
+        let unit = null; // 'M', 'K', '%', '$' or null
+
+        if (original.includes('M')) {
+            target = parseFloat(original.replace(/[^0-9.]/g, '')) || 0;
+            unit = 'M';
+        } else if (original.includes('K')) {
+            target = parseFloat(original.replace(/[^0-9.]/g, '')) || 0;
+            unit = 'K';
+        } else if (original.includes('%')) {
+            target = parseFloat(original.replace(/[^0-9.]/g, '')) || 0;
+            unit = '%';
+        } else if (original.includes('$')) {
+            // Allow formats like "$1.2M" or "$1200000"
+            target = parseFloat(original.replace(/[^0-9.]/g, '')) || 0;
+            unit = '$';
+            // If original contains 'M' treat target as millions
+            if (original.includes('M')) {
+                // target already is the numeric part (e.g. 1.2) and represents millions
+            } else {
+                // If it's a plain number (e.g. $1200000) we'll keep the raw number
+            }
+        } else {
+            // Plain integer value
+            target = parseFloat(element.textContent.replace(/[^0-9.]/g, '')) || 0;
+        }
+
+        // Compute increment based on target and desired frame rate (~60fps)
+        const frames = Math.max(1, Math.round(duration / 16));
+        const increment = target / frames;
         let current = 0;
 
         const timer = setInterval(() => {
@@ -42,17 +73,26 @@ class EnterpriseApp {
                 current = target;
                 clearInterval(timer);
             }
-            
-            // Format the number based on original format
-            const original = element.textContent;
-            if (original.includes('%')) {
-                element.textContent = Math.floor(current) + '%';
-            } else if (original.includes('$')) {
-                element.textContent = '$' + this.formatNumber(Math.floor(current));
-            } else if (original.includes('M')) {
-                element.textContent = (current / 1000000).toFixed(1) + 'M';
-            } else if (original.includes('K')) {
-                element.textContent = (current / 1000).toFixed(1) + 'K';
+
+            // Format the number based on detected unit
+            if (unit === '%') {
+                element.textContent = `${Math.floor(current)}%`;
+            } else if (unit === '$') {
+                if (original.includes('M')) {
+                    // Show as millions with one decimal
+                    element.textContent = `$${current.toFixed(1)}M`;
+                } else if (original.match(/[KM]$/i)) {
+                    // If original had K or M with $, respect that
+                    if (original.includes('K')) element.textContent = `$${current.toFixed(1)}K`;
+                    else element.textContent = `$${Math.floor(current)}`;
+                } else {
+                    element.textContent = '$' + this.formatNumber(Math.floor(current));
+                }
+            } else if (unit === 'M') {
+                // original contained like "12M" -> target is 12 (millions)
+                element.textContent = `${current.toFixed(1)}M`;
+            } else if (unit === 'K') {
+                element.textContent = `${current.toFixed(1)}K`;
             } else {
                 element.textContent = Math.floor(current);
             }

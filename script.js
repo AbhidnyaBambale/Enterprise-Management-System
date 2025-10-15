@@ -79,17 +79,38 @@ function animateKPIs() {
     const kpiValues = document.querySelectorAll('.kpi-value');
 
     kpiValues.forEach(value => {
-        const originalText = value.textContent;
-        const numericValue = parseFloat(originalText.replace(/[^0-9.]/g, ''));
+        const originalText = value.textContent.trim();
 
-        if (numericValue) {
-            animateNumber(value, 0, numericValue, originalText);
+        // Determine numeric target and pass unit info
+        let numericValue = 0;
+        let unit = null;
+
+        if (originalText.includes('M')) {
+            // '12M' -> target 12 (millions)
+            numericValue = parseFloat(originalText.replace(/[^0-9.]/g, '')) || 0;
+            unit = 'M';
+        } else if (originalText.includes('K')) {
+            numericValue = parseFloat(originalText.replace(/[^0-9.]/g, '')) || 0;
+            unit = 'K';
+        } else if (originalText.includes('%')) {
+            numericValue = parseFloat(originalText.replace(/[^0-9.]/g, '')) || 0;
+            unit = '%';
+        } else if (originalText.includes('$')) {
+            numericValue = parseFloat(originalText.replace(/[^0-9.]/g, '')) || 0;
+            unit = '$';
+            // If the $ value is large (no M/K), numericValue will be the raw number
+        } else {
+            numericValue = parseFloat(originalText.replace(/[^0-9.]/g, '')) || 0;
+        }
+
+        if (numericValue || numericValue === 0) {
+            animateNumber(value, 0, numericValue, originalText, unit);
         }
     });
 }
 
 // Animate number counting
-function animateNumber(element, start, end, originalText) {
+function animateNumber(element, start, end, originalText, unit) {
     const duration = 2000;
     const startTime = performance.now();
 
@@ -99,15 +120,23 @@ function animateNumber(element, start, end, originalText) {
 
         const currentValue = start + (end - start) * easeOutQuart(progress);
 
-        // Format the number based on original text format
-        if (originalText.includes('$')) {
+        // Format based on detected unit passed from caller
+        if (unit === '$') {
             if (originalText.includes('M')) {
                 element.textContent = `$${(currentValue).toFixed(1)}M`;
+            } else if (originalText.includes('K')) {
+                element.textContent = `$${(currentValue).toFixed(1)}K`;
             } else {
+                // If it's a plain dollar number, show rounded
                 element.textContent = `$${Math.round(currentValue)}`;
             }
-        } else if (originalText.includes('%')) {
+        } else if (unit === '%') {
             element.textContent = `${currentValue.toFixed(1)}%`;
+        } else if (unit === 'M') {
+            // keep value as millions (numeric end is number in millions)
+            element.textContent = `${currentValue.toFixed(1)}M`;
+        } else if (unit === 'K') {
+            element.textContent = `${currentValue.toFixed(1)}K`;
         } else {
             element.textContent = Math.round(currentValue).toString();
         }
