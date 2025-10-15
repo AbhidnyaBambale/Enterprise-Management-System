@@ -126,7 +126,7 @@
                         </div>
                         <h3 class="kpi-title">On Schedule</h3>
                     </div>
-                    <div class="kpi-value">38</div>
+                    <div class="kpi-value">8%</div>
                     <div class="kpi-trend neutral">
                         <i class="fas fa-minus"></i>
                         88% rate
@@ -237,7 +237,7 @@
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-dollar-sign"></i>
-                            <span>$2.3M Budget</span>
+                            <span>SAR 2.3M Budget</span>
                         </div>
                     </div>
 
@@ -316,7 +316,7 @@
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-dollar-sign"></i>
-                            <span>$1.8M Budget</span>
+                            <span>SAR 1.8M Budget</span>
                         </div>
                     </div>
 
@@ -395,7 +395,7 @@
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-dollar-sign"></i>
-                            <span>$3.2M Budget</span>
+                            <span>SAR 3.2M Budget</span>
                         </div>
                     </div>
 
@@ -474,7 +474,7 @@
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-dollar-sign"></i>
-                            <span>$1.5M Budget</span>
+                            <span>SAR1.5M Budget</span>
                         </div>
                     </div>
 
@@ -553,7 +553,7 @@
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-dollar-sign"></i>
-                            <span>$980K Budget</span>
+                            <span>SAR980K Budget</span>
                         </div>
                     </div>
 
@@ -632,7 +632,7 @@
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-dollar-sign"></i>
-                            <span>$750K Budget</span>
+                            <span>SAR750K Budget</span>
                         </div>
                     </div>
 
@@ -702,7 +702,7 @@
                                 <div class="recommendation-metrics">
                                     <span class="metric">Impact: High</span>
                                     <span class="metric">Confidence: 94%</span>
-                                    <span class="metric">Savings: $45K</span>
+                                    <span class="metric">Savings: SAR45K</span>
                                 </div>
                             </div>
                             <div class="recommendation-actions">
@@ -742,7 +742,7 @@
                                 <div class="recommendation-metrics">
                                     <span class="metric">Impact: Low</span>
                                     <span class="metric">Confidence: 76%</span>
-                                    <span class="metric">Savings: $12K</span>
+                                    <span class="metric">Savings: SAR12K</span>
                                 </div>
                             </div>
                             <div class="recommendation-actions">
@@ -881,14 +881,14 @@
                     switch (action) {
                         case 'View Details':
                         case 'View Plan':
-                            window.enterpriseApp.showToast(`Opening ${projectTitle} details...`, 'info');
+                            window.enterpriseApp.showToast(`Opening SAR{projectTitle} details...`, 'info');
                             break;
                         case 'Manage':
                         case 'Configure':
-                            window.enterpriseApp.showToast(`Opening project management for ${projectTitle}...`, 'info');
+                            window.enterpriseApp.showToast(`Opening project management for SAR{projectTitle}...`, 'info');
                             break;
                         case 'Start Project':
-                            window.enterpriseApp.showToast(`Starting ${projectTitle}...`, 'success');
+                            window.enterpriseApp.showToast(`Starting SAR{projectTitle}...`, 'success');
                             setTimeout(() => {
                                 projectCard.dataset.status = 'active';
                                 const statusBadge = projectCard.querySelector('.status-badge');
@@ -897,13 +897,13 @@
                             }, 1500);
                             break;
                         case 'Urgent Review':
-                            window.enterpriseApp.showToast(`Escalating ${projectTitle} for urgent review...`, 'warning');
+                            window.enterpriseApp.showToast(`Escalating SAR{projectTitle} for urgent review...`, 'warning');
                             break;
                         case 'Resume':
-                            window.enterpriseApp.showToast(`Resuming ${projectTitle}...`, 'info');
+                            window.enterpriseApp.showToast(`Resuming SAR{projectTitle}...`, 'info');
                             break;
                         default:
-                            window.enterpriseApp.showToast(`${action} action for ${projectTitle}`, 'info');
+                            window.enterpriseApp.showToast(`SAR{action} action for SAR{projectTitle}`, 'info');
                     }
                 }
             }
@@ -969,7 +969,7 @@
                 btn.addEventListener('click', function () {
                     const action = this.textContent.trim();
                     if (window.enterpriseApp) {
-                        window.enterpriseApp.showToast(`Applying AI recommendation: ${action}`, 'success');
+                        window.enterpriseApp.showToast(`Applying AI recommendation: SAR{action}`, 'success');
                     }
                 });
             });

@@ -147,7 +147,7 @@
                         </div>
                         <h3 class="kpi-title">Monthly Revenue</h3>
                     </div>
-                    <div class="kpi-value">2.1M</div>
+                    <div class="kpi-value">120M</div>
                     <div class="kpi-trend positive">
                         <i class="fas fa-arrow-up"></i>
                         +8.5%
@@ -161,7 +161,7 @@
                         </div>
                         <h3 class="kpi-title">Profit Margin</h3>
                     </div>
-                    <div class="kpi-value">18.3%</div>
+                    <div class="kpi-value">18%</div>
                     <div class="kpi-trend negative">
                         <i class="fas fa-arrow-down"></i>
                         -2.1%
@@ -451,7 +451,7 @@
                                 min: 1.5,
                                 ticks: {
                                     callback: function (value) {
-                                        return '$' + value.toFixed(1) + 'M';
+                                        return 'SAR' + value.toFixed(1) + 'M';
                                     }
                                 }
                             }
@@ -513,7 +513,7 @@
                     dot.addEventListener('click', (e) => {
                         const region = e.target.getAttribute('data-tooltip');
                         if (window.enterpriseApp) {
-                            window.enterpriseApp.showToast(`Viewing details for ${region}`, 'info');
+                            window.enterpriseApp.showToast(`Viewing details for SAR{region}`, 'info');
                         }
                     });
                 });
@@ -603,7 +603,7 @@
             // Date filter change
             document.getElementById('dateFilter')?.addEventListener('change', function () {
                 if (window.enterpriseApp) {
-                    window.enterpriseApp.showToast(`Updating dashboard for ${this.options[this.selectedIndex].text}`, 'info');
+                    window.enterpriseApp.showToast(`Updating dashboard for SAR{this.options[this.selectedIndex].text}`, 'info');
 
                     // Simulate data refresh
                     setTimeout(() => {

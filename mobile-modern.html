@@ -140,7 +140,7 @@
                         </div>
                         <h3 class="kpi-title">Hours Logged</h3>
                     </div>
-                    <div class="kpi-value">4,382</div>
+                    <div class="kpi-value">440</div>
                     <div class="kpi-trend positive">
                         <i class="fas fa-arrow-up"></i>
                         This week
@@ -154,7 +154,7 @@
                         </div>
                         <h3 class="kpi-title">GPS Check-ins</h3>
                     </div>
-                    <div class="kpi-value">1,245</div>
+                    <div class="kpi-value">125</div>
                     <div class="kpi-trend neutral">
                         <i class="fas fa-minus"></i>
                         Today
@@ -264,11 +264,11 @@
                                             </div>
                                             <div class="quick-stats">
                                                 <div class="stat-item">
-                                                    <span class="stat-value">8.5h</span>
+                                                    <span class="stat-value">8h</span>
                                                     <span class="stat-label">Today</span>
                                                 </div>
                                                 <div class="stat-item">
-                                                    <span class="stat-value">42.5h</span>
+                                                    <span class="stat-value">42h</span>
                                                     <span class="stat-label">This Week</span>
                                                 </div>
                                             </div>
@@ -808,7 +808,7 @@
             document.querySelectorAll('.control-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            document.querySelector(`[data-screen="${screenId.replace('Screen', '')}"]`)?.classList.add('active');
+            document.querySelector(`[data-screen="SAR{screenId.replace('Screen', '')}"]`)?.classList.add('active');
 
             // Start specific screen functionality
             if (screenId === 'timesheetScreen') {
@@ -887,8 +887,8 @@
             activityItem.innerHTML = `
                 <div class="activity-avatar">YU</div>
                 <div class="activity-content">
-                    <h5>You <span class="activity-action">${action}</span></h5>
-                    <p>${project}</p>
+                    <h5>You <span class="activity-action">SAR{action}</span></h5>
+                    <p>SAR{project}</p>
                     <div class="activity-meta">
                         <span class="activity-time">Just now</span>
                         <span class="activity-location">
@@ -897,7 +897,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="activity-status ${status}"></div>
+                <div class="activity-status SAR{status}"></div>
             `;
 
             activityFeed.insertBefore(activityItem, activityFeed.firstChild);
@@ -925,10 +925,10 @@
                 const activityItem = document.createElement('div');
                 activityItem.className = 'activity-item';
                 activityItem.innerHTML = `
-                    <div class="activity-avatar">${activity.user}</div>
+                    <div class="activity-avatar">SAR{activity.user}</div>
                     <div class="activity-content">
-                        <h5>${activity.name} <span class="activity-action">${activity.action}</span></h5>
-                        <p>${activity.project}</p>
+                        <h5>SAR{activity.name} <span class="activity-action">SAR{activity.action}</span></h5>
+                        <p>SAR{activity.project}</p>
                         <div class="activity-meta">
                             <span class="activity-time">Just now</span>
                             <span class="activity-location">
@@ -937,7 +937,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="activity-status ${activity.status}"></div>
+                    <div class="activity-status SAR{activity.status}"></div>
                 `;
 
                 activityFeed.insertBefore(activityItem, activityFeed.firstChild);
