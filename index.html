@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +40,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero-subtitle {
@@ -88,13 +89,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 50px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
 
         .btn-hero:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
         .btn-primary-hero {
@@ -338,8 +339,15 @@
 
         /* Animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .floating {
@@ -347,8 +355,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         .pulse {
@@ -360,28 +375,28 @@
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-stats {
                 gap: 1.5rem;
             }
-            
+
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .feature-card {
                 padding: 2rem 1.5rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .cta-title {
                 font-size: 2rem;
             }
@@ -391,18 +406,18 @@
             .landing-hero {
                 padding: 3rem 1rem;
             }
-            
+
             .features-section,
             .tech-stack,
             .cta-section {
                 padding: 4rem 1rem;
             }
-            
+
             .hero-stats {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .footer-links {
                 flex-direction: column;
                 gap: 1rem;
@@ -410,16 +425,21 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="landing-hero">
         <div class="hero-content animate-fade-in">
+            <div class="hero-logo">
+                <img src="NDT CCS _ NDT Companies- OnestopNDT.png" alt="Enterprise Management System logo">
+            </div>
+
             <h1 class="hero-title">Enterprise Management System</h1>
             <p class="hero-subtitle">
                 AI-Powered Solution for Modern Enterprise Operations<br>
                 Manage 600+ field staff, optimize projects, and maximize efficiency
             </p>
-            
+
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">600+</span>
@@ -438,7 +458,7 @@
                     <span class="stat-label">Uptime</span>
                 </div>
             </div>
-            
+
             <div class="hero-actions">
                 <a href="website-home.html" class="btn btn-hero btn-primary-hero">
                     <i class="fas fa-rocket"></i>
@@ -452,17 +472,18 @@
         </div>
     </section>
 
+
     <!-- Features Section -->
     <section class="features-section">
         <div class="features-container">
             <div class="section-header">
                 <h2 class="section-title">Comprehensive Business Solutions</h2>
                 <p class="section-description">
-                    Experience the power of integrated enterprise management with AI-driven insights, 
+                    Experience the power of integrated enterprise management with AI-driven insights,
                     real-time monitoring, and seamless workflow optimization.
                 </p>
             </div>
-            
+
             <div class="features-grid">
                 <div class="feature-card animate-slide-up">
                     <div class="feature-icon">
@@ -554,7 +575,7 @@
                     Built on Microsoft's enterprise-grade platform with cutting-edge AI and cloud technologies.
                 </p>
             </div>
-            
+
             <div class="tech-grid">
                 <div class="tech-item">
                     <div class="tech-icon">
@@ -563,7 +584,7 @@
                     <div class="tech-name">Microsoft Azure</div>
                     <div class="tech-description">Cloud infrastructure and AI services</div>
                 </div>
-                
+
                 <div class="tech-item">
                     <div class="tech-icon">
                         <i class="fas fa-bolt"></i>
@@ -571,7 +592,7 @@
                     <div class="tech-name">Power Platform</div>
                     <div class="tech-description">Low-code business automation</div>
                 </div>
-                
+
                 <div class="tech-item">
                     <div class="tech-icon">
                         <i class="fas fa-cogs"></i>
@@ -579,7 +600,7 @@
                     <div class="tech-name">Dynamics 365</div>
                     <div class="tech-description">Enterprise resource planning</div>
                 </div>
-                
+
                 <div class="tech-item">
                     <div class="tech-icon">
                         <i class="fas fa-brain"></i>
@@ -587,7 +608,7 @@
                     <div class="tech-name">Azure AI</div>
                     <div class="tech-description">Machine learning and analytics</div>
                 </div>
-                
+
                 <div class="tech-item">
                     <div class="tech-icon">
                         <i class="fas fa-mobile-alt"></i>
@@ -604,7 +625,7 @@
         <div class="cta-content">
             <h2 class="cta-title">Ready to Transform Your Business?</h2>
             <p class="cta-description">
-                Experience the future of enterprise management with our comprehensive, AI-powered solution. 
+                Experience the future of enterprise management with our comprehensive, AI-powered solution.
                 Start your digital transformation journey today.
             </p>
             <div class="hero-actions">
@@ -640,7 +661,7 @@
     <script src="app.js"></script>
     <script>
         // Landing page specific animations
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Animate statistics on scroll
             const observerOptions = {
                 threshold: 0.5,
@@ -697,14 +718,15 @@
 
         // Add hover effects to feature cards
         document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-8px) scale(1.02)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
     </script>
 </body>
+
 </html>

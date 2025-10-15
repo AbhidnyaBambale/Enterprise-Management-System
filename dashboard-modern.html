@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="modern-styles.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
 </head>
+
 <body>
     <div class="app-container">
         <!-- Header -->
@@ -15,14 +17,15 @@
             <div class="header-content">
                 <div class="logo-section">
                     <div class="logo-icon">
-                        <i class="fas fa-building"></i>
+                        <img src="NDT CCS _ NDT Companies- OnestopNDT.png" alt="EMS Logo"
+                            style="width: 40px; height: auto;">
                     </div>
                     <div class="logo-text">
                         <h1>Enterprise Management</h1>
                         <p>Executive Dashboard</p>
                     </div>
                 </div>
-                
+
                 <div class="header-actions">
                     <div class="notification-icon">
                         <i class="fas fa-bell"></i>
@@ -404,12 +407,12 @@
 
             createRevenueChart() {
                 const ctx = document.getElementById('revenueChart').getContext('2d');
-                
+
                 // Generate sample data
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
                 const revenueData = [1.8, 1.9, 2.1, 1.85, 2.3, 2.1];
                 const forecastData = [null, null, null, null, null, 2.1, 2.4, 2.6, 2.8];
-                
+
                 this.charts.revenue = new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -447,7 +450,7 @@
                                 beginAtZero: false,
                                 min: 1.5,
                                 ticks: {
-                                    callback: function(value) {
+                                    callback: function (value) {
                                         return '$' + value.toFixed(1) + 'M';
                                     }
                                 }
@@ -459,7 +462,7 @@
 
             createProjectChart() {
                 const ctx = document.getElementById('projectChart').getContext('2d');
-                
+
                 this.charts.project = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
@@ -533,11 +536,11 @@
                 kpiValues.forEach(kpi => {
                     const currentText = kpi.textContent;
                     const currentValue = parseFloat(currentText.replace(/[^\d.]/g, ''));
-                    
+
                     // Simulate small random changes
                     const change = (Math.random() - 0.5) * 0.1;
                     let newValue = currentValue + change;
-                    
+
                     // Format based on original format
                     if (currentText.includes('M')) {
                         kpi.textContent = newValue.toFixed(1) + 'M';
@@ -554,14 +557,14 @@
                 if (this.charts.revenue) {
                     const chart = this.charts.revenue;
                     const newValue = 1.8 + Math.random() * 0.8;
-                    
+
                     // Remove first data point and add new one
                     chart.data.labels.shift();
                     chart.data.labels.push('New');
-                    
+
                     chart.data.datasets[0].data.shift();
                     chart.data.datasets[0].data.push(newValue);
-                    
+
                     chart.update('active');
                 }
             }
@@ -570,7 +573,7 @@
                 // Simulate export functionality
                 if (window.enterpriseApp) {
                     window.enterpriseApp.showToast('Preparing dashboard export...', 'info');
-                    
+
                     setTimeout(() => {
                         window.enterpriseApp.showToast('Dashboard exported successfully!', 'success');
                     }, 2000);
@@ -579,29 +582,29 @@
         }
 
         // Initialize dashboard when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             window.dashboard = new Dashboard();
-            
+
             // Add event listeners for dashboard-specific actions
-            document.getElementById('toggleForecast')?.addEventListener('click', function() {
+            document.getElementById('toggleForecast')?.addEventListener('click', function () {
                 // Toggle forecast visibility
                 if (window.dashboard.charts.revenue) {
                     const chart = window.dashboard.charts.revenue;
                     const forecastDataset = chart.data.datasets[1];
                     forecastDataset.hidden = !forecastDataset.hidden;
                     chart.update();
-                    
-                    this.innerHTML = forecastDataset.hidden ? 
-                        '<i class="fas fa-brain"></i> Show Forecast' : 
+
+                    this.innerHTML = forecastDataset.hidden ?
+                        '<i class="fas fa-brain"></i> Show Forecast' :
                         '<i class="fas fa-brain"></i> Hide Forecast';
                 }
             });
 
             // Date filter change
-            document.getElementById('dateFilter')?.addEventListener('change', function() {
+            document.getElementById('dateFilter')?.addEventListener('change', function () {
                 if (window.enterpriseApp) {
                     window.enterpriseApp.showToast(`Updating dashboard for ${this.options[this.selectedIndex].text}`, 'info');
-                    
+
                     // Simulate data refresh
                     setTimeout(() => {
                         window.dashboard.updateChartData();
@@ -639,9 +642,20 @@
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
-        .map-dot.large { width: 50px; height: 50px; }
-        .map-dot.medium { width: 45px; height: 45px; }
-        .map-dot.small { width: 35px; height: 35px; }
+        .map-dot.large {
+            width: 50px;
+            height: 50px;
+        }
+
+        .map-dot.medium {
+            width: 45px;
+            height: 45px;
+        }
+
+        .map-dot.small {
+            width: 35px;
+            height: 35px;
+        }
 
         .map-dot:hover {
             transform: scale(1.2);
@@ -653,9 +667,17 @@
         }
 
         @keyframes mapPulse {
-            0% { box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
-            50% { box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6), 0 0 0 10px rgba(102, 126, 234, 0.1); }
-            100% { box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+            0% {
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6), 0 0 0 10px rgba(102, 126, 234, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            }
         }
 
         .staff-count {
@@ -746,10 +768,21 @@
             flex-shrink: 0;
         }
 
-        .alert-item.critical .alert-icon { background: var(--error-color); }
-        .alert-item.warning .alert-icon { background: var(--warning-color); }
-        .alert-item.info .alert-icon { background: var(--info-color); }
-        .alert-item.success .alert-icon { background: var(--success-color); }
+        .alert-item.critical .alert-icon {
+            background: var(--error-color);
+        }
+
+        .alert-item.warning .alert-icon {
+            background: var(--warning-color);
+        }
+
+        .alert-item.info .alert-icon {
+            background: var(--info-color);
+        }
+
+        .alert-item.success .alert-icon {
+            background: var(--success-color);
+        }
 
         .alert-content {
             flex: 1;
@@ -837,4 +870,5 @@
         }
     </style>
 </body>
+
 </html>

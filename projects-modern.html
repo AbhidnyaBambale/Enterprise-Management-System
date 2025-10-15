@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="modern-styles.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Header -->
@@ -14,14 +16,15 @@
             <div class="header-content">
                 <div class="logo-section">
                     <div class="logo-icon">
-                        <i class="fas fa-building"></i>
+                        <img src="NDT CCS _ NDT Companies- OnestopNDT.png" alt="EMS Logo"
+                            style="width: 40px; height: auto;">
                     </div>
                     <div class="logo-text">
                         <h1>Enterprise Management</h1>
                         <p>Project Management Hub</p>
                     </div>
                 </div>
-                
+
                 <div class="header-actions">
                     <div class="notification-icon">
                         <i class="fas fa-bell"></i>
@@ -185,7 +188,8 @@
                         <div class="filter-group search-group">
                             <label class="form-label">Search</label>
                             <div class="search-input-container">
-                                <input type="text" class="form-control" placeholder="Search projects..." id="searchInput">
+                                <input type="text" class="form-control" placeholder="Search projects..."
+                                    id="searchInput">
                                 <i class="fas fa-search search-icon"></i>
                             </div>
                         </div>
@@ -693,7 +697,8 @@
                             </div>
                             <div class="recommendation-content">
                                 <h5>Resource Reallocation Opportunity</h5>
-                                <p>Move 3 specialists from "Infrastructure Upgrade" (on hold) to "Industrial Complex - Phase 1" to accelerate completion by 8 days.</p>
+                                <p>Move 3 specialists from "Infrastructure Upgrade" (on hold) to "Industrial Complex -
+                                    Phase 1" to accelerate completion by 8 days.</p>
                                 <div class="recommendation-metrics">
                                     <span class="metric">Impact: High</span>
                                     <span class="metric">Confidence: 94%</span>
@@ -712,7 +717,8 @@
                             </div>
                             <div class="recommendation-content">
                                 <h5>Timeline Optimization</h5>
-                                <p>Adjust "Commercial Tower" project schedule to start 1 week earlier, reducing resource conflicts by 23%.</p>
+                                <p>Adjust "Commercial Tower" project schedule to start 1 week earlier, reducing resource
+                                    conflicts by 23%.</p>
                                 <div class="recommendation-metrics">
                                     <span class="metric">Impact: Medium</span>
                                     <span class="metric">Confidence: 87%</span>
@@ -731,7 +737,8 @@
                             </div>
                             <div class="recommendation-content">
                                 <h5>Equipment Optimization</h5>
-                                <p>Share specialized equipment between "Residential Complex" and "Office Building" projects to reduce costs.</p>
+                                <p>Share specialized equipment between "Residential Complex" and "Office Building"
+                                    projects to reduce costs.</p>
                                 <div class="recommendation-metrics">
                                     <span class="metric">Impact: Low</span>
                                     <span class="metric">Confidence: 76%</span>
@@ -904,7 +911,7 @@
             generateAIRecommendations() {
                 if (window.enterpriseApp) {
                     window.enterpriseApp.showToast('AI is analyzing project data...', 'info');
-                    
+
                     setTimeout(() => {
                         window.enterpriseApp.showToast('New AI recommendations generated!', 'success');
                         this.animateRecommendations();
@@ -918,7 +925,7 @@
                     setTimeout(() => {
                         item.style.transform = 'scale(1.02)';
                         item.style.boxShadow = '0 4px 20px rgba(102, 126, 234, 0.2)';
-                        
+
                         setTimeout(() => {
                             item.style.transform = 'scale(1)';
                             item.style.boxShadow = '';
@@ -930,7 +937,7 @@
             optimizeResources() {
                 if (window.enterpriseApp) {
                     window.enterpriseApp.showToast('AI resource optimization in progress...', 'info');
-                    
+
                     setTimeout(() => {
                         window.enterpriseApp.showToast('Resource allocation optimized! Efficiency improved by 12%', 'success');
                     }, 4000);
@@ -939,9 +946,9 @@
         }
 
         // Initialize project manager when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             window.projectManager = new ProjectManager();
-            
+
             // Add specific event listeners for project management actions
             const generateRecommendationsBtn = document.querySelector('[data-action="generate-recommendations"]');
             if (generateRecommendationsBtn) {
@@ -959,7 +966,7 @@
 
             // Recommendation action buttons
             document.querySelectorAll('.recommendation-actions .btn-primary').forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const action = this.textContent.trim();
                     if (window.enterpriseApp) {
                         window.enterpriseApp.showToast(`Applying AI recommendation: ${action}`, 'success');
@@ -1393,4 +1400,5 @@
         }
     </style>
 </body>
+
 </html>
