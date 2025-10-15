@@ -3,70 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cost Analysis - Wireframes</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="wireframe-styles.css" rel="stylesheet">
+    <title>Cost Analysis - Enterprise Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="modern-styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
 </head>
 <body>
-    <div class="wireframe-container">
+    <div class="app-container">
         <!-- Header -->
-        <header class="wireframe-header">
+        <header class="app-header">
             <div class="header-content">
-                <div class="logo-area">
-                    <div class="logo-box">[LOGO]</div>
-                    <h1>Enterprise Management System</h1>
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Enterprise Management</h1>
+                        <p>Financial Analytics Hub</p>
+                    </div>
                 </div>
-                <div class="user-area">
-                    <div class="user-box">[USER]</div>
-                    <span>Finance Manager</span>
+                
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">FM</div>
+                        <div class="user-info">
+                            <h4>Finance Manager</h4>
+                            <p>Cost Analysis</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Navigation -->
-        <nav class="wireframe-nav">
-            <div class="nav-item">
-                <a href="home.html">
+        <nav class="app-navigation">
+            <div class="nav-content">
+                <a href="website-home.html" class="nav-item">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="dashboard.html">
+                <a href="dashboard-modern.html" class="nav-item">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="projects.html">
+                <a href="projects-modern.html" class="nav-item">
                     <i class="fas fa-project-diagram"></i>
                     <span>Projects</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="mobile-app.html">
+                <a href="mobile-modern.html" class="nav-item">
                     <i class="fas fa-mobile-alt"></i>
                     <span>Mobile App</span>
                 </a>
-            </div>
-            <div class="nav-item active">
-                <i class="fas fa-chart-line"></i>
-                <span>Cost Analysis</span>
-            </div>
-            <div class="nav-item">
-                <a href="inventory.html">
+                <div class="nav-item active">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Cost Analysis</span>
+                </div>
+                <a href="inventory.html" class="nav-item">
                     <i class="fas fa-boxes"></i>
                     <span>Inventory</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="hr-portal.html">
+                <a href="hr-portal.html" class="nav-item">
                     <i class="fas fa-users"></i>
                     <span>HR Portal</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="maintenance.html">
+                <a href="maintenance.html" class="nav-item">
                     <i class="fas fa-tools"></i>
                     <span>Maintenance</span>
                 </a>
@@ -74,323 +79,840 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="wireframe-main">
-            <div class="page-header">
-                <h2>AI-Powered Cost Analysis</h2>
-                <div class="breadcrumb">
-                    <span><a href="home.html">Home</a></span>
-                    <span>Cost Analysis</span>
+        <main class="app-main">
+            <!-- Page Header -->
+            <div class="page-header animate-fade-in">
+                <div class="page-title">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h1>AI-Powered Cost Analysis</h1>
+                        <div class="breadcrumb">
+                            <a href="website-home.html">Home</a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span>Cost Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <select class="form-control" id="timeFilter">
+                        <option value="30">Last 30 Days</option>
+                        <option value="90" selected>Last Quarter</option>
+                        <option value="365">Year to Date</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                    <button class="btn btn-secondary" data-action="export-report">
+                        <i class="fas fa-download"></i>
+                        Export Report
+                    </button>
+                    <button class="btn btn-primary" data-action="ai-forecast">
+                        <i class="fas fa-brain"></i>
+                        AI Forecast
+                    </button>
                 </div>
             </div>
 
-            <!-- Action Bar -->
-            <div class="widget" style="margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <div style="display: flex; gap: 1rem; align-items: center;">
-                        <select style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px;">
-                            <option>Last 30 Days</option>
-                            <option>Last Quarter</option>
-                            <option>YTD</option>
-                            <option>Custom Range</option>
-                        </select>
-                        <select style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px;">
-                            <option>All Projects</option>
-                            <option>Active Projects</option>
-                            <option>Completed Projects</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; gap: 1rem;">
-                        <div class="wireframe-button">📊 Export Report</div>
-                        <div class="wireframe-button">🤖 AI Variance Analysis</div>
-                        <div class="wireframe-button">📈 Forecasting</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cost Overview Cards -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                
-                <!-- Total Project Costs -->
-                <div class="widget" style="border-left: 4px solid #007bff;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                        <div style="color: #007bff; font-size: 1.2rem;">💰</div>
-                        <h3 style="color: #495057; font-size: 1rem;">Total Project Costs</h3>
-                    </div>
-                    <div style="font-size: 2.2rem; font-weight: bold; color: #495057; margin-bottom: 1rem;">$8.4M</div>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <div style="font-size: 0.9rem; color: #666;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">Labor: $5.2M (62%)</div>
-                            <div style="background: #ecf0f1; height: 6px; border-radius: 3px; overflow: hidden;">
-                                <div style="background: #007bff; height: 100%; width: 62%; border-radius: 3px;"></div>
-                            </div>
+            <!-- Cost Overview KPIs -->
+            <div class="kpi-grid animate-slide-up">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon primary">
+                            <i class="fas fa-dollar-sign"></i>
                         </div>
-                        <div style="font-size: 0.9rem; color: #666;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">Materials: $2.8M (33%)</div>
-                            <div style="background: #ecf0f1; height: 6px; border-radius: 3px; overflow: hidden;">
-                                <div style="background: #28a745; height: 100%; width: 33%; border-radius: 3px;"></div>
-                            </div>
-                        </div>
-                        <div style="font-size: 0.9rem; color: #666;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">Overhead: $0.4M (5%)</div>
-                            <div style="background: #ecf0f1; height: 6px; border-radius: 3px; overflow: hidden;">
-                                <div style="background: #f39c12; height: 100%; width: 5%; border-radius: 3px;"></div>
-                            </div>
-                        </div>
+                        <h3 class="kpi-title">Total Project Costs</h3>
+                    </div>
+                    <div class="kpi-value">$8.4M</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +5.2% vs budget
                     </div>
                 </div>
 
-                <!-- Budget Variance -->
-                <div class="widget" style="border-left: 4px solid #28a745;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                        <div style="color: #28a745; font-size: 1.2rem;">📊</div>
-                        <h3 style="color: #495057; font-size: 1rem;">Budget Variance</h3>
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon success">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3 class="kpi-title">Budget Variance</h3>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="color: #28a745; font-size: 1.8rem; font-weight: bold;">$127K</div>
-                        <div style="color: #28a745; font-size: 0.9rem; margin: 5px 0;">Under Budget (1.5%)</div>
-                    </div>
-                    <div style="background: rgba(40, 167, 69, 0.1); padding: 0.8rem; border-radius: 5px; margin-top: 1rem; display: flex; align-items: center; gap: 8px;">
-                        <div style="color: #28a745;">🤖</div>
-                        <span style="color: #1e7e34; font-size: 0.85rem;">AI detected savings from optimized scheduling</span>
+                    <div class="kpi-value">-$127K</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-down"></i>
+                        Under budget (1.5%)
                     </div>
                 </div>
 
-                <!-- Cost Alerts -->
-                <div class="widget" style="border-left: 4px solid #dc3545;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                        <div style="color: #dc3545; font-size: 1.2rem;">⚠</div>
-                        <h3 style="color: #495057; font-size: 1rem;">Cost Alerts</h3>
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="kpi-title">Cost Alerts</h3>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="background: #f8d7da; border: 2px solid #f5c6cb; border-radius: 8px; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.85rem; color: #721c24;">Project ABC123: 15% overrun risk</span>
-                            <div class="wireframe-button" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Review</div>
+                    <div class="kpi-value">3</div>
+                    <div class="kpi-trend negative">
+                        <i class="fas fa-arrow-up"></i>
+                        Projects at risk
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon info">
+                            <i class="fas fa-percentage"></i>
                         </div>
-                        <div style="background: #fff3cd; border: 2px solid #ffeaa7; border-radius: 8px; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.85rem; color: #856404;">Material costs increased 8%</span>
-                            <div class="wireframe-button" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Details</div>
-                        </div>
+                        <h3 class="kpi-title">Profit Margin</h3>
+                    </div>
+                    <div class="kpi-value">18.3%</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +2.1% improvement
                     </div>
                 </div>
             </div>
 
-            <!-- Cost Analysis Sections -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 3rem;">
-                
+            <!-- Cost Breakdown and Analytics -->
+            <div class="grid grid-2" style="margin-top: 2rem;">
                 <!-- Cost Trends Chart -->
-                <div class="widget">
-                    <h3 style="margin-bottom: 1rem; color: #495057; display: flex; align-items: center; gap: 10px;">📈 Cost Trends & AI Predictions</h3>
-                    
-                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.8rem;">
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <div style="width: 12px; height: 12px; background: #007bff; border-radius: 2px;"></div>
-                            <span>Actual Costs</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <div style="width: 12px; height: 12px; background: #dc3545; border-radius: 2px;"></div>
-                            <span>Budget</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <div style="width: 12px; height: 12px; background: #28a745; border-radius: 2px;"></div>
-                            <span>AI Forecast</span>
+                <div class="chart-container animate-slide-up">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-chart-line"></i>
+                            Cost Trends & AI Predictions
+                        </h3>
+                        <div class="chart-actions">
+                            <button class="btn btn-secondary btn-sm" id="toggleForecast">
+                                <i class="fas fa-brain"></i>
+                                AI Forecast
+                            </button>
                         </div>
                     </div>
-                    
-                    <div class="chart-placeholder" style="height: 300px;">
-                        [COST TRENDS CHART]<br>
-                        Line chart showing actual vs budgeted costs<br>
-                        with AI-powered future projections<br><br>
-                        Key Insights:<br>
-                        • Q1: 5% under budget<br>
-                        • Q2: On track<br>
-                        • Q3 Forecast: 3% savings expected
-                    </div>
+                    <canvas id="costTrendsChart" height="300"></canvas>
                 </div>
 
-                <!-- Profitability Analysis -->
-                <div class="widget">
-                    <h3 style="margin-bottom: 1rem; color: #495057; display: flex; align-items: center; gap: 10px;">% Profitability Analysis</h3>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                            <span style="color: #666; font-size: 0.9rem;">Gross Margin</span>
-                            <span style="font-weight: bold; color: #28a745; font-size: 1.1rem;">22.3%</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                            <span style="color: #666; font-size: 0.9rem;">Net Margin</span>
-                            <span style="font-weight: bold; color: #495057; font-size: 1.1rem;">18.1%</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                            <span style="color: #666; font-size: 0.9rem;">ROI</span>
-                            <span style="font-weight: bold; color: #28a745; font-size: 1.1rem;">15.7%</span>
-                        </div>
+                <!-- Cost Category Breakdown -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-chart-pie"></i>
+                            Cost Category Breakdown
+                        </h3>
+                        <p class="card-subtitle">Q3 2025 distribution</p>
                     </div>
-                    
-                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
-                        <h4 style="color: #495057; margin-bottom: 0.5rem; font-size: 0.9rem;">🤖 AI Recommendations</h4>
-                        <div style="display: flex; align-items: center; gap: 10px; padding: 0.8rem; background: #fff; border-radius: 5px; margin-bottom: 0.5rem; font-size: 0.85rem;">
-                            <div style="color: #f39c12;">💡</div>
-                            <span style="color: #495057;">Increase pricing by 3% to improve margins by $89K</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 10px; padding: 0.8rem; background: #fff; border-radius: 5px; font-size: 0.85rem;">
-                            <div style="color: #f39c12;">⏰</div>
-                            <span style="color: #495057;">Optimize schedules to reduce overtime costs by 12%</span>
+                    <div class="card-body">
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <div class="cost-label">
+                                    <span class="cost-category">Labor Costs</span>
+                                    <span class="cost-percentage">62%</span>
+                                </div>
+                                <div class="cost-amount">$5.2M</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 62%" data-width="62%"></div>
+                                </div>
+                            </div>
+
+                            <div class="cost-item">
+                                <div class="cost-label">
+                                    <span class="cost-category">Materials</span>
+                                    <span class="cost-percentage">33%</span>
+                                </div>
+                                <div class="cost-amount">$2.8M</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 33%; background: linear-gradient(90deg, var(--success-color), #38a169);" data-width="33%"></div>
+                                </div>
+                            </div>
+
+                            <div class="cost-item">
+                                <div class="cost-label">
+                                    <span class="cost-category">Equipment</span>
+                                    <span class="cost-percentage">3%</span>
+                                </div>
+                                <div class="cost-amount">$250K</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 3%; background: linear-gradient(90deg, var(--warning-color), #dd6b20);" data-width="3%"></div>
+                                </div>
+                            </div>
+
+                            <div class="cost-item">
+                                <div class="cost-label">
+                                    <span class="cost-category">Overhead</span>
+                                    <span class="cost-percentage">2%</span>
+                                </div>
+                                <div class="cost-amount">$150K</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 2%; background: linear-gradient(90deg, var(--info-color), #2c5282);" data-width="2%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Cost Breakdown Table -->
-            <div class="widget">
-                <h3 style="margin-bottom: 1.5rem; color: #495057;">Project Cost Breakdown</h3>
-                <table class="wireframe-table">
-                    <thead>
-                        <tr>
-                            <th>Project Name</th>
-                            <th>Budget</th>
-                            <th>Actual Cost</th>
-                            <th>Variance</th>
-                            <th>Progress</th>
-                            <th>AI Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Industrial Complex - Phase 1</strong></td>
-                            <td>$2.1M</td>
-                            <td>$1.9M</td>
-                            <td style="color: #28a745;">-$200K (-9.5%)</td>
-                            <td>68%</td>
-                            <td><span style="color: #28a745; font-size: 0.8rem;">🤖 On Track</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Edit</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Commercial Tower - Maintenance</strong></td>
-                            <td>$850K</td>
-                            <td>$123K</td>
-                            <td style="color: #6c757d;">-$727K (Planning)</td>
-                            <td>15%</td>
-                            <td><span style="color: #007bff; font-size: 0.8rem;">🤖 Optimized</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Edit</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>Residential Complex - Phase 3</strong></td>
-                            <td>$3.2M</td>
-                            <td>$3.68M</td>
-                            <td style="color: #dc3545;">+$480K (+15%)</td>
-                            <td>42%</td>
-                            <td><span style="color: #dc3545; font-size: 0.8rem;">⚠ Alert</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #dc3545; color: #fff; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Urgent</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Details</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Healthcare Facility - Phase 2</strong></td>
-                            <td>$1.8M</td>
-                            <td>$1.65M</td>
-                            <td style="color: #28a745;">-$150K (-8.3%)</td>
-                            <td>89%</td>
-                            <td><span style="color: #28a745; font-size: 0.8rem;">🤖 Ahead</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Close</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Office Complex - Phase 1</strong></td>
-                            <td>$950K</td>
-                            <td>$890K</td>
-                            <td style="color: #28a745;">-$60K (-6.3%)</td>
-                            <td>76%</td>
-                            <td><span style="color: #007bff; font-size: 0.8rem;">🤖 Stable</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Edit</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Project Cost Analysis Table -->
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-table"></i>
+                        Project Cost Analysis
+                    </h3>
+                    <p class="card-subtitle">Detailed cost breakdown by project</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Budget</th>
+                                    <th>Actual Cost</th>
+                                    <th>Variance</th>
+                                    <th>Progress</th>
+                                    <th>AI Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="project-info">
+                                            <strong>Industrial Complex - Phase 1</strong>
+                                            <div class="project-meta">Riyadh, SA • 45 team members</div>
+                                        </div>
+                                    </td>
+                                    <td>$2.1M</td>
+                                    <td>$1.9M</td>
+                                    <td><span class="variance positive">-$200K (-9.5%)</span></td>
+                                    <td>
+                                        <div class="progress-info">
+                                            <span class="progress-text">68%</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 68%" data-width="68%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge active">🤖 On Track</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-info">
+                                            <strong>Commercial Tower - Maintenance</strong>
+                                            <div class="project-meta">Jeddah, SA • 28 team members</div>
+                                        </div>
+                                    </td>
+                                    <td>$850K</td>
+                                    <td>$123K</td>
+                                    <td><span class="variance neutral">-$727K (Planning)</span></td>
+                                    <td>
+                                        <div class="progress-info">
+                                            <span class="progress-text">15%</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 15%" data-width="15%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge pending">🤖 Optimized</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="alert-row">
+                                    <td>
+                                        <div class="project-info">
+                                            <strong>Residential Complex - Phase 3</strong>
+                                            <div class="project-meta">Dammam, SA • 62 team members</div>
+                                        </div>
+                                    </td>
+                                    <td>$3.2M</td>
+                                    <td>$3.68M</td>
+                                    <td><span class="variance negative">+$480K (+15%)</span></td>
+                                    <td>
+                                        <div class="progress-info">
+                                            <span class="progress-text">42%</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 42%; background: linear-gradient(90deg, var(--error-color), #e53e3e);" data-width="42%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge error">⚠ Alert</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-warning btn-sm">Urgent</button>
+                                            <button class="btn btn-secondary btn-sm">Details</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-info">
+                                            <strong>Healthcare Facility - Phase 2</strong>
+                                            <div class="project-meta">Mecca, SA • 35 team members</div>
+                                        </div>
+                                    </td>
+                                    <td>$1.8M</td>
+                                    <td>$1.65M</td>
+                                    <td><span class="variance positive">-$150K (-8.3%)</span></td>
+                                    <td>
+                                        <div class="progress-info">
+                                            <span class="progress-text">89%</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 89%" data-width="89%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge completed">🤖 Ahead</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-success btn-sm">Close</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-info">
+                                            <strong>Office Complex - Phase 1</strong>
+                                            <div class="project-meta">Medina, SA • 22 team members</div>
+                                        </div>
+                                    </td>
+                                    <td>$950K</td>
+                                    <td>$890K</td>
+                                    <td><span class="variance positive">-$60K (-6.3%)</span></td>
+                                    <td>
+                                        <div class="progress-info">
+                                            <span class="progress-text">76%</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 76%" data-width="76%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge active">🤖 Stable</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
-            <!-- AI Insights Panel -->
-            <div class="widget" style="margin-top: 2rem; border-left: 4px solid #9c27b0;">
-                <h3 style="color: #495057; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-                    🤖 AI Cost Intelligence Dashboard
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                    <div>
-                        <h4 style="color: #495057; margin-bottom: 1rem;">Predictive Analytics</h4>
-                        <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="color: #4a148c; font-weight: bold; margin-bottom: 5px;">Cost Overrun Prediction</div>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">AI forecasts 18% increase in material costs next quarter based on market trends</p>
+            <!-- AI Cost Intelligence Panel -->
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-brain"></i>
+                        AI Cost Intelligence Dashboard
+                    </h3>
+                    <p class="card-subtitle">Predictive analytics and optimization recommendations</p>
+                </div>
+                <div class="card-body">
+                    <div class="grid grid-2">
+                        <div class="ai-insights">
+                            <h4>Predictive Analytics</h4>
+                            <div class="insight-item">
+                                <div class="insight-icon warning">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="insight-content">
+                                    <h5>Cost Overrun Prediction</h5>
+                                    <p>AI forecasts 18% increase in material costs next quarter based on market trends and supplier data.</p>
+                                    <div class="insight-confidence">Confidence: 87%</div>
+                                </div>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight-icon success">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="insight-content">
+                                    <h5>Resource Optimization</h5>
+                                    <p>Potential $127K savings identified through workforce reallocation and equipment sharing between projects.</p>
+                                    <div class="insight-confidence">Confidence: 94%</div>
+                                </div>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight-icon info">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="insight-content">
+                                    <h5>Schedule Optimization</h5>
+                                    <p>Adjusting project timelines could reduce overtime costs by 12% and improve overall efficiency.</p>
+                                    <div class="insight-confidence">Confidence: 76%</div>
+                                </div>
+                            </div>
                         </div>
-                        <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px;">
-                            <div style="color: #4a148c; font-weight: bold; margin-bottom: 5px;">Resource Optimization</div>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">Potential $127K savings identified through workforce reallocation</p>
+
+                        <div class="risk-assessment">
+                            <h4>Risk Assessment</h4>
+                            <div class="risk-metrics">
+                                <div class="risk-item high">
+                                    <div class="risk-label">High Risk Projects</div>
+                                    <div class="risk-count">3</div>
+                                    <div class="risk-projects">Residential Complex, Infrastructure Upgrade, Smart Building</div>
+                                </div>
+                                <div class="risk-item medium">
+                                    <div class="risk-label">Medium Risk Projects</div>
+                                    <div class="risk-count">7</div>
+                                    <div class="risk-projects">Commercial Tower, Office Complex, Healthcare Facility</div>
+                                </div>
+                                <div class="risk-item low">
+                                    <div class="risk-label">Low Risk Projects</div>
+                                    <div class="risk-count">23</div>
+                                    <div class="risk-projects">Industrial Complex, Maintenance Projects, Small Renovations</div>
+                                </div>
+                                <div class="risk-item monitored">
+                                    <div class="risk-label">AI Monitored</div>
+                                    <div class="risk-count">33/33</div>
+                                    <div class="risk-projects">All projects under continuous AI surveillance</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div>
-                        <h4 style="color: #495057; margin-bottom: 1rem;">Risk Assessment</h4>
-                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #f8d7da; border-radius: 5px;">
-                                <span style="font-size: 0.9rem; color: #721c24;">High Risk Projects</span>
-                                <span style="font-weight: bold; color: #721c24;">3</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #fff3cd; border-radius: 5px;">
-                                <span style="font-size: 0.9rem; color: #856404;">Medium Risk Projects</span>
-                                <span style="font-weight: bold; color: #856404;">7</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #d4edda; border-radius: 5px;">
-                                <span style="font-size: 0.9rem; color: #155724;">Low Risk Projects</span>
-                                <span style="font-weight: bold; color: #155724;">23</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #e3f2fd; border-radius: 5px;">
-                                <span style="font-size: 0.9rem; color: #1565c0;">AI Monitored</span>
-                                <span style="font-weight: bold; color: #1565c0;">33/33</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-history"></i>
+                        View Historical Analysis
+                    </button>
+                    <button class="btn btn-primary" data-action="generate-insights">
+                        <i class="fas fa-refresh"></i>
+                        Generate New Insights
+                    </button>
                 </div>
             </div>
         </main>
-
-        <!-- Footer -->
-        <footer class="wireframe-footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <span>© 2025 Enterprise Management System</span>
-                </div>
-                <div class="footer-section">
-                    <span>Cost Analysis | AI Monitoring Active</span>
-                </div>
-                <div class="footer-section">
-                    <a href="#export">Export Data</a>
-                    <a href="#alerts">Alert Settings</a>
-                    <a href="#reports">Custom Reports</a>
-                </div>
-            </div>
-        </footer>
     </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // Cost Analysis specific JavaScript
+        class CostAnalysis {
+            constructor() {
+                this.charts = {};
+                this.initializeCharts();
+                this.initializeInteractions();
+            }
+
+            initializeCharts() {
+                this.createCostTrendsChart();
+                this.animateProgressBars();
+            }
+
+            createCostTrendsChart() {
+                const ctx = document.getElementById('costTrendsChart').getContext('2d');
+                
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+                const actualCosts = [1.8, 1.9, 2.1, 1.85, 2.3, 2.1, 2.4, 2.6, 2.8];
+                const budgetedCosts = [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0];
+                const forecastCosts = [null, null, null, null, null, null, null, null, 2.8, 3.1, 3.3, 3.5];
+                
+                this.charts.costTrends = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: [...months, 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            label: 'Actual Costs',
+                            data: [...actualCosts, null, null, null],
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }, {
+                            label: 'Budgeted',
+                            data: [...budgetedCosts, null, null, null],
+                            borderColor: '#f56565',
+                            backgroundColor: 'rgba(245, 101, 101, 0.1)',
+                            fill: false,
+                            tension: 0.4,
+                            borderDash: [5, 5]
+                        }, {
+                            label: 'AI Forecast',
+                            data: forecastCosts,
+                            borderColor: '#48bb78',
+                            backgroundColor: 'rgba(72, 187, 120, 0.1)',
+                            fill: false,
+                            tension: 0.4,
+                            borderDash: [10, 5]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: false
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                min: 1.5,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toFixed(1) + 'M';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            animateProgressBars() {
+                const progressBars = document.querySelectorAll('.progress-bar');
+                progressBars.forEach(bar => {
+                    const width = bar.dataset.width || bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 300);
+                });
+            }
+
+            initializeInteractions() {
+                // Toggle forecast visibility
+                document.getElementById('toggleForecast')?.addEventListener('click', function() {
+                    if (window.costAnalysis.charts.costTrends) {
+                        const chart = window.costAnalysis.charts.costTrends;
+                        const forecastDataset = chart.data.datasets[2];
+                        forecastDataset.hidden = !forecastDataset.hidden;
+                        chart.update();
+                        
+                        this.innerHTML = forecastDataset.hidden ? 
+                            '<i class="fas fa-brain"></i> Show Forecast' : 
+                            '<i class="fas fa-brain"></i> Hide Forecast';
+                    }
+                });
+
+                // Time filter change
+                document.getElementById('timeFilter')?.addEventListener('change', function() {
+                    if (window.enterpriseApp) {
+                        window.enterpriseApp.showToast(`Updating cost analysis for ${this.options[this.selectedIndex].text}`, 'info');
+                        
+                        setTimeout(() => {
+                            window.costAnalysis.updateChartData();
+                            window.enterpriseApp.showToast('Cost analysis updated!', 'success');
+                        }, 1500);
+                    }
+                });
+
+                // Action buttons
+                document.querySelectorAll('[data-action]').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const action = e.target.dataset.action;
+                        this.handleAction(action);
+                    });
+                });
+            }
+
+            handleAction(action) {
+                if (window.enterpriseApp) {
+                    switch (action) {
+                        case 'export-report':
+                            window.enterpriseApp.showToast('Preparing cost analysis report...', 'info');
+                            setTimeout(() => {
+                                window.enterpriseApp.showToast('Report exported successfully!', 'success');
+                            }, 2000);
+                            break;
+                        case 'ai-forecast':
+                            window.enterpriseApp.showToast('Generating AI cost forecast...', 'info');
+                            setTimeout(() => {
+                                window.enterpriseApp.showToast('AI forecast generated!', 'success');
+                            }, 3000);
+                            break;
+                        case 'generate-insights':
+                            window.enterpriseApp.showToast('AI is analyzing cost data...', 'info');
+                            setTimeout(() => {
+                                window.enterpriseApp.showToast('New insights generated!', 'success');
+                            }, 4000);
+                            break;
+                    }
+                }
+            }
+
+            updateChartData() {
+                if (this.charts.costTrends) {
+                    const chart = this.charts.costTrends;
+                    const newValue = 2.0 + Math.random() * 1.0;
+                    
+                    chart.data.labels.shift();
+                    chart.data.labels.push('New');
+                    
+                    chart.data.datasets[0].data.shift();
+                    chart.data.datasets[0].data.push(newValue);
+                    
+                    chart.update('active');
+                }
+            }
+        }
+
+        // Initialize cost analysis when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            window.costAnalysis = new CostAnalysis();
+        });
+    </script>
+
+    <style>
+        /* Cost Analysis specific styles */
+        .cost-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .cost-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cost-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cost-category {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .cost-percentage {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .cost-amount {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .project-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .variance {
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+
+        .variance.positive {
+            background: rgba(72, 187, 120, 0.1);
+            color: var(--success-color);
+        }
+
+        .variance.negative {
+            background: rgba(245, 101, 101, 0.1);
+            color: var(--error-color);
+        }
+
+        .variance.neutral {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--info-color);
+        }
+
+        .progress-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 100px;
+        }
+
+        .progress-text {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .alert-row {
+            background: rgba(245, 101, 101, 0.05);
+            border-left: 4px solid var(--error-color);
+        }
+
+        .ai-insights {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .insight-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .insight-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .insight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .insight-icon.warning {
+            background: var(--warning-color);
+        }
+
+        .insight-icon.success {
+            background: var(--success-color);
+        }
+
+        .insight-icon.info {
+            background: var(--info-color);
+        }
+
+        .insight-content {
+            flex: 1;
+        }
+
+        .insight-content h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .insight-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0 0 0.75rem 0;
+            line-height: 1.5;
+        }
+
+        .insight-confidence {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .risk-assessment {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .risk-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .risk-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+
+        .risk-item.high {
+            background: rgba(245, 101, 101, 0.1);
+            border-left-color: var(--error-color);
+        }
+
+        .risk-item.medium {
+            background: rgba(237, 137, 54, 0.1);
+            border-left-color: var(--warning-color);
+        }
+
+        .risk-item.low {
+            background: rgba(72, 187, 120, 0.1);
+            border-left-color: var(--success-color);
+        }
+
+        .risk-item.monitored {
+            background: rgba(66, 153, 225, 0.1);
+            border-left-color: var(--info-color);
+        }
+
+        .risk-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .risk-count {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .risk-projects {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .chart-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid.grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .insight-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .risk-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
 </body>
 </html>

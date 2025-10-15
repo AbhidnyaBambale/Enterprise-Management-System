@@ -3,70 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Inventory & PIM - Wireframes</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="wireframe-styles.css" rel="stylesheet">
+    <title>Smart Inventory Management - Enterprise Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="modern-styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="wireframe-container">
+    <div class="app-container">
         <!-- Header -->
-        <header class="wireframe-header">
+        <header class="app-header">
             <div class="header-content">
-                <div class="logo-area">
-                    <div class="logo-box">[LOGO]</div>
-                    <h1>Enterprise Management System</h1>
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Enterprise Management</h1>
+                        <p>Inventory Management Hub</p>
+                    </div>
                 </div>
-                <div class="user-area">
-                    <div class="user-box">[USER]</div>
-                    <span>Inventory Manager</span>
+                
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">8</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">IM</div>
+                        <div class="user-info">
+                            <h4>Inventory Manager</h4>
+                            <p>Smart PIM System</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Navigation -->
-        <nav class="wireframe-nav">
-            <div class="nav-item">
-                <a href="home.html">
+        <nav class="app-navigation">
+            <div class="nav-content">
+                <a href="website-home.html" class="nav-item">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="dashboard.html">
+                <a href="dashboard-modern.html" class="nav-item">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="projects.html">
+                <a href="projects-modern.html" class="nav-item">
                     <i class="fas fa-project-diagram"></i>
                     <span>Projects</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="mobile-app.html">
+                <a href="mobile-modern.html" class="nav-item">
                     <i class="fas fa-mobile-alt"></i>
                     <span>Mobile App</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="cost-analysis.html">
+                <a href="cost-analysis.html" class="nav-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Cost Analysis</span>
                 </a>
-            </div>
-            <div class="nav-item active">
-                <i class="fas fa-boxes"></i>
-                <span>Inventory</span>
-            </div>
-            <div class="nav-item">
-                <a href="hr-portal.html">
+                <div class="nav-item active">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </div>
+                <a href="hr-portal.html" class="nav-item">
                     <i class="fas fa-users"></i>
                     <span>HR Portal</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="maintenance.html">
+                <a href="maintenance.html" class="nav-item">
                     <i class="fas fa-tools"></i>
                     <span>Maintenance</span>
                 </a>
@@ -74,377 +78,1268 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="wireframe-main">
-            <div class="page-header">
-                <h2>Smart Inventory & PIM Management</h2>
-                <div class="breadcrumb">
-                    <span><a href="home.html">Home</a></span>
-                    <span>Inventory Management</span>
+        <main class="app-main">
+            <!-- Page Header -->
+            <div class="page-header animate-fade-in">
+                <div class="page-title">
+                    <i class="fas fa-boxes"></i>
+                    <div>
+                        <h1>Smart Inventory & PIM Management</h1>
+                        <div class="breadcrumb">
+                            <a href="website-home.html">Home</a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span>Inventory Management</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <select class="form-control" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="hvac">HVAC</option>
+                        <option value="safety">Safety Equipment</option>
+                    </select>
+                    <button class="btn btn-secondary" data-action="scan-qr">
+                        <i class="fas fa-qrcode"></i>
+                        Scan QR Code
+                    </button>
+                    <button class="btn btn-primary" data-action="add-item">
+                        <i class="fas fa-plus"></i>
+                        Add Item
+                    </button>
                 </div>
             </div>
 
-            <!-- Action Bar -->
-            <div class="widget" style="margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <div style="display: flex; gap: 1rem; align-items: center;">
-                        <select style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px;">
-                            <option>All Categories</option>
-                            <option>Electrical</option>
-                            <option>Plumbing</option>
-                            <option>HVAC</option>
-                            <option>Safety Equipment</option>
-                        </select>
-                        <input type="text" placeholder="Search items..." style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px; width: 250px;">
-                        <div class="wireframe-button">🔍 Search</div>
+            <!-- Inventory Overview KPIs -->
+            <div class="kpi-grid animate-slide-up">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon primary">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3 class="kpi-title">Total Items</h3>
                     </div>
-                    <div style="display: flex; gap: 1rem;">
-                        <div class="wireframe-button" style="background: #007bff; color: #fff; border-color: #007bff;">+ Add Item</div>
-                        <div class="wireframe-button">🤖 AI Replenishment</div>
-                        <div class="wireframe-button">📱 Scan QR Code</div>
+                    <div class="kpi-value">2,847</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +127 this month
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="kpi-title">Low Stock Alerts</h3>
+                    </div>
+                    <div class="kpi-value">23</div>
+                    <div class="kpi-trend negative">
+                        <i class="fas fa-arrow-up"></i>
+                        Requires attention
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon success">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="kpi-title">In Transit</h3>
+                    </div>
+                    <div class="kpi-value">145</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +12 pending delivery
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon info">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="kpi-title">Total Value</h3>
+                    </div>
+                    <div class="kpi-value">$1.2M</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +8.5% this quarter
                     </div>
                 </div>
             </div>
 
-            <!-- Inventory Statistics -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #007bff;">
-                    <div style="font-size: 1.5rem; color: #007bff;">📦</div>
-                    <div>
-                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Total Items</h3>
-                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">2,847</span>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #f39c12;">
-                    <div style="font-size: 1.5rem; color: #f39c12;">⚠</div>
-                    <div>
-                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Low Stock</h3>
-                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">23</span>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #28a745;">
-                    <div style="font-size: 1.5rem; color: #28a745;">🚛</div>
-                    <div>
-                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">In Transit</h3>
-                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">145</span>
-                    </div>
-                </div>
-                
-                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; border-left: 4px solid #9c27b0;">
-                    <div style="font-size: 1.5rem; color: #9c27b0;">💰</div>
-                    <div>
-                        <h3 style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">Total Value</h3>
-                        <span style="font-size: 1.5rem; font-weight: bold; color: #495057;">$1.2M</span>
+            <!-- Search and Filters -->
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-body">
+                    <div class="search-filters">
+                        <div class="search-group">
+                            <div class="search-input-container">
+                                <input type="text" class="form-control" placeholder="Search items by name, SKU, or category..." id="searchInput">
+                                <i class="fas fa-search search-icon"></i>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <select class="form-control" id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="in-stock">In Stock</option>
+                                <option value="low-stock">Low Stock</option>
+                                <option value="out-of-stock">Out of Stock</option>
+                                <option value="in-transit">In Transit</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select class="form-control" id="locationFilter">
+                                <option value="">All Locations</option>
+                                <option value="warehouse-a">Warehouse A</option>
+                                <option value="warehouse-b">Warehouse B</option>
+                                <option value="warehouse-c">Warehouse C</option>
+                                <option value="site-storage">Site Storage</option>
+                            </select>
+                        </div>
+                        <div class="filter-actions">
+                            <button class="btn btn-primary" data-action="ai-replenishment">
+                                <i class="fas fa-robot"></i>
+                                AI Replenishment
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Inventory Items Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-                
+            <div class="inventory-grid animate-slide-up" id="inventoryGrid" style="margin-top: 2rem;">
                 <!-- Normal Stock Item -->
-                <div class="widget" style="border-left: 4px solid #28a745; padding: 1.5rem;">
-                    <div style="display: grid; grid-template-areas: 'image details actions' 'suggestion suggestion suggestion'; grid-template-columns: 60px 1fr auto; grid-template-rows: auto auto; gap: 1rem;">
-                        <div style="grid-area: image; display: flex; align-items: center; justify-content: center; background: #007bff; color: #fff; border-radius: 8px; height: 50px; font-size: 1.2rem;">⚡</div>
-                        
-                        <div style="grid-area: details;">
-                            <h4 style="color: #495057; margin-bottom: 5px; font-size: 1rem;">Industrial Cable - 10AWG</h4>
-                            <p style="color: #6c757d; font-size: 0.8rem; margin-bottom: 10px; font-family: monospace;">ELC-10AWG-500M</p>
-                            <div style="display: flex; gap: 15px;">
-                                <span style="color: #28a745; font-size: 0.9rem;">Stock: 245m</span>
-                                <span style="color: #6c757d; font-weight: 500; font-size: 0.9rem;">$2.45/m</span>
+                <div class="inventory-card" data-category="electrical" data-status="in-stock">
+                    <div class="item-header">
+                        <div class="item-icon electrical">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="item-info">
+                            <h3>Industrial Cable - 10AWG</h3>
+                            <p class="item-sku">ELC-10AWG-500M</p>
+                            <div class="item-meta">
+                                <span class="item-location">Warehouse A</span>
+                                <span class="item-category">Electrical</span>
                             </div>
                         </div>
-                        
-                        <div style="grid-area: actions; display: flex; gap: 5px; align-items: flex-start;">
-                            <div style="width: 30px; height: 30px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">✏</div>
-                            <div style="width: 30px; height: 30px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">➖</div>
+                        <div class="item-actions">
+                            <button class="btn-icon" data-action="edit-item">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon" data-action="adjust-stock">
+                                <i class="fas fa-minus"></i>
+                            </button>
                         </div>
-                        
-                        <div style="grid-area: suggestion; display: flex; align-items: center; gap: 8px; padding: 0.5rem; background: rgba(52, 152, 219, 0.1); border-radius: 5px; font-size: 0.8rem; color: #495057;">
-                            <div style="color: #007bff;">🤖</div>
+                    </div>
+                    <div class="item-stock">
+                        <div class="stock-info">
+                            <span class="stock-label">Current Stock</span>
+                            <span class="stock-value">245m</span>
+                        </div>
+                        <div class="stock-price">$2.45/m</div>
+                    </div>
+                    <div class="item-ai-suggestion">
+                        <div class="ai-suggestion success">
+                            <i class="fas fa-brain"></i>
                             <span>Auto-consume: Project XYZ - 50m required</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Low Stock Item -->
-                <div class="widget" style="border-left: 4px solid #f39c12; padding: 1.5rem; background: #fef9e7;">
-                    <div style="display: grid; grid-template-areas: 'image details actions' 'suggestion suggestion suggestion'; grid-template-columns: 60px 1fr auto; grid-template-rows: auto auto; gap: 1rem;">
-                        <div style="grid-area: image; display: flex; align-items: center; justify-content: center; background: #6c757d; color: #fff; border-radius: 8px; height: 50px; font-size: 1.2rem;">🔧</div>
-                        
-                        <div style="grid-area: details;">
-                            <h4 style="color: #495057; margin-bottom: 5px; font-size: 1rem;">Pipe Joint Compound</h4>
-                            <p style="color: #6c757d; font-size: 0.8rem; margin-bottom: 10px; font-family: monospace;">PLM-JC-500ML</p>
-                            <div style="display: flex; gap: 15px;">
-                                <span style="color: #f39c12; font-weight: bold; font-size: 0.9rem;">Stock: 12 units</span>
-                                <span style="color: #6c757d; font-weight: 500; font-size: 0.9rem;">$8.95/unit</span>
+                <div class="inventory-card low-stock" data-category="plumbing" data-status="low-stock">
+                    <div class="item-header">
+                        <div class="item-icon plumbing">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="item-info">
+                            <h3>Pipe Joint Compound</h3>
+                            <p class="item-sku">PLM-JC-500ML</p>
+                            <div class="item-meta">
+                                <span class="item-location">Warehouse B</span>
+                                <span class="item-category">Plumbing</span>
                             </div>
                         </div>
-                        
-                        <div style="grid-area: actions; display: flex; gap: 5px; align-items: flex-start;">
-                            <div style="width: 30px; height: 30px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">✏</div>
-                            <div style="width: 30px; height: 30px; background: #f39c12; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">🛒</div>
+                        <div class="item-actions">
+                            <button class="btn-icon" data-action="edit-item">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon urgent" data-action="reorder">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
                         </div>
-                        
-                        <div style="grid-area: suggestion; display: flex; align-items: center; gap: 8px; padding: 0.5rem; background: rgba(231, 76, 60, 0.1); border-radius: 5px; font-size: 0.8rem; color: #c0392b;">
-                            <div style="color: #dc3545;">⚠</div>
+                    </div>
+                    <div class="item-stock">
+                        <div class="stock-info">
+                            <span class="stock-label">Current Stock</span>
+                            <span class="stock-value critical">12 units</span>
+                        </div>
+                        <div class="stock-price">$8.95/unit</div>
+                    </div>
+                    <div class="item-ai-suggestion">
+                        <div class="ai-suggestion warning">
+                            <i class="fas fa-exclamation-triangle"></i>
                             <span>Order 48 units - needed for 3 upcoming projects</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Normal Stock Item -->
-                <div class="widget" style="border-left: 4px solid #007bff; padding: 1.5rem;">
-                    <div style="display: grid; grid-template-areas: 'image details actions' 'suggestion suggestion suggestion'; grid-template-columns: 60px 1fr auto; grid-template-rows: auto auto; gap: 1rem;">
-                        <div style="grid-area: image; display: flex; align-items: center; justify-content: center; background: #f39c12; color: #fff; border-radius: 8px; height: 50px; font-size: 1.2rem;">⛑</div>
-                        
-                        <div style="grid-area: details;">
-                            <h4 style="color: #495057; margin-bottom: 5px; font-size: 1rem;">Safety Helmet - Class E</h4>
-                            <p style="color: #6c757d; font-size: 0.8rem; margin-bottom: 10px; font-family: monospace;">SAF-HLM-CE-WH</p>
-                            <div style="display: flex; gap: 15px;">
-                                <span style="color: #28a745; font-size: 0.9rem;">Stock: 87 units</span>
-                                <span style="color: #6c757d; font-weight: 500; font-size: 0.9rem;">$24.99/unit</span>
+                <!-- Safety Equipment -->
+                <div class="inventory-card" data-category="safety" data-status="in-stock">
+                    <div class="item-header">
+                        <div class="item-icon safety">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <div class="item-info">
+                            <h3>Safety Helmet - Class E</h3>
+                            <p class="item-sku">SAF-HLM-CE-WH</p>
+                            <div class="item-meta">
+                                <span class="item-location">Warehouse C</span>
+                                <span class="item-category">Safety</span>
                             </div>
                         </div>
-                        
-                        <div style="grid-area: actions; display: flex; gap: 5px; align-items: flex-start;">
-                            <div style="width: 30px; height: 30px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">✏</div>
-                            <div style="width: 30px; height: 30px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">📱</div>
+                        <div class="item-actions">
+                            <button class="btn-icon" data-action="edit-item">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon" data-action="scan-qr">
+                                <i class="fas fa-qrcode"></i>
+                            </button>
                         </div>
-                        
-                        <div style="grid-area: suggestion; display: flex; align-items: center; gap: 8px; padding: 0.5rem; background: rgba(52, 152, 219, 0.1); border-radius: 5px; font-size: 0.8rem; color: #495057;">
-                            <div style="color: #007bff;">🤖</div>
+                    </div>
+                    <div class="item-stock">
+                        <div class="stock-info">
+                            <span class="stock-label">Current Stock</span>
+                            <span class="stock-value">87 units</span>
+                        </div>
+                        <div class="stock-price">$24.99/unit</div>
+                    </div>
+                    <div class="item-ai-suggestion">
+                        <div class="ai-suggestion info">
+                            <i class="fas fa-brain"></i>
                             <span>Usage trend: Stable - no action required</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- New Item -->
-                <div class="widget" style="border-left: 4px solid #9c27b0; padding: 1.5rem;">
-                    <div style="display: grid; grid-template-areas: 'image details actions' 'suggestion suggestion suggestion'; grid-template-columns: 60px 1fr auto; grid-template-rows: auto auto; gap: 1rem;">
-                        <div style="grid-area: image; display: flex; align-items: center; justify-content: center; background: #28a745; color: #fff; border-radius: 8px; height: 50px; font-size: 1.2rem;">💡</div>
-                        
-                        <div style="grid-area: details;">
-                            <h4 style="color: #495057; margin-bottom: 5px; font-size: 1rem;">LED Light Fixture - 50W</h4>
-                            <p style="color: #6c757d; font-size: 0.8rem; margin-bottom: 10px; font-family: monospace;">LED-FIX-50W-4K-IP65</p>
-                            <div style="display: flex; gap: 15px;">
-                                <span style="color: #9c27b0; font-weight: bold; font-size: 0.9rem;">New Item</span>
-                                <span style="color: #6c757d; font-weight: 500; font-size: 0.9rem;">$89.50/unit</span>
+                <div class="inventory-card new-item" data-category="electrical" data-status="in-stock">
+                    <div class="item-header">
+                        <div class="item-icon electrical">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="item-info">
+                            <h3>LED Light Fixture - 50W</h3>
+                            <p class="item-sku">LED-FIX-50W-4K-IP65</p>
+                            <div class="item-meta">
+                                <span class="item-location">Warehouse A</span>
+                                <span class="item-category">Electrical</span>
                             </div>
                         </div>
-                        
-                        <div style="grid-area: actions; display: flex; gap: 5px; align-items: flex-start;">
-                            <div style="width: 30px; height: 30px; background: #f8f9fa; border: 2px dashed #adb5bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">✏</div>
-                            <div style="width: 30px; height: 30px; background: #28a745; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer;">✓</div>
+                        <div class="item-actions">
+                            <button class="btn-icon" data-action="edit-item">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon success" data-action="approve-item">
+                                <i class="fas fa-check"></i>
+                            </button>
                         </div>
-                        
-                        <div style="grid-area: suggestion; display: flex; align-items: center; gap: 8px; padding: 0.5rem; background: rgba(156, 39, 176, 0.1); border-radius: 5px; font-size: 0.8rem; color: #495057;">
-                            <div style="color: #9c27b0;">🤖</div>
+                    </div>
+                    <div class="item-stock">
+                        <div class="stock-info">
+                            <span class="stock-label">Status</span>
+                            <span class="stock-value new">New Item</span>
+                        </div>
+                        <div class="stock-price">$89.50/unit</div>
+                    </div>
+                    <div class="item-ai-suggestion">
+                        <div class="ai-suggestion info">
+                            <i class="fas fa-brain"></i>
                             <span>AI-generated item code ready for approval</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HVAC Equipment -->
+                <div class="inventory-card" data-category="hvac" data-status="in-stock">
+                    <div class="item-header">
+                        <div class="item-icon hvac">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="item-info">
+                            <h3>HVAC Filter - Standard</h3>
+                            <p class="item-sku">HVAC-FLT-STD-12X12</p>
+                            <div class="item-meta">
+                                <span class="item-location">Warehouse B</span>
+                                <span class="item-category">HVAC</span>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn-icon" data-action="edit-item">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon" data-action="transfer">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-stock">
+                        <div class="stock-info">
+                            <span class="stock-label">Current Stock</span>
+                            <span class="stock-value">156 units</span>
+                        </div>
+                        <div class="stock-price">$12.75/unit</div>
+                    </div>
+                    <div class="item-ai-suggestion">
+                        <div class="ai-suggestion success">
+                            <i class="fas fa-brain"></i>
+                            <span>Optimal stock level maintained</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In Transit Item -->
+                <div class="inventory-card in-transit" data-category="electrical" data-status="in-transit">
+                    <div class="item-header">
+                        <div class="item-icon electrical">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="item-info">
+                            <h3>Power Outlet - Industrial</h3>
+                            <p class="item-sku">ELC-OUT-IND-220V</p>
+                            <div class="item-meta">
+                                <span class="item-location">In Transit</span>
+                                <span class="item-category">Electrical</span>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn-icon" data-action="track-shipment">
+                                <i class="fas fa-truck"></i>
+                            </button>
+                            <button class="btn-icon" data-action="view-details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-stock">
+                        <div class="stock-info">
+                            <span class="stock-label">Expected</span>
+                            <span class="stock-value">25 units</span>
+                        </div>
+                        <div class="stock-price">$45.00/unit</div>
+                    </div>
+                    <div class="item-ai-suggestion">
+                        <div class="ai-suggestion info">
+                            <i class="fas fa-truck"></i>
+                            <span>ETA: 2 days - Project ABC123 waiting</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- AI PIM Assistant Panel -->
-            <div class="widget" style="margin-bottom: 2rem; background: #e3f2fd; border-left: 4px solid #007bff;">
-                <h3 style="color: #495057; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-                    🤖 AI-Powered PIM Assistant
-                </h3>
-                
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="background: #fff; padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
-                                <div style="color: #007bff;">🏷</div>
-                                <strong style="color: #495057;">Auto-Generated Item Code</strong>
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-brain"></i>
+                        AI-Powered PIM Assistant
+                    </h3>
+                    <p class="card-subtitle">Intelligent inventory management recommendations</p>
+                </div>
+                <div class="card-body">
+                    <div class="ai-assistant-grid">
+                        <div class="ai-recommendation">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-tags"></i>
                             </div>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">For new LED light fixture: <code style="background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace;">LED-FIX-50W-4K-IP65</code></p>
+                            <div class="recommendation-content">
+                                <h5>Auto-Generated Item Code</h5>
+                                <p>For new LED light fixture: <code>LED-FIX-50W-4K-IP65</code></p>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">Apply</button>
+                                    <button class="btn btn-secondary btn-sm">Customize</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wireframe-button" style="background: #007bff; color: #fff; border-color: #007bff;">Apply</div>
-                    </div>
 
-                    <div style="background: #fff; padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
-                                <div style="color: #007bff;">📈</div>
-                                <strong style="color: #495057;">Demand Forecast</strong>
+                        <div class="ai-recommendation">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-chart-line"></i>
                             </div>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">Electrical cables: 15% increase expected next month based on project pipeline</p>
+                            <div class="recommendation-content">
+                                <h5>Demand Forecast</h5>
+                                <p>Electrical cables: 15% increase expected next month based on project pipeline</p>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">View Details</button>
+                                    <button class="btn btn-secondary btn-sm">Adjust Stock</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wireframe-button">View Details</div>
-                    </div>
 
-                    <div style="background: #fff; padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
-                                <div style="color: #007bff;">🔄</div>
-                                <strong style="color: #495057;">Automated Variant Selection</strong>
+                        <div class="ai-recommendation">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-sync-alt"></i>
                             </div>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">AI suggests correct product variants based on historical order patterns</p>
+                            <div class="recommendation-content">
+                                <h5>Automated Variant Selection</h5>
+                                <p>AI suggests correct product variants based on historical order patterns</p>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">Configure</button>
+                                    <button class="btn btn-secondary btn-sm">Learn More</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wireframe-button">Configure</div>
                     </div>
                 </div>
             </div>
 
             <!-- Inventory Analytics -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                
+            <div class="grid grid-2" style="margin-top: 2rem;">
                 <!-- Usage Analytics -->
-                <div class="widget">
-                    <h3 style="margin-bottom: 1rem; color: #495057;">Inventory Usage Analytics</h3>
-                    <div class="chart-placeholder" style="height: 250px;">
-                        [USAGE ANALYTICS CHART]<br><br>
-                        Top Consumed Items:<br>
-                        • Industrial Cable: 45% of usage<br>
-                        • Safety Equipment: 23% of usage<br>
-                        • Pipe Fittings: 18% of usage<br><br>
-                        Consumption Pattern: Steady growth
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Inventory Usage Analytics
+                        </h3>
+                        <p class="card-subtitle">Top consumed items and trends</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="usage-analytics">
+                            <div class="usage-item">
+                                <div class="usage-category">Industrial Cable</div>
+                                <div class="usage-percentage">45%</div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <div class="usage-item">
+                                <div class="usage-category">Safety Equipment</div>
+                                <div class="usage-percentage">23%</div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 23%"></div>
+                                </div>
+                            </div>
+                            <div class="usage-item">
+                                <div class="usage-category">Pipe Fittings</div>
+                                <div class="usage-percentage">18%</div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 18%"></div>
+                                </div>
+                            </div>
+                            <div class="usage-item">
+                                <div class="usage-category">HVAC Components</div>
+                                <div class="usage-percentage">14%</div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 14%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analytics-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Consumption pattern: Steady growth trend</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Stock Levels -->
-                <div class="widget">
-                    <h3 style="margin-bottom: 1rem; color: #495057;">Stock Level Status</h3>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.9rem;">Optimal Stock</span>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="background: #e9ecef; height: 8px; width: 150px; border-radius: 4px; overflow: hidden;">
-                                    <div style="background: #28a745; height: 100%; width: 68%;"></div>
-                                </div>
-                                <span style="font-size: 0.8rem; color: #6c757d;">1,940 items</span>
-                            </div>
-                        </div>
-                        
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.9rem;">Low Stock</span>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="background: #e9ecef; height: 8px; width: 150px; border-radius: 4px; overflow: hidden;">
-                                    <div style="background: #f39c12; height: 100%; width: 8%;"></div>
-                                </div>
-                                <span style="font-size: 0.8rem; color: #6c757d;">23 items</span>
-                            </div>
-                        </div>
-                        
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.9rem;">Out of Stock</span>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="background: #e9ecef; height: 8px; width: 150px; border-radius: 4px; overflow: hidden;">
-                                    <div style="background: #dc3545; height: 100%; width: 2%;"></div>
-                                </div>
-                                <span style="font-size: 0.8rem; color: #6c757d;">5 items</span>
-                            </div>
-                        </div>
-                        
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.9rem;">Overstock</span>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="background: #e9ecef; height: 8px; width: 150px; border-radius: 4px; overflow: hidden;">
-                                    <div style="background: #6c757d; height: 100%; width: 22%;"></div>
-                                </div>
-                                <span style="font-size: 0.8rem; color: #6c757d;">879 items</span>
-                            </div>
-                        </div>
+                <!-- Stock Level Status -->
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-chart-pie"></i>
+                            Stock Level Status
+                        </h3>
+                        <p class="card-subtitle">Current inventory distribution</p>
                     </div>
-                    
-                    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #dee2e6;">
-                        <h4 style="color: #495057; margin-bottom: 1rem; font-size: 1rem;">🤖 AI Replenishment Suggestions</h4>
-                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; font-size: 0.9rem; color: #6c757d;">
-                            • Order 48 units of Pipe Joint Compound<br>
-                            • Restock electrical cables within 2 weeks<br>
-                            • Consider bulk purchase discount for safety helmets<br>
-                            • 3 items require immediate attention
+                    <div class="card-body">
+                        <div class="stock-status">
+                            <div class="status-item optimal">
+                                <div class="status-label">Optimal Stock</div>
+                                <div class="status-count">1,940 items</div>
+                                <div class="status-bar">
+                                    <div class="status-fill" style="width: 68%"></div>
+                                </div>
+                            </div>
+                            <div class="status-item low">
+                                <div class="status-label">Low Stock</div>
+                                <div class="status-count">23 items</div>
+                                <div class="status-bar">
+                                    <div class="status-fill" style="width: 8%"></div>
+                                </div>
+                            </div>
+                            <div class="status-item out">
+                                <div class="status-label">Out of Stock</div>
+                                <div class="status-count">5 items</div>
+                                <div class="status-bar">
+                                    <div class="status-fill" style="width: 2%"></div>
+                                </div>
+                            </div>
+                            <div class="status-item overstock">
+                                <div class="status-label">Overstock</div>
+                                <div class="status-count">879 items</div>
+                                <div class="status-bar">
+                                    <div class="status-fill" style="width: 22%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ai-suggestions">
+                            <h5>🤖 AI Replenishment Suggestions</h5>
+                            <ul>
+                                <li>Order 48 units of Pipe Joint Compound</li>
+                                <li>Restock electrical cables within 2 weeks</li>
+                                <li>Consider bulk purchase discount for safety helmets</li>
+                                <li>3 items require immediate attention</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Recent Transactions -->
-            <div class="widget">
-                <h3 style="margin-bottom: 1.5rem; color: #495057;">Recent Inventory Transactions</h3>
-                <table class="wireframe-table">
-                    <thead>
-                        <tr>
-                            <th>Date/Time</th>
-                            <th>Item</th>
-                            <th>Transaction Type</th>
-                            <th>Quantity</th>
-                            <th>Project/User</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sept 26, 09:45 AM</td>
-                            <td><strong>Industrial Cable - 10AWG</strong><br><small style="color: #6c757d;">ELC-10AWG-500M</small></td>
-                            <td><span style="color: #dc3545;">Consumption</span></td>
-                            <td>-50m</td>
-                            <td>Industrial Complex - Phase 1</td>
-                            <td>Warehouse A</td>
-                            <td><span style="color: #28a745;">✓ Confirmed</span></td>
-                        </tr>
-                        <tr>
-                            <td>Sept 26, 09:30 AM</td>
-                            <td><strong>Safety Helmet - Class E</strong><br><small style="color: #6c757d;">SAF-HLM-CE-WH</small></td>
-                            <td><span style="color: #007bff;">Issue</span></td>
-                            <td>-3 units</td>
-                            <td>Ahmed Al-Rashid</td>
-                            <td>Site B</td>
-                            <td><span style="color: #28a745;">✓ Confirmed</span></td>
-                        </tr>
-                        <tr>
-                            <td>Sept 26, 08:15 AM</td>
-                            <td><strong>LED Light Fixture - 50W</strong><br><small style="color: #6c757d;">LED-FIX-50W-4K-IP65</small></td>
-                            <td><span style="color: #28a745;">Receipt</span></td>
-                            <td>+25 units</td>
-                            <td>Purchase Order #PO-2547</td>
-                            <td>Warehouse C</td>
-                            <td><span style="color: #f39c12;">⏳ Pending QC</span></td>
-                        </tr>
-                        <tr style="background: #fff3cd;">
-                            <td>Sept 26, 07:30 AM</td>
-                            <td><strong>Pipe Joint Compound</strong><br><small style="color: #6c757d;">PLM-JC-500ML</small></td>
-                            <td><span style="color: #f39c12;">AI Alert</span></td>
-                            <td>12 units remaining</td>
-                            <td>System Generated</td>
-                            <td>All Locations</td>
-                            <td><span style="color: #f39c12;">⚠ Low Stock</span></td>
-                        </tr>
-                        <tr>
-                            <td>Sept 25, 16:45 PM</td>
-                            <td><strong>HVAC Filter - Standard</strong><br><small style="color: #6c757d;">HVAC-FLT-STD-12X12</small></td>
-                            <td><span style="color: #6c757d;">Transfer</span></td>
-                            <td>Warehouse A → Site C</td>
-                            <td>Maintenance Team</td>
-                            <td>Multiple</td>
-                            <td><span style="color: #28a745;">✓ Complete</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-history"></i>
+                        Recent Inventory Transactions
+                    </h3>
+                    <p class="card-subtitle">Latest inventory movements and updates</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date/Time</th>
+                                    <th>Item</th>
+                                    <th>Transaction Type</th>
+                                    <th>Quantity</th>
+                                    <th>Project/User</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sept 26, 09:45 AM</td>
+                                    <td>
+                                        <div class="transaction-item">
+                                            <strong>Industrial Cable - 10AWG</strong>
+                                            <div class="item-sku">ELC-10AWG-500M</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="transaction-type consumption">Consumption</span></td>
+                                    <td>-50m</td>
+                                    <td>Industrial Complex - Phase 1</td>
+                                    <td>Warehouse A</td>
+                                    <td><span class="status-badge active">✓ Confirmed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Sept 26, 09:30 AM</td>
+                                    <td>
+                                        <div class="transaction-item">
+                                            <strong>Safety Helmet - Class E</strong>
+                                            <div class="item-sku">SAF-HLM-CE-WH</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="transaction-type issue">Issue</span></td>
+                                    <td>-3 units</td>
+                                    <td>Ahmed Al-Rashid</td>
+                                    <td>Site B</td>
+                                    <td><span class="status-badge active">✓ Confirmed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Sept 26, 08:15 AM</td>
+                                    <td>
+                                        <div class="transaction-item">
+                                            <strong>LED Light Fixture - 50W</strong>
+                                            <div class="item-sku">LED-FIX-50W-4K-IP65</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="transaction-type receipt">Receipt</span></td>
+                                    <td>+25 units</td>
+                                    <td>Purchase Order #PO-2547</td>
+                                    <td>Warehouse C</td>
+                                    <td><span class="status-badge pending">⏳ Pending QC</span></td>
+                                </tr>
+                                <tr class="alert-row">
+                                    <td>Sept 26, 07:30 AM</td>
+                                    <td>
+                                        <div class="transaction-item">
+                                            <strong>Pipe Joint Compound</strong>
+                                            <div class="item-sku">PLM-JC-500ML</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="transaction-type alert">AI Alert</span></td>
+                                    <td>12 units remaining</td>
+                                    <td>System Generated</td>
+                                    <td>All Locations</td>
+                                    <td><span class="status-badge error">⚠ Low Stock</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Sept 25, 16:45 PM</td>
+                                    <td>
+                                        <div class="transaction-item">
+                                            <strong>HVAC Filter - Standard</strong>
+                                            <div class="item-sku">HVAC-FLT-STD-12X12</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="transaction-type transfer">Transfer</span></td>
+                                    <td>Warehouse A → Site C</td>
+                                    <td>Maintenance Team</td>
+                                    <td>Multiple</td>
+                                    <td><span class="status-badge completed">✓ Complete</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </main>
-
-        <!-- Footer -->
-        <footer class="wireframe-footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <span>© 2025 Enterprise Management System</span>
-                </div>
-                <div class="footer-section">
-                    <span>Inventory | AI Monitoring: 2,847 items</span>
-                </div>
-                <div class="footer-section">
-                    <a href="#barcode">Barcode Scanner</a>
-                    <a href="#reports">Inventory Reports</a>
-                    <a href="#settings">PIM Settings</a>
-                </div>
-            </div>
-        </footer>
     </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // Inventory Management specific JavaScript
+        class InventoryManager {
+            constructor() {
+                this.items = this.loadInventoryItems();
+                this.initializeFilters();
+                this.initializeItemCards();
+            }
+
+            loadInventoryItems() {
+                return Array.from(document.querySelectorAll('.inventory-card')).map(card => ({
+                    element: card,
+                    category: card.dataset.category,
+                    status: card.dataset.status,
+                    name: card.querySelector('h3').textContent.toLowerCase()
+                }));
+            }
+
+            initializeFilters() {
+                const categoryFilter = document.getElementById('categoryFilter');
+                const statusFilter = document.getElementById('statusFilter');
+                const locationFilter = document.getElementById('locationFilter');
+                const searchInput = document.getElementById('searchInput');
+
+                [categoryFilter, statusFilter, locationFilter].forEach(filter => {
+                    filter.addEventListener('change', () => this.filterItems());
+                });
+
+                searchInput.addEventListener('input', () => this.filterItems());
+            }
+
+            initializeItemCards() {
+                this.items.forEach(item => {
+                    this.initializeItemCard(item.element);
+                });
+            }
+
+            initializeItemCard(card) {
+                // Action buttons
+                const actionButtons = card.querySelectorAll('.item-actions .btn-icon');
+                actionButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        this.handleItemAction(e.target, card);
+                    });
+                });
+
+                // Card hover effect
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-4px)';
+                    card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '';
+                });
+            }
+
+            filterItems() {
+                const categoryFilter = document.getElementById('categoryFilter').value;
+                const statusFilter = document.getElementById('statusFilter').value;
+                const locationFilter = document.getElementById('locationFilter').value;
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+                this.items.forEach(item => {
+                    const matchesCategory = !categoryFilter || item.category === categoryFilter;
+                    const matchesStatus = !statusFilter || item.status === statusFilter;
+                    const matchesSearch = !searchTerm || item.name.includes(searchTerm);
+
+                    if (matchesCategory && matchesStatus && matchesSearch) {
+                        item.element.style.display = 'block';
+                        setTimeout(() => {
+                            item.element.style.opacity = '1';
+                            item.element.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.element.style.opacity = '0';
+                        item.element.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.element.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+
+            handleItemAction(button, itemCard) {
+                const action = button.dataset.action;
+                const itemName = itemCard.querySelector('h3').textContent;
+
+                if (window.enterpriseApp) {
+                    switch (action) {
+                        case 'edit-item':
+                            window.enterpriseApp.showToast(`Editing ${itemName}...`, 'info');
+                            break;
+                        case 'adjust-stock':
+                            window.enterpriseApp.showToast(`Adjusting stock for ${itemName}...`, 'info');
+                            break;
+                        case 'reorder':
+                            window.enterpriseApp.showToast(`Creating reorder for ${itemName}...`, 'warning');
+                            break;
+                        case 'scan-qr':
+                            window.enterpriseApp.showToast(`Scanning QR code for ${itemName}...`, 'info');
+                            break;
+                        case 'approve-item':
+                            window.enterpriseApp.showToast(`${itemName} approved successfully!`, 'success');
+                            break;
+                        case 'track-shipment':
+                            window.enterpriseApp.showToast(`Tracking shipment for ${itemName}...`, 'info');
+                            break;
+                        case 'view-details':
+                            window.enterpriseApp.showToast(`Viewing details for ${itemName}...`, 'info');
+                            break;
+                        case 'transfer':
+                            window.enterpriseApp.showToast(`Initiating transfer for ${itemName}...`, 'info');
+                            break;
+                    }
+                }
+            }
+
+            generateAIRecommendations() {
+                if (window.enterpriseApp) {
+                    window.enterpriseApp.showToast('AI is analyzing inventory patterns...', 'info');
+                    
+                    setTimeout(() => {
+                        window.enterpriseApp.showToast('New AI recommendations generated!', 'success');
+                    }, 3000);
+                }
+            }
+        }
+
+        // Initialize inventory manager when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            window.inventoryManager = new InventoryManager();
+            
+            // Add event listeners for inventory-specific actions
+            document.querySelectorAll('[data-action]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const action = e.target.dataset.action;
+                    if (window.inventoryManager) {
+                        switch (action) {
+                            case 'add-item':
+                                if (window.enterpriseApp) {
+                                    window.enterpriseApp.showToast('Opening add item form...', 'info');
+                                }
+                                break;
+                            case 'scan-qr':
+                                if (window.enterpriseApp) {
+                                    window.enterpriseApp.showToast('Initializing QR scanner...', 'info');
+                                }
+                                break;
+                            case 'ai-replenishment':
+                                window.inventoryManager.generateAIRecommendations();
+                                break;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        /* Inventory specific styles */
+        .search-filters {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 1.5rem;
+            align-items: end;
+        }
+
+        .search-input-container {
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .inventory-card {
+            background: var(--surface-color);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inventory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .inventory-card.low-stock::before {
+            background: linear-gradient(90deg, var(--warning-color), #dd6b20);
+        }
+
+        .inventory-card.new-item::before {
+            background: linear-gradient(90deg, var(--info-color), #2c5282);
+        }
+
+        .inventory-card.in-transit::before {
+            background: linear-gradient(90deg, var(--success-color), #38a169);
+        }
+
+        .inventory-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .item-header {
+            display: grid;
+            grid-template-columns: 60px 1fr auto;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .item-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .item-icon.electrical {
+            background: var(--primary-color);
+        }
+
+        .item-icon.plumbing {
+            background: var(--info-color);
+        }
+
+        .item-icon.safety {
+            background: var(--warning-color);
+        }
+
+        .item-icon.hvac {
+            background: var(--success-color);
+        }
+
+        .item-info h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.25rem 0;
+        }
+
+        .item-sku {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .item-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .item-stock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--background-color);
+            border-radius: 8px;
+        }
+
+        .stock-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stock-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .stock-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stock-value.critical {
+            color: var(--error-color);
+        }
+
+        .stock-value.new {
+            color: var(--info-color);
+        }
+
+        .stock-price {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .item-ai-suggestion {
+            margin-top: 1rem;
+        }
+
+        .ai-suggestion {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .ai-suggestion.success {
+            background: rgba(72, 187, 120, 0.1);
+            color: var(--success-color);
+        }
+
+        .ai-suggestion.warning {
+            background: rgba(237, 137, 54, 0.1);
+            color: var(--warning-color);
+        }
+
+        .ai-suggestion.info {
+            background: rgba(66, 153, 225, 0.1);
+            color: var(--info-color);
+        }
+
+        .ai-assistant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ai-recommendation {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .ai-recommendation:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .recommendation-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .recommendation-content {
+            flex: 1;
+        }
+
+        .recommendation-content h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .recommendation-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+            line-height: 1.5;
+        }
+
+        .recommendation-content code {
+            background: var(--background-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.75rem;
+        }
+
+        .recommendation-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .usage-analytics {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .usage-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .usage-category {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            min-width: 120px;
+        }
+
+        .usage-percentage {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            min-width: 40px;
+        }
+
+        .usage-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--background-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .usage-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .analytics-note {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(66, 153, 225, 0.1);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--info-color);
+        }
+
+        .stock-status {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            min-width: 100px;
+        }
+
+        .status-count {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            min-width: 80px;
+        }
+
+        .status-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--background-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .status-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .status-item.optimal .status-fill {
+            background: var(--success-color);
+        }
+
+        .status-item.low .status-fill {
+            background: var(--warning-color);
+        }
+
+        .status-item.out .status-fill {
+            background: var(--error-color);
+        }
+
+        .status-item.overstock .status-fill {
+            background: var(--text-muted);
+        }
+
+        .ai-suggestions {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .ai-suggestions h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 1rem 0;
+        }
+
+        .ai-suggestions ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ai-suggestions li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .ai-suggestions li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .transaction-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .transaction-type {
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .transaction-type.consumption {
+            background: rgba(245, 101, 101, 0.1);
+            color: var(--error-color);
+        }
+
+        .transaction-type.issue {
+            background: rgba(66, 153, 225, 0.1);
+            color: var(--info-color);
+        }
+
+        .transaction-type.receipt {
+            background: rgba(72, 187, 120, 0.1);
+            color: var(--success-color);
+        }
+
+        .transaction-type.alert {
+            background: rgba(237, 137, 54, 0.1);
+            color: var(--warning-color);
+        }
+
+        .transaction-type.transfer {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary-color);
+        }
+
+        .alert-row {
+            background: rgba(245, 101, 101, 0.05);
+            border-left: 4px solid var(--error-color);
+        }
+
+        @media (max-width: 768px) {
+            .search-filters {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .inventory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .item-header {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .item-actions {
+                justify-content: flex-start;
+            }
+
+            .ai-assistant-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-recommendation {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .recommendation-actions {
+                justify-content: center;
+            }
+        }
+    </style>
 </body>
 </html>

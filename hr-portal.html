@@ -3,70 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR & Payroll Self-Service - Wireframes</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="wireframe-styles.css" rel="stylesheet">
+    <title>HR & Payroll Portal - Enterprise Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="modern-styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="wireframe-container">
+    <div class="app-container">
         <!-- Header -->
-        <header class="wireframe-header">
+        <header class="app-header">
             <div class="header-content">
-                <div class="logo-area">
-                    <div class="logo-box">[LOGO]</div>
-                    <h1>Enterprise Management System</h1>
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Enterprise Management</h1>
+                        <p>HR & Payroll Hub</p>
+                    </div>
                 </div>
-                <div class="user-area">
-                    <div class="user-box">[USER]</div>
-                    <span>HR Manager</span>
+                
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">12</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">HR</div>
+                        <div class="user-info">
+                            <h4>HR Manager</h4>
+                            <p>People Operations</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Navigation -->
-        <nav class="wireframe-nav">
-            <div class="nav-item">
-                <a href="home.html">
+        <nav class="app-navigation">
+            <div class="nav-content">
+                <a href="website-home.html" class="nav-item">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="dashboard.html">
+                <a href="dashboard-modern.html" class="nav-item">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="projects.html">
+                <a href="projects-modern.html" class="nav-item">
                     <i class="fas fa-project-diagram"></i>
                     <span>Projects</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="mobile-app.html">
+                <a href="mobile-modern.html" class="nav-item">
                     <i class="fas fa-mobile-alt"></i>
                     <span>Mobile App</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="cost-analysis.html">
+                <a href="cost-analysis.html" class="nav-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Cost Analysis</span>
                 </a>
-            </div>
-            <div class="nav-item">
-                <a href="inventory.html">
+                <a href="inventory.html" class="nav-item">
                     <i class="fas fa-boxes"></i>
                     <span>Inventory</span>
                 </a>
-            </div>
-            <div class="nav-item active">
-                <i class="fas fa-users"></i>
-                <span>HR Portal</span>
-            </div>
-            <div class="nav-item">
-                <a href="maintenance.html">
+                <div class="nav-item active">
+                    <i class="fas fa-users"></i>
+                    <span>HR Portal</span>
+                </div>
+                <a href="maintenance.html" class="nav-item">
                     <i class="fas fa-tools"></i>
                     <span>Maintenance</span>
                 </a>
@@ -74,382 +78,1172 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="wireframe-main">
-            <div class="page-header">
-                <h2>HR & Payroll Self-Service Portal</h2>
-                <div class="breadcrumb">
-                    <span><a href="home.html">Home</a></span>
-                    <span>HR Portal</span>
+        <main class="app-main">
+            <!-- Page Header -->
+            <div class="page-header animate-fade-in">
+                <div class="page-title">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h1>HR & Payroll Self-Service Portal</h1>
+                        <div class="breadcrumb">
+                            <a href="website-home.html">Home</a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span>HR Portal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <select class="form-control" id="departmentFilter">
+                        <option value="">All Departments</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="field-operations">Field Operations</option>
+                        <option value="administration">Administration</option>
+                        <option value="management">Management</option>
+                    </select>
+                    <button class="btn btn-secondary" data-action="hr-reports">
+                        <i class="fas fa-chart-bar"></i>
+                        HR Reports
+                    </button>
+                    <button class="btn btn-primary" data-action="new-employee">
+                        <i class="fas fa-user-plus"></i>
+                        New Employee
+                    </button>
                 </div>
             </div>
 
-            <!-- Action Bar -->
-            <div class="widget" style="margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <div style="display: flex; gap: 1rem; align-items: center;">
-                        <select style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px;">
-                            <option>All Departments</option>
-                            <option>Engineering</option>
-                            <option>Field Operations</option>
-                            <option>Administration</option>
-                            <option>Management</option>
-                        </select>
-                        <input type="text" placeholder="Search employees..." style="padding: 0.5rem; border: 2px solid #dee2e6; border-radius: 5px; width: 250px;">
+            <!-- HR Overview KPIs -->
+            <div class="kpi-grid animate-slide-up">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="kpi-title">Total Employees</h3>
                     </div>
-                    <div style="display: flex; gap: 1rem;">
-                        <div class="wireframe-button" style="background: #007bff; color: #fff; border-color: #007bff;">+ New Employee</div>
-                        <div class="wireframe-button">💰 Process Payroll</div>
-                        <div class="wireframe-button">📊 HR Reports</div>
+                    <div class="kpi-value">623</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +12 this month
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon success">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="kpi-title">Active Projects</h3>
+                    </div>
+                    <div class="kpi-value">587</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +15 allocated
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon warning">
+                            <i class="fas fa-calendar-times"></i>
+                        </div>
+                        <h3 class="kpi-title">On Leave Today</h3>
+                    </div>
+                    <div class="kpi-value">36</div>
+                    <div class="kpi-trend neutral">
+                        <i class="fas fa-minus"></i>
+                        Normal rate
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-icon info">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3 class="kpi-title">New Hires (Month)</h3>
+                    </div>
+                    <div class="kpi-value">12</div>
+                    <div class="kpi-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +3 vs last month
                     </div>
                 </div>
             </div>
 
-            <!-- HR Overview Widgets -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                
-                <!-- Employee Overview -->
-                <div class="widget" style="border-left: 4px solid #007bff;">
-                    <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">👥 Employee Overview</h3>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
-                            <span style="color: #6c757d; font-size: 0.9rem;">Total Employees</span>
-                            <span style="font-weight: bold; color: #495057; font-size: 1.1rem;">623</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
-                            <span style="color: #6c757d; font-size: 0.9rem;">Active Projects</span>
-                            <span style="font-weight: bold; color: #495057; font-size: 1.1rem;">587</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
-                            <span style="color: #6c757d; font-size: 0.9rem;">On Leave Today</span>
-                            <span style="font-weight: bold; color: #f39c12; font-size: 1.1rem;">36</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
-                            <span style="color: #6c757d; font-size: 0.9rem;">New Hires (Month)</span>
-                            <span style="font-weight: bold; color: #28a745; font-size: 1.1rem;">12</span>
-                        </div>
-                    </div>
+            <!-- Employee Self-Service Portal -->
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        Employee Self-Service Portal
+                    </h3>
+                    <p class="card-subtitle">Comprehensive HR tools for all employees</p>
                 </div>
-
-                <!-- Attendance Summary -->
-                <div class="widget" style="border-left: 4px solid #28a745;">
-                    <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">⏰ Attendance Summary</h3>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <span style="font-size: 0.9rem;">Present: 91%</span>
-                            </div>
-                            <div style="background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                                <div style="background: #28a745; height: 100%; width: 91%; border-radius: 4px;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <span style="font-size: 0.9rem;">Leave: 6%</span>
-                            </div>
-                            <div style="background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                                <div style="background: #f39c12; height: 100%; width: 6%; border-radius: 4px;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <span style="font-size: 0.9rem;">Absent: 3%</span>
-                            </div>
-                            <div style="background: #e9ecef; height: 8px; border-radius: 4px; overflow: hidden;">
-                                <div style="background: #dc3545; height: 100%; width: 3%; border-radius: 4px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #dee2e6; font-size: 0.9rem; color: #6c757d;">
-                        Average weekly hours: 42.3h<br>
-                        Overtime this week: 287h
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employee Self-Service Portal Preview -->
-            <div class="widget" style="margin-bottom: 3rem;">
-                <h3 style="color: #495057; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">📱 Employee Self-Service Portal</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                    
-                    <!-- Leave Management Card -->
-                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
-                        <div style="background: #007bff; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
-                            <div style="font-size: 1.2rem;">📅</div>
-                            <h4 style="font-size: 0.9rem; margin: 0;">Leave Management</h4>
-                        </div>
-                        <div style="padding: 1rem;">
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: #6c757d;">
-                                <span>Annual Leave: 18 days remaining</span>
-                                <span>Sick Leave: 5 days remaining</span>
-                                <span>Personal Leave: 3 days remaining</span>
-                            </div>
-                            <div class="wireframe-button" style="width: 100%; text-align: center; background: #007bff; color: #fff; border-color: #007bff;">Request Leave</div>
-                        </div>
-                    </div>
-
-                    <!-- Expense Claims Card -->
-                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
-                        <div style="background: #28a745; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
-                            <div style="font-size: 1.2rem;">🧾</div>
-                            <h4 style="font-size: 0.9rem; margin: 0;">Expense Claims</h4>
-                        </div>
-                        <div style="padding: 1rem;">
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: #6c757d;">
-                                <span>Pending: $234.50 (2 claims)</span>
-                                <span>Approved: $1,890.25 (8 claims)</span>
-                                <span>This Month: $2,124.75 total</span>
-                            </div>
-                            <div class="wireframe-button" style="width: 100%; text-align: center;">📷 Submit Receipt</div>
-                            <div style="background: rgba(156, 39, 176, 0.1); padding: 0.5rem; margin-top: 0.5rem; border-radius: 5px; font-size: 0.8rem; color: #8e44ad; display: flex; align-items: center; gap: 5px;">
-                                <div>🤖</div>
-                                <span>AI OCR auto-fills expense details</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Payslip & Documents Card -->
-                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
-                        <div style="background: #6c757d; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
-                            <div style="font-size: 1.2rem;">📄</div>
-                            <h4 style="font-size: 0.9rem; margin: 0;">Documents & Payslips</h4>
-                        </div>
-                        <div style="padding: 1rem;">
-                            <div style="margin-bottom: 1rem;">
-                                <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem; background: #fff; border-radius: 5px; margin-bottom: 0.5rem; font-size: 0.8rem;">
-                                    <div style="color: #dc3545;">📄</div>
-                                    <span>Payslip - September 2025</span>
+                <div class="card-body">
+                    <div class="self-service-grid">
+                        <!-- Leave Management Card -->
+                        <div class="service-card">
+                            <div class="service-header leave">
+                                <div class="service-icon">
+                                    <i class="fas fa-calendar-alt"></i>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem; background: #fff; border-radius: 5px; margin-bottom: 0.5rem; font-size: 0.8rem;">
-                                    <div style="color: #dc3545;">📜</div>
-                                    <span>Employment Certificate</span>
+                                <h4>Leave Management</h4>
+                            </div>
+                            <div class="service-content">
+                                <div class="leave-balance">
+                                    <div class="balance-item">
+                                        <span class="balance-label">Annual Leave</span>
+                                        <span class="balance-value">18 days remaining</span>
+                                    </div>
+                                    <div class="balance-item">
+                                        <span class="balance-label">Sick Leave</span>
+                                        <span class="balance-value">5 days remaining</span>
+                                    </div>
+                                    <div class="balance-item">
+                                        <span class="balance-label">Personal Leave</span>
+                                        <span class="balance-value">3 days remaining</span>
+                                    </div>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem; background: #fff; border-radius: 5px; font-size: 0.8rem;">
-                                    <div style="color: #dc3545;">📋</div>
-                                    <span>Tax Statement YTD</span>
+                                <button class="btn btn-primary service-btn">Request Leave</button>
+                            </div>
+                        </div>
+
+                        <!-- Expense Claims Card -->
+                        <div class="service-card">
+                            <div class="service-header expense">
+                                <div class="service-icon">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <h4>Expense Claims</h4>
+                            </div>
+                            <div class="service-content">
+                                <div class="expense-summary">
+                                    <div class="expense-item">
+                                        <span class="expense-label">Pending</span>
+                                        <span class="expense-value">$234.50 (2 claims)</span>
+                                    </div>
+                                    <div class="expense-item">
+                                        <span class="expense-label">Approved</span>
+                                        <span class="expense-value">$1,890.25 (8 claims)</span>
+                                    </div>
+                                    <div class="expense-item">
+                                        <span class="expense-label">This Month</span>
+                                        <span class="expense-value">$2,124.75 total</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary service-btn">
+                                    <i class="fas fa-camera"></i>
+                                    Submit Receipt
+                                </button>
+                                <div class="ai-feature">
+                                    <i class="fas fa-brain"></i>
+                                    <span>AI OCR auto-fills expense details</span>
                                 </div>
                             </div>
-                            <div class="wireframe-button" style="width: 100%; text-align: center;">View All Documents</div>
                         </div>
-                    </div>
 
-                    <!-- Performance Dashboard Card -->
-                    <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #dee2e6;">
-                        <div style="background: #f39c12; color: #fff; padding: 1rem; display: flex; align-items: center; gap: 10px;">
-                            <div style="font-size: 1.2rem;">📊</div>
-                            <h4 style="font-size: 0.9rem; margin: 0;">Performance Dashboard</h4>
-                        </div>
-                        <div style="padding: 1rem;">
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: #6c757d;">
-                                <span>Current Rating: ⭐⭐⭐⭐⭐ (4.8/5)</span>
-                                <span>Projects Completed: 23</span>
-                                <span>Training Hours: 42h</span>
+                        <!-- Documents & Payslips Card -->
+                        <div class="service-card">
+                            <div class="service-header documents">
+                                <div class="service-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h4>Documents & Payslips</h4>
                             </div>
-                            <div class="wireframe-button" style="width: 100%; text-align: center;">View Full Profile</div>
+                            <div class="service-content">
+                                <div class="document-list">
+                                    <div class="document-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span>Payslip - September 2025</span>
+                                    </div>
+                                    <div class="document-item">
+                                        <i class="fas fa-certificate"></i>
+                                        <span>Employment Certificate</span>
+                                    </div>
+                                    <div class="document-item">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Tax Statement YTD</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary service-btn">View All Documents</button>
+                            </div>
+                        </div>
+
+                        <!-- Performance Dashboard Card -->
+                        <div class="service-card">
+                            <div class="service-header performance">
+                                <div class="service-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <h4>Performance Dashboard</h4>
+                            </div>
+                            <div class="service-content">
+                                <div class="performance-metrics">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Current Rating</span>
+                                        <span class="metric-value">⭐⭐⭐⭐⭐ (4.8/5)</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Projects Completed</span>
+                                        <span class="metric-value">23</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Training Hours</span>
+                                        <span class="metric-value">42h</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary service-btn">View Full Profile</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- AI-Powered HR Insights -->
-            <div class="widget" style="margin-bottom: 3rem; border-left: 4px solid #9c27b0;">
-                <h3 style="color: #495057; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
-                    🤖 AI-Powered HR Insights
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-                    
-                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
-                        <div style="font-size: 1.2rem; color: #9c27b0;">📈</div>
-                        <div style="flex: 1;">
-                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Retention Prediction</strong>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">5 employees at high risk of leaving based on engagement patterns and performance metrics</p>
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-brain"></i>
+                        AI-Powered HR Insights
+                    </h3>
+                    <p class="card-subtitle">Intelligent workforce analytics and recommendations</p>
+                </div>
+                <div class="card-body">
+                    <div class="ai-insights-grid">
+                        <div class="insight-card retention">
+                            <div class="insight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h5>Retention Prediction</h5>
+                                <p>5 employees at high risk of leaving based on engagement patterns and performance metrics</p>
+                                <div class="insight-confidence">Confidence: 87%</div>
+                            </div>
+                            <div class="insight-actions">
+                                <button class="btn btn-warning btn-sm">Intervene</button>
+                                <button class="btn btn-secondary btn-sm">Details</button>
+                            </div>
                         </div>
-                        <div class="wireframe-button" style="background: #9c27b0; color: #fff; border-color: #9c27b0;">Intervene</div>
-                    </div>
 
-                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
-                        <div style="font-size: 1.2rem; color: #9c27b0;">🎓</div>
-                        <div style="flex: 1;">
-                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Training Recommendations</strong>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">42 employees would benefit from advanced safety certification based on project assignments</p>
+                        <div class="insight-card training">
+                            <div class="insight-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h5>Training Recommendations</h5>
+                                <p>42 employees would benefit from advanced safety certification based on project assignments</p>
+                                <div class="insight-confidence">Confidence: 94%</div>
+                            </div>
+                            <div class="insight-actions">
+                                <button class="btn btn-primary btn-sm">Schedule Training</button>
+                                <button class="btn btn-secondary btn-sm">View List</button>
+                            </div>
                         </div>
-                        <div class="wireframe-button">Schedule Training</div>
-                    </div>
 
-                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
-                        <div style="font-size: 1.2rem; color: #9c27b0;">💰</div>
-                        <div style="flex: 1;">
-                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Payroll Optimization</strong>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">AI detected potential $23K savings through overtime optimization and efficient scheduling</p>
+                        <div class="insight-card payroll">
+                            <div class="insight-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h5>Payroll Optimization</h5>
+                                <p>AI detected potential $23K savings through overtime optimization and efficient scheduling</p>
+                                <div class="insight-confidence">Confidence: 76%</div>
+                            </div>
+                            <div class="insight-actions">
+                                <button class="btn btn-success btn-sm">Review Options</button>
+                                <button class="btn btn-secondary btn-sm">Analyze</button>
+                            </div>
                         </div>
-                        <div class="wireframe-button">Review Options</div>
-                    </div>
 
-                    <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid #9c27b0;">
-                        <div style="font-size: 1.2rem; color: #9c27b0;">🏆</div>
-                        <div style="flex: 1;">
-                            <strong style="color: #4a148c; display: block; margin-bottom: 5px;">Performance Insights</strong>
-                            <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">Top 10% performers show 23% higher engagement in projects with AI-assisted tools</p>
+                        <div class="insight-card performance">
+                            <div class="insight-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h5>Performance Insights</h5>
+                                <p>Top 10% performers show 23% higher engagement in projects with AI-assisted tools</p>
+                                <div class="insight-confidence">Confidence: 89%</div>
+                            </div>
+                            <div class="insight-actions">
+                                <button class="btn btn-primary btn-sm">View Report</button>
+                                <button class="btn btn-secondary btn-sm">Export Data</button>
+                            </div>
                         </div>
-                        <div class="wireframe-button">View Report</div>
                     </div>
                 </div>
             </div>
 
             <!-- HR Analytics Dashboard -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                
+            <div class="grid grid-2" style="margin-top: 2rem;">
                 <!-- Employee Demographics -->
-                <div class="widget">
-                    <h3 style="margin-bottom: 1rem; color: #495057;">Employee Demographics</h3>
-                    <div class="chart-placeholder" style="height: 250px;">
-                        [DEMOGRAPHICS CHART]<br><br>
-                        Age Distribution:<br>
-                        • 25-35 years: 45% (280 employees)<br>
-                        • 35-45 years: 32% (200 employees)<br>
-                        • 45-55 years: 18% (112 employees)<br>
-                        • 55+ years: 5% (31 employees)<br><br>
-                        Gender: 78% Male, 22% Female<br>
-                        Departments: Engineering (40%), Field Ops (35%), Admin (25%)
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-users"></i>
+                            Employee Demographics
+                        </h3>
+                        <p class="card-subtitle">Workforce composition and distribution</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="demographics-content">
+                            <div class="demographic-section">
+                                <h5>Age Distribution</h5>
+                                <div class="demographic-item">
+                                    <span class="demo-label">25-35 years</span>
+                                    <span class="demo-percentage">45% (280 employees)</span>
+                                    <div class="demo-bar">
+                                        <div class="demo-fill" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <div class="demographic-item">
+                                    <span class="demo-label">35-45 years</span>
+                                    <span class="demo-percentage">32% (200 employees)</span>
+                                    <div class="demo-bar">
+                                        <div class="demo-fill" style="width: 32%"></div>
+                                    </div>
+                                </div>
+                                <div class="demographic-item">
+                                    <span class="demo-label">45-55 years</span>
+                                    <span class="demo-percentage">18% (112 employees)</span>
+                                    <div class="demo-bar">
+                                        <div class="demo-fill" style="width: 18%"></div>
+                                    </div>
+                                </div>
+                                <div class="demographic-item">
+                                    <span class="demo-label">55+ years</span>
+                                    <span class="demo-percentage">5% (31 employees)</span>
+                                    <div class="demo-bar">
+                                        <div class="demo-fill" style="width: 5%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="demographic-summary">
+                                <div class="summary-item">
+                                    <span class="summary-label">Gender</span>
+                                    <span class="summary-value">78% Male, 22% Female</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Departments</span>
+                                    <span class="summary-value">Engineering (40%), Field Ops (35%), Admin (25%)</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Payroll Summary -->
-                <div class="widget">
-                    <h3 style="margin-bottom: 1rem; color: #495057;">Payroll Summary (September 2025)</h3>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                            <span style="color: #666; font-size: 0.9rem;">Base Salaries</span>
-                            <span style="font-weight: bold; color: #495057;">$2,847,650</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                            <span style="color: #666; font-size: 0.9rem;">Overtime</span>
-                            <span style="font-weight: bold; color: #f39c12;">$387,420</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                            <span style="color: #666; font-size: 0.9rem;">Benefits</span>
-                            <span style="font-weight: bold; color: #007bff;">$456,780</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 2px solid #dee2e6;">
-                            <span style="color: #666; font-size: 0.9rem;">Taxes & Deductions</span>
-                            <span style="font-weight: bold; color: #dc3545;">-$642,385</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
-                            <span style="color: #495057; font-size: 1rem; font-weight: bold;">Total Net Pay</span>
-                            <span style="font-weight: bold; color: #28a745; font-size: 1.2rem;">$3,049,465</span>
-                        </div>
+                <div class="card animate-slide-up">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Payroll Summary (September 2025)
+                        </h3>
+                        <p class="card-subtitle">Monthly payroll breakdown and analysis</p>
                     </div>
-                    
-                    <div style="background: #e3f2fd; padding: 1rem; border-radius: 5px; font-size: 0.9rem;">
-                        <div style="color: #1565c0; font-weight: bold; margin-bottom: 5px;">🤖 AI Compliance Check</div>
-                        <div style="color: #6c757d;">✅ Saudi Labor Law compliant<br>✅ All tax calculations verified<br>✅ Benefits allocation optimized</div>
+                    <div class="card-body">
+                        <div class="payroll-breakdown">
+                            <div class="payroll-item">
+                                <span class="payroll-label">Base Salaries</span>
+                                <span class="payroll-amount">$2,847,650</span>
+                            </div>
+                            <div class="payroll-item">
+                                <span class="payroll-label">Overtime</span>
+                                <span class="payroll-amount overtime">$387,420</span>
+                            </div>
+                            <div class="payroll-item">
+                                <span class="payroll-label">Benefits</span>
+                                <span class="payroll-amount benefits">$456,780</span>
+                            </div>
+                            <div class="payroll-item">
+                                <span class="payroll-label">Taxes & Deductions</span>
+                                <span class="payroll-amount deductions">-$642,385</span>
+                            </div>
+                            <div class="payroll-total">
+                                <span class="total-label">Total Net Pay</span>
+                                <span class="total-amount">$3,049,465</span>
+                            </div>
+                        </div>
+                        <div class="ai-compliance">
+                            <div class="compliance-header">
+                                <i class="fas fa-brain"></i>
+                                <span>AI Compliance Check</span>
+                            </div>
+                            <div class="compliance-items">
+                                <div class="compliance-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Saudi Labor Law compliant</span>
+                                </div>
+                                <div class="compliance-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>All tax calculations verified</span>
+                                </div>
+                                <div class="compliance-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Benefits allocation optimized</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Recent HR Activities -->
-            <div class="widget">
-                <h3 style="margin-bottom: 1.5rem; color: #495057;">Recent HR Activities</h3>
-                <table class="wireframe-table">
-                    <thead>
-                        <tr>
-                            <th>Date/Time</th>
-                            <th>Employee</th>
-                            <th>Activity Type</th>
-                            <th>Details</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sept 26, 10:15 AM</td>
-                            <td><strong>Ahmed Al-Rashid</strong><br><small style="color: #6c757d;">Senior Technician</small></td>
-                            <td><span style="color: #28a745;">Expense Claim</span></td>
-                            <td>Travel expenses - Project Site C<br>Amount: $145.50</td>
-                            <td><span style="color: #f39c12;">⏳ AI Reviewing</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Process</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sept 26, 09:30 AM</td>
-                            <td><strong>Fatima Hassan</strong><br><small style="color: #6c757d;">Project Manager</small></td>
-                            <td><span style="color: #007bff;">Leave Request</span></td>
-                            <td>Annual Leave: Oct 15-19, 2025<br>Duration: 5 days</td>
-                            <td><span style="color: #28a745;">✓ Approved</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Calendar</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sept 26, 08:45 AM</td>
-                            <td><strong>Omar Abdullah</strong><br><small style="color: #6c757d;">Field Engineer</small></td>
-                            <td><span style="color: #dc3545;">Performance Review</span></td>
-                            <td>Q3 2025 Performance Review<br>Rating: 4.2/5.0</td>
-                            <td><span style="color: #28a745;">✓ Completed</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Feedback</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr style="background: #f8d7da;">
-                            <td>Sept 26, 08:00 AM</td>
-                            <td><strong>Khalid Mansour</strong><br><small style="color: #6c757d;">Senior Technician</small></td>
-                            <td><span style="color: #dc3545;">AI Alert</span></td>
-                            <td>High turnover risk detected<br>Engagement score declining</td>
-                            <td><span style="color: #dc3545;">⚠ Requires Action</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #dc3545; color: #fff; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Urgent</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Contact</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sept 25, 16:30 PM</td>
-                            <td><strong>Sarah Al-Zahra</strong><br><small style="color: #6c757d;">Admin Assistant</small></td>
-                            <td><span style="color: #6c757d;">Document Request</span></td>
-                            <td>Employment Certificate<br>For visa application</td>
-                            <td><span style="color: #28a745;">✓ Issued</span></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">View</div>
-                                    <div style="background: #f8f9fa; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.7rem; cursor: pointer;">Download</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card animate-slide-up" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-history"></i>
+                        Recent HR Activities
+                    </h3>
+                    <p class="card-subtitle">Latest HR transactions and employee actions</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date/Time</th>
+                                    <th>Employee</th>
+                                    <th>Activity Type</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sept 26, 10:15 AM</td>
+                                    <td>
+                                        <div class="employee-info">
+                                            <strong>Ahmed Al-Rashid</strong>
+                                            <div class="employee-role">Senior Technician</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="activity-type expense">Expense Claim</span></td>
+                                    <td>Travel expenses - Project Site C<br>Amount: $145.50</td>
+                                    <td><span class="status-badge pending">⏳ AI Reviewing</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Process</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sept 26, 09:30 AM</td>
+                                    <td>
+                                        <div class="employee-info">
+                                            <strong>Fatima Hassan</strong>
+                                            <div class="employee-role">Project Manager</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="activity-type leave">Leave Request</span></td>
+                                    <td>Annual Leave: Oct 15-19, 2025<br>Duration: 5 days</td>
+                                    <td><span class="status-badge active">✓ Approved</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Calendar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sept 26, 08:45 AM</td>
+                                    <td>
+                                        <div class="employee-info">
+                                            <strong>Omar Abdullah</strong>
+                                            <div class="employee-role">Field Engineer</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="activity-type performance">Performance Review</span></td>
+                                    <td>Q3 2025 Performance Review<br>Rating: 4.2/5.0</td>
+                                    <td><span class="status-badge completed">✓ Completed</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Feedback</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="alert-row">
+                                    <td>Sept 26, 08:00 AM</td>
+                                    <td>
+                                        <div class="employee-info">
+                                            <strong>Khalid Mansour</strong>
+                                            <div class="employee-role">Senior Technician</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="activity-type alert">AI Alert</span></td>
+                                    <td>High turnover risk detected<br>Engagement score declining</td>
+                                    <td><span class="status-badge error">⚠ Requires Action</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-warning btn-sm">Urgent</button>
+                                            <button class="btn btn-secondary btn-sm">Contact</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sept 25, 16:30 PM</td>
+                                    <td>
+                                        <div class="employee-info">
+                                            <strong>Sarah Al-Zahra</strong>
+                                            <div class="employee-role">Admin Assistant</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="activity-type document">Document Request</span></td>
+                                    <td>Employment Certificate<br>For visa application</td>
+                                    <td><span class="status-badge active">✓ Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-secondary btn-sm">View</button>
+                                            <button class="btn btn-primary btn-sm">Download</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </main>
-
-        <!-- Footer -->
-        <footer class="wireframe-footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <span>© 2025 Enterprise Management System</span>
-                </div>
-                <div class="footer-section">
-                    <span>HR Portal | AI Insights Active | 623 Employees</span>
-                </div>
-                <div class="footer-section">
-                    <a href="#payroll">Payroll Processing</a>
-                    <a href="#compliance">Compliance Reports</a>
-                    <a href="#analytics">HR Analytics</a>
-                </div>
-            </div>
-        </footer>
     </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script>
+        // HR Portal specific JavaScript
+        class HRPortal {
+            constructor() {
+                this.initializeFilters();
+                this.initializeServiceCards();
+                this.initializeInsights();
+            }
+
+            initializeFilters() {
+                const departmentFilter = document.getElementById('departmentFilter');
+                if (departmentFilter) {
+                    departmentFilter.addEventListener('change', (e) => {
+                        if (window.enterpriseApp) {
+                            window.enterpriseApp.showToast(`Filtering by ${e.target.options[e.target.selectedIndex].text}`, 'info');
+                        }
+                    });
+                }
+            }
+
+            initializeServiceCards() {
+                // Service card interactions
+                document.querySelectorAll('.service-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const serviceType = e.target.closest('.service-card').querySelector('h4').textContent;
+                        this.handleServiceAction(serviceType, e.target.textContent.trim());
+                    });
+                });
+            }
+
+            initializeInsights() {
+                // Insight card interactions
+                document.querySelectorAll('.insight-actions .btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const insightCard = e.target.closest('.insight-card');
+                        const insightType = insightCard.classList[1]; // Get the insight type class
+                        this.handleInsightAction(insightType, e.target.textContent.trim());
+                    });
+                });
+            }
+
+            handleServiceAction(serviceType, action) {
+                if (window.enterpriseApp) {
+                    switch (serviceType) {
+                        case 'Leave Management':
+                            if (action === 'Request Leave') {
+                                window.enterpriseApp.showToast('Opening leave request form...', 'info');
+                            }
+                            break;
+                        case 'Expense Claims':
+                            if (action.includes('Submit Receipt')) {
+                                window.enterpriseApp.showToast('Initializing receipt scanner...', 'info');
+                            }
+                            break;
+                        case 'Documents & Payslips':
+                            if (action === 'View All Documents') {
+                                window.enterpriseApp.showToast('Loading document library...', 'info');
+                            }
+                            break;
+                        case 'Performance Dashboard':
+                            if (action === 'View Full Profile') {
+                                window.enterpriseApp.showToast('Opening performance profile...', 'info');
+                            }
+                            break;
+                    }
+                }
+            }
+
+            handleInsightAction(insightType, action) {
+                if (window.enterpriseApp) {
+                    switch (insightType) {
+                        case 'retention':
+                            if (action === 'Intervene') {
+                                window.enterpriseApp.showToast('Initiating retention intervention...', 'warning');
+                            }
+                            break;
+                        case 'training':
+                            if (action === 'Schedule Training') {
+                                window.enterpriseApp.showToast('Opening training scheduler...', 'info');
+                            }
+                            break;
+                        case 'payroll':
+                            if (action === 'Review Options') {
+                                window.enterpriseApp.showToast('Loading payroll optimization options...', 'info');
+                            }
+                            break;
+                        case 'performance':
+                            if (action === 'View Report') {
+                                window.enterpriseApp.showToast('Generating performance report...', 'info');
+                            }
+                            break;
+                    }
+                }
+            }
+
+            generateHRInsights() {
+                if (window.enterpriseApp) {
+                    window.enterpriseApp.showToast('AI is analyzing workforce data...', 'info');
+                    
+                    setTimeout(() => {
+                        window.enterpriseApp.showToast('New HR insights generated!', 'success');
+                    }, 3000);
+                }
+            }
+        }
+
+        // Initialize HR portal when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            window.hrPortal = new HRPortal();
+            
+            // Add event listeners for HR-specific actions
+            document.querySelectorAll('[data-action]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const action = e.target.dataset.action;
+                    if (window.hrPortal) {
+                        switch (action) {
+                            case 'new-employee':
+                                if (window.enterpriseApp) {
+                                    window.enterpriseApp.showToast('Opening new employee form...', 'info');
+                                }
+                                break;
+                            case 'hr-reports':
+                                if (window.enterpriseApp) {
+                                    window.enterpriseApp.showToast('Generating HR reports...', 'info');
+                                }
+                                break;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        /* HR Portal specific styles */
+        .self-service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface-color);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-header {
+            padding: 1.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-header.leave {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }
+
+        .service-header.expense {
+            background: linear-gradient(135deg, var(--success-color), #38a169);
+        }
+
+        .service-header.documents {
+            background: linear-gradient(135deg, var(--info-color), #2c5282);
+        }
+
+        .service-header.performance {
+            background: linear-gradient(135deg, var(--warning-color), #dd6b20);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .service-header h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .leave-balance,
+        .expense-summary,
+        .performance-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .balance-item,
+        .expense-item,
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .balance-item:last-child,
+        .expense-item:last-child,
+        .metric-item:last-child {
+            border-bottom: none;
+        }
+
+        .balance-label,
+        .expense-label,
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .balance-value,
+        .expense-value,
+        .metric-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .service-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .ai-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--primary-color);
+        }
+
+        .document-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .document-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--background-color);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+        }
+
+        .document-item i {
+            color: var(--error-color);
+            width: 16px;
+        }
+
+        .ai-insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .insight-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .insight-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .insight-card.retention {
+            border-left: 4px solid var(--warning-color);
+            background: rgba(237, 137, 54, 0.02);
+        }
+
+        .insight-card.training {
+            border-left: 4px solid var(--primary-color);
+            background: rgba(102, 126, 234, 0.02);
+        }
+
+        .insight-card.payroll {
+            border-left: 4px solid var(--success-color);
+            background: rgba(72, 187, 120, 0.02);
+        }
+
+        .insight-card.performance {
+            border-left: 4px solid var(--info-color);
+            background: rgba(66, 153, 225, 0.02);
+        }
+
+        .insight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .insight-card.retention .insight-icon {
+            background: var(--warning-color);
+        }
+
+        .insight-card.training .insight-icon {
+            background: var(--primary-color);
+        }
+
+        .insight-card.payroll .insight-icon {
+            background: var(--success-color);
+        }
+
+        .insight-card.performance .insight-icon {
+            background: var(--info-color);
+        }
+
+        .insight-content {
+            flex: 1;
+        }
+
+        .insight-content h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .insight-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0 0 0.75rem 0;
+            line-height: 1.5;
+        }
+
+        .insight-confidence {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .insight-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .demographics-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .demographic-section h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 1rem 0;
+        }
+
+        .demographic-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .demo-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            min-width: 80px;
+        }
+
+        .demo-percentage {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            min-width: 120px;
+        }
+
+        .demo-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--background-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .demo-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .demographic-summary {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .summary-label {
+            color: var(--text-secondary);
+        }
+
+        .summary-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .payroll-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payroll-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .payroll-item:last-child {
+            border-bottom: none;
+        }
+
+        .payroll-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .payroll-amount {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .payroll-amount.overtime {
+            color: var(--warning-color);
+        }
+
+        .payroll-amount.benefits {
+            color: var(--info-color);
+        }
+
+        .payroll-amount.deductions {
+            color: var(--error-color);
+        }
+
+        .payroll-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: 2px solid var(--border-color);
+            margin-top: 0.5rem;
+        }
+
+        .total-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .total-amount {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--success-color);
+        }
+
+        .ai-compliance {
+            background: rgba(66, 153, 225, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .compliance-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--info-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .compliance-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .compliance-item i {
+            color: var(--success-color);
+        }
+
+        .employee-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .employee-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .activity-type {
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .activity-type.expense {
+            background: rgba(72, 187, 120, 0.1);
+            color: var(--success-color);
+        }
+
+        .activity-type.leave {
+            background: rgba(66, 153, 225, 0.1);
+            color: var(--info-color);
+        }
+
+        .activity-type.performance {
+            background: rgba(245, 101, 101, 0.1);
+            color: var(--error-color);
+        }
+
+        .activity-type.alert {
+            background: rgba(237, 137, 54, 0.1);
+            color: var(--warning-color);
+        }
+
+        .activity-type.document {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .alert-row {
+            background: rgba(245, 101, 101, 0.05);
+            border-left: 4px solid var(--error-color);
+        }
+
+        @media (max-width: 768px) {
+            .self-service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insight-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .insight-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .demographic-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .demo-bar {
+                width: 100%;
+            }
+        }
+    </style>
 </body>
 </html>
