@@ -173,19 +173,43 @@ class EnterpriseApp {
         const navItems = document.querySelectorAll('.nav-item');
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         
+        // Create a mapping of page files to their corresponding nav items
+        const pageMapping = {
+            'website-home.html': 'website-home.html',
+            'home.html': 'website-home.html',
+            'index.html': 'website-home.html',
+            'dashboard.html': 'dashboard.html',
+            'projects-modern.html': 'projects-modern.html',
+            'projects.html': 'projects-modern.html',
+            'mobile-modern.html': 'mobile-modern.html',
+            'mobile-app.html': 'mobile-modern.html',
+            'cost-analysis.html': 'cost-analysis.html',
+            'inventory.html': 'inventory.html',
+            'hr-portal.html': 'hr-portal.html',
+            'maintenance.html': 'maintenance.html'
+        };
+        
+        // Get the target page for current page
+        const targetPage = pageMapping[currentPage] || currentPage;
+        
         navItems.forEach(item => {
             const link = item.getAttribute('href') || item.querySelector('a')?.getAttribute('href');
-            if (link && link.includes(currentPage)) {
+            
+            // Check if this nav item should be active
+            if (link && link === targetPage) {
                 item.classList.add('active');
+            } else {
+                item.classList.remove('active');
             }
             
-            item.addEventListener('click', (e) => {
-                if (!item.querySelector('a')) {
+            // Only add click handler for non-anchor elements (like div.nav-item.active)
+            if (item.tagName !== 'A') {
+                item.addEventListener('click', (e) => {
                     e.preventDefault();
                     navItems.forEach(nav => nav.classList.remove('active'));
                     item.classList.add('active');
-                }
-            });
+                });
+            }
         });
     }
 

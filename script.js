@@ -1,38 +1,37 @@
 // Main application JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
     initializeCharts();
     addInteractivity();
 });
 
-// Initialize the application
 function initializeApp() {
-    // Module navigation
     const navItems = document.querySelectorAll('.nav-item');
     const moduleContents = document.querySelectorAll('.module-content');
-    
+
     navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const targetModule = item.dataset.module;
-            
-            // Update navigation
+        item.addEventListener('click', (e) => {
+            // Prevent anchor navigation if present
+            if (item.tagName === 'A') e.preventDefault(); // stop href navigation [web:14][web:6]
+
+            const targetModule = item.dataset.module; // requires data-module on element [web:10]
+            const targetContent = targetModule ? document.getElementById(targetModule) : null; // map to id [web:3]
+
+            if (!targetContent) return; // no-op if mismatch [web:3]
+
+            // Update active nav
             navItems.forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
-            
-            // Update content
-            moduleContents.forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            const targetContent = document.getElementById(targetModule);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
+
+            // Update active content
+            moduleContents.forEach(content => content.classList.remove('active'));
+            targetContent.classList.add('active');
         });
     });
-    
+
     console.log('Enterprise Management System POC initialized');
 }
+
 
 // Initialize charts and visualizations
 function initializeCharts() {
@@ -41,7 +40,7 @@ function initializeCharts() {
     if (revenueCtx) {
         createRevenueChart(revenueCtx);
     }
-    
+
     // Animate KPI cards
     animateKPIs();
 }
@@ -78,11 +77,11 @@ function createRevenueChart(ctx) {
 // Animate KPI values
 function animateKPIs() {
     const kpiValues = document.querySelectorAll('.kpi-value');
-    
+
     kpiValues.forEach(value => {
         const originalText = value.textContent;
         const numericValue = parseFloat(originalText.replace(/[^0-9.]/g, ''));
-        
+
         if (numericValue) {
             animateNumber(value, 0, numericValue, originalText);
         }
@@ -93,13 +92,13 @@ function animateKPIs() {
 function animateNumber(element, start, end, originalText) {
     const duration = 2000;
     const startTime = performance.now();
-    
+
     function updateNumber(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
+
         const currentValue = start + (end - start) * easeOutQuart(progress);
-        
+
         // Format the number based on original text format
         if (originalText.includes('$')) {
             if (originalText.includes('M')) {
@@ -112,12 +111,12 @@ function animateNumber(element, start, end, originalText) {
         } else {
             element.textContent = Math.round(currentValue).toString();
         }
-        
+
         if (progress < 1) {
             requestAnimationFrame(updateNumber);
         }
     }
-    
+
     requestAnimationFrame(updateNumber);
 }
 
@@ -130,13 +129,13 @@ function easeOutQuart(t) {
 function addInteractivity() {
     // Project card interactions
     addProjectCardInteractions();
-    
+
     // AI recommendation interactions
     addAIRecommendationInteractions();
-    
+
     // Mobile app simulation
     addMobileAppInteractions();
-    
+
     // Real-time updates simulation
     simulateRealTimeUpdates();
 }
@@ -144,15 +143,15 @@ function addInteractivity() {
 // Project card interactions
 function addProjectCardInteractions() {
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
         // Add hover effects for project actions
         const actionButtons = card.querySelectorAll('.btn-icon');
-        
+
         actionButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 const icon = button.querySelector('i');
                 if (icon.classList.contains('fa-eye')) {
                     showProjectDetails(card);
@@ -195,18 +194,18 @@ function handleEmergencyAlert(card) {
 // AI recommendation interactions
 function addAIRecommendationInteractions() {
     const applyButtons = document.querySelectorAll('.ai-recommendations-panel .btn-primary');
-    
+
     applyButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            
+
             const recommendation = button.closest('.recommendation-item');
             const title = recommendation.querySelector('strong').textContent;
-            
+
             // Simulate applying recommendation
             button.textContent = 'Applying...';
             button.disabled = true;
-            
+
             setTimeout(() => {
                 button.textContent = 'Applied';
                 button.style.background = '#27ae60';
@@ -220,13 +219,13 @@ function addAIRecommendationInteractions() {
 function addMobileAppInteractions() {
     const mobileFrame = document.querySelector('.mobile-frame');
     if (!mobileFrame) return;
-    
+
     // Clock in/out button
     const clockButton = mobileFrame.querySelector('.btn-success');
     if (clockButton) {
         clockButton.addEventListener('click', () => {
             const isClockingOut = clockButton.textContent.includes('Clock Out');
-            
+
             if (isClockingOut) {
                 clockButton.innerHTML = '<i class="fas fa-play"></i> Clock In';
                 clockButton.classList.remove('btn-success');
@@ -241,14 +240,14 @@ function addMobileAppInteractions() {
             }
         });
     }
-    
+
     // Action buttons
     const actionButtons = mobileFrame.querySelectorAll('.action-btn');
     actionButtons.forEach(button => {
         button.addEventListener('click', () => {
             const actionType = button.querySelector('span').textContent;
             showNotification(`${actionType} feature activated`, 'info');
-            
+
             // Simulate different actions
             if (actionType === 'Photo') {
                 simulateCameraAction();
@@ -279,9 +278,9 @@ function simulateCameraAction() {
             <p>Camera activated - Photo captured and linked to project</p>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         document.body.removeChild(notification);
     }, 2000);
@@ -319,7 +318,7 @@ function simulateRealTimeUpdates() {
             animateNumber(staffElement, currentValue, newValue, newValue.toString());
         }
     }, 30000);
-    
+
     // Add new alerts periodically
     setInterval(() => {
         addRandomAlert();
@@ -330,7 +329,7 @@ function simulateRealTimeUpdates() {
 function addRandomAlert() {
     const alertsContainer = document.querySelector('.alerts-widget');
     if (!alertsContainer) return;
-    
+
     const alerts = [
         {
             type: 'info',
@@ -351,9 +350,9 @@ function addRandomAlert() {
             message: 'Minor incident at Site C - immediate supervisor review required.'
         }
     ];
-    
+
     const randomAlert = alerts[Math.floor(Math.random() * alerts.length)];
-    
+
     const alertElement = document.createElement('div');
     alertElement.className = `alert-item ${randomAlert.type}`;
     alertElement.innerHTML = `
@@ -363,20 +362,20 @@ function addRandomAlert() {
             <p>${randomAlert.message}</p>
         </div>
     `;
-    
+
     // Add with animation
     alertElement.style.opacity = '0';
     alertElement.style.transform = 'translateY(-10px)';
-    
+
     alertsContainer.appendChild(alertElement);
-    
+
     // Animate in
     setTimeout(() => {
         alertElement.style.transition = 'all 0.3s ease';
         alertElement.style.opacity = '1';
         alertElement.style.transform = 'translateY(0)';
     }, 100);
-    
+
     // Remove old alerts if too many
     const allAlerts = alertsContainer.querySelectorAll('.alert-item');
     if (allAlerts.length > 5) {
@@ -384,7 +383,7 @@ function addRandomAlert() {
         oldestAlert.style.transition = 'all 0.3s ease';
         oldestAlert.style.opacity = '0';
         oldestAlert.style.transform = 'translateY(-10px)';
-        
+
         setTimeout(() => {
             if (oldestAlert.parentNode) {
                 oldestAlert.parentNode.removeChild(oldestAlert);
@@ -410,7 +409,7 @@ function showNotification(message, type = 'info') {
         transition: all 0.3s ease;
         max-width: 300px;
     `;
-    
+
     // Set color based on type
     switch (type) {
         case 'success':
@@ -425,21 +424,21 @@ function showNotification(message, type = 'info') {
         default:
             notification.style.background = '#3498db';
     }
-    
+
     notification.textContent = message;
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Auto remove
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateX(100px)';
-        
+
         setTimeout(() => {
             if (notification.parentNode) {
                 document.body.removeChild(notification);
@@ -449,7 +448,7 @@ function showNotification(message, type = 'info') {
 }
 
 // Add some advanced features for demonstration
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Demo mode shortcuts
     if (e.ctrlKey && e.shiftKey) {
         switch (e.key) {
@@ -472,7 +471,7 @@ document.addEventListener('keydown', function(e) {
 // Toggle demo mode with enhanced features
 function toggleDemoMode() {
     const body = document.body;
-    
+
     if (body.classList.contains('demo-mode')) {
         body.classList.remove('demo-mode');
         showNotification('Demo mode disabled', 'info');
@@ -490,7 +489,7 @@ function startDemoAnimations() {
     progressBars.forEach(bar => {
         const currentWidth = parseInt(bar.style.width);
         let direction = 1;
-        
+
         setInterval(() => {
             if (document.body.classList.contains('demo-mode')) {
                 const newWidth = currentWidth + (Math.random() * 2 - 1);
@@ -515,7 +514,7 @@ function showAIInsights() {
         justify-content: center;
         z-index: 10000;
     `;
-    
+
     modal.innerHTML = `
         <div style="background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%;">
             <h3 style="color: #2c3e50; margin-bottom: 20px;">
@@ -538,9 +537,9 @@ function showAIInsights() {
             </button>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     // Close on outside click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -552,7 +551,7 @@ function showAIInsights() {
 // Generate random data for demonstration
 function generateRandomData() {
     showNotification('Generating random data for demonstration...', 'info');
-    
+
     // Update KPI values
     setTimeout(() => {
         animateKPIs();
